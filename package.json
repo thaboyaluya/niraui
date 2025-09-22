@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "nira-ui": "^1.17.0",
+    "tailwindcss": "^4.1.13"
+  },
+  "name": "nira-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "docs": "npx @tailwindcss/cli -i ./nira-ui/index.css -o ./public/nira.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" >
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+<link rel="stylesheet" href="../public/github.css">
+<link rel="stylesheet" href="../public/nira.css">
+
+
+
+
+<title>Components — Tailwind CSS Components 
+</title>
+<meta name="description" content="Tailwind CSS component examples by Nira UI"/>
+<meta name="keywords" content="introduction,guide,nextjs,documents"/>
+
+<link rel="canonical" href="../index.html"/>
+<meta property="og:title" content="Install Nira UI | Tailwind Components"/>
+<meta property="og:description" content="Tailwind CSS component examples by Nira UI"/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content="Documents"/>
+<meta property="og:image" content="/images/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Tailwind CSS component examples by Nira UI"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@RubixStudios"/>
+<meta name="twitter:title" content="Documents"/>
+<meta name="twitter:description" content="Tailwind CSS component examples by Nira UI"/>
+<meta name="twitter:image" content="/images/og-image.png"/>
+<meta name="twitter:image:alt" content="Tailwind CSS component examples by Nira UI"/>
+<meta name="robots" content="index,follow">
+<link rel="icon" href="../img/svgviewer-output.svg" type="image/x-icon" sizes="48x48"/>
+
+</head>
+
+<body >
+<nav class="sticky top-0 z-50 h-16 w-full border-b px-2 border-base-300/47 backdrop-blur-xl backdrop-filter md:px-4">
+
+<div class="mx-auto flex h-full items-center justify-between p-1 sm:p-3 md:gap-2">
+
+<div class="flex items-center gap-5">
+
+
+<div class="flex items-center gap-6">
+
+<div><a class="flex items-center gap-2.5" href="../docs/index.html">
+
+    <img alt="Nira UI" loading="lazy" width="34" height="34" decoding="async" data-nimg="1" src="../img/svgviewer-output.svg"/>
+
+<span class="text-md font-semibold hidden sm:flex">Nira UI
+</span>
+</a>
+</div>
+
+<div class="text-muted-foreground hidden items-center gap-5 text-sm font-medium md:flex">
+<a class="flex items-center gap-1 text-sm" href="../docs/introduction.html">Docs
+  
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+</a>
+
+ <a class="flex items-center gap-1 text-sm"  rel="noopener noreferrer" href="../components/index.html">Components
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+ <a class="flex items-center gap-1 text-sm" target="_blank" rel="noopener noreferrer" href="https://play.tailwindcss.com/Qz5OQPQCZ2">Playround
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+
+</div>
+
+
+</div>
+</div>
+
+<div class="flex items-center gap-2">
+
+<div>
+
+<div class="relative max-w-md flex-1 cursor-pointer" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_R_plb_" data-state="closed" data-slot="dialog-trigger">
+<input type="search" data-slot="input" class="input" placeholder="Search"/>
+</div>
+</div>
+
+<div class="flex gap-2 sm:ml-0"><a class="button" target="_blank" rel="noopener noreferrer" aria-label="View the repository on GitHub" href="https://github.com/thaboyaluya/nira-ui/">
+	
+	<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-[1.1rem] w-[1.1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+
+<path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
+
+<select class="select" onchange="setTheme(this.value)" id="theme-toggle">
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="system">System</option>
+    <option value="neon">Neon</option>
+  <option value="storm">Storm</option>
+  <option value="forest">Forest</option>
+    <option value="sunset">Sunset</option>
+	<option value="rose">Rose</option>
+	<option value="gold">Gold</option>
+  <option value="corporate">Corporate</option>
+   <option value="retro">Retro</option>
+   <option value="steel">Steel</option>
+   <option value="pastel">Pastel</option>
+   <option value="lofi">Lofi</option>
+   <option value="dracula">Dracula</option>
+	   <option value="midnight">Midnight</option>
+    
+ 
+  
+</select>
+
+
+</div>
+</div>
+</div></nav>
+
+<main class="h-auto px-5 sm:px-8">
+
+<div class="flex flex-row sm:gap-10">
+<div class="sm:w-full sm:max-w-[18rem]">
+    <input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state peer" />
+    <label for="sidebar-mobile-fixed" class="sidebar-overlay z-10"></label>
+    <aside class="sidebar border border-base-300/47 border-r sidebar-mobile sidebar-fixed-left h-full max-w-[18rem] justify-start bg-base-100 z-10   max-sm:fixed max-sm:-translate-x-full  peer-checked:translate-x-0">
+        <section class="sidebar-title items-center p-8"></section>
+        <section class="sidebar-content">
+            <nav class="menu rounded-md">
+                <section class="menu-section px-4">
+                    <span class="menu-title">Docs</span>
+                    <ul class="menu-items">
+                        <li class="py-0.5">
+                            <a href="./introduction.html" class="menu-item" >Introduction</a>
+                        </li>
+
+                        <li class="py-0.5">
+                            <a href="./installation.html" class="menu-item" >Installation</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="" class="menu-item" >Usage</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="" class="menu-item" >Customization</a>
+                        </li>
+                         <li class="py-0.5">
+                            <a href="../docs/theme.html" class="menu-item" >Theme</a>
+                        </li>
+                    </ul>
+                </section>
+                <div class="divider my-0"></div>
+                <section class="menu-section px-4">
+                    <span class="menu-title">Components</span>
+                    <ul class="menu-items">
+                        <li>
+                            <input type="checkbox" id="menu-2" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-2">
+                                <div class="flex gap-2">
+                                    <span>Form input</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Button Group</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Button</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Checkbox</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Forms</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Input File</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Input</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Radio</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Range</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Select</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Textarea</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-3" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-3">
+                                <div class="flex gap-2">
+                                    <span>Navigation</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Breadcrumb</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Drawer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Dropdown</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Footer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Link</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Navbar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Sidebar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Tab</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-4" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-4">
+                                <div class="flex gap-2">
+                                    <span>Informational</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Accordion</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Alert</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Avatar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Badge</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Card</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Divider</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Dot</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >KBD</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Mockup Browser</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Mockup code</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Modal</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Pagination</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Progress</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Skeleton</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Spinner</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Step</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Table</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="" class="menu-item" >Tooltip</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </section>
+    </aside>
+</div>
+
+ 
+<div class="pl-0 sm:pl-[9rem] md:pl-2 py-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4">
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs  duration-200 hover:-translate-y-1" href="../components/accordion.html">
+        <figure><img loading="lazy" class="border-base-300/47 bag-base-100   border" src="../img/accordion.webp" alt="Accordion" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Accordion</h2>
+            <p class="text-xs opacity-60">Accordion is used for showing and hiding content but only one item can stay open at a time.</p>
+        </div>
+    </a>
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/alert.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/alert.webp" alt="Alert" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Alert</h2>
+            <p class="text-xs opacity-60">Alert informs users about important events.</p>
+        </div>
+    </a>
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/avatar.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/avatar.webp" alt="Avatar" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Avatar</h2>
+            <p class="text-xs opacity-60">Avatars are used to show a thumbnail representation of an individual or business in the interface.</p>
+        </div>
+    </a>
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/badge.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/badge.webp" alt="Badge" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Badge</h2>
+            <p class="text-xs opacity-60">Badges are used to inform the user of the status of specific data.</p>
+        </div>
+    </a>
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/breadcrumb.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/breadcrumbs.webp" alt="Breadcrumbs" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Breadcrumbs</h2>
+            <p class="text-xs opacity-60">Breadcrumbs helps users to navigate through the website.</p>
+        </div>
+    </a>
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/button.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/button.webp" alt="Button" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Button</h2>
+            <p class="text-xs opacity-60">Buttons allow the user to take actions or make choices.</p>
+        </div>
+    </a>
+
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/button-group.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/button.webp" alt="Button Group" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Button Group</h2>
+            <p class="text-xs opacity-60">Button Group component is used to trigger actions.</p>
+        </div>
+    </a>
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/card.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/card.webp" alt="Card" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Card</h2>
+            <p class="text-xs opacity-60">Cards are used to group and display content in a way that is easily readable.</p>
+        </div>
+    </a>
+
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/checkbox.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/checkbox.webp" alt="Checkbox" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Checkbox</h2>
+            <p class="text-xs opacity-60">Checkboxes are used to select or deselect a value.</p>
+        </div>
+    </a>
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/divider.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/divider.webp" alt="Divider" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Divider</h2>
+            <p class="text-xs opacity-60">Divider will be used to separate content vertically or horizontally.</p>
+        </div>
+    </a>
+     <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/dot.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/dot.webp" alt="Dot" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Dot</h2>
+            <p class="text-xs opacity-60">Dot is a really small icon to visually show the current status of an element, like online, offline, error, etc.</p>
+        </div>
+    </a>
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/drawer.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/drawer.webp" alt="Drawer" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Drawer</h2>
+            <p class="text-xs opacity-60">Drawer is a grid layout that can show/hide a sidebar on the left or right side of the page.</p>
+        </div>
+    </a>
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/dropdown.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/dropdown.webp" alt="Dropdown" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Dropdown</h2>
+            <p class="text-xs opacity-60">Dropdown can open a menu or any other element when the button is clicked.</p>
+        </div>
+    </a>
+
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/footer.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/footer.webp" alt="Footer" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Footer</h2>
+            <p class="text-xs opacity-60">Footer can contain logo, copyright notice, and links to other pages.</p>
+        </div>
+    </a>
+
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/form.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/footer.webp" alt="Forms" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Form</h2>
+            <p class="text-xs opacity-60">Forms classes that can be used to create different types of forms.</p>
+        </div>
+    </a>
+
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/input.html">
+        <figure class="px-4 pt-4 !bg-base-100">
+            <img loading="lazy" class="border-base-300/47   border" src="../img/input.webp" alt="Text Input" />
+        </figure>
+        <div class="card-body">
+            <h2 class="card-title">Input</h2>
+            <p class="text-xs opacity-60">Input is a simple input field.</p>
+        </div>
+    </a>
+
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/input-file.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/file-input.webp" alt="File Input" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Input File</h2>
+            <p class="text-xs opacity-60">Input File is a an input field for uploading files.</p>
+        </div>
+    </a>
+
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/input-range.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/range.webp" alt="Range slider" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Input Range</h2>
+            <p class="text-xs opacity-60">Input Range is used to select a value by sliding a handle.</p>
+        </div>
+    </a>
+
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/kbd.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/kbd.webp" alt="Kbd" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Kbd</h2>
+            <p class="text-xs opacity-60">Kbd is used to display keyboard shortcuts.</p>
+        </div>
+    </a>
+
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/link.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/link.webp" alt="Link" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Link</h2>
+            <p class="text-xs opacity-60">Link adds the missing underline style to links.</p>
+        </div>
+    </a>
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/mockup-browser.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/mockup-browser.webp" alt="Mockup Browser" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Mockup Browser</h2>
+            <p class="text-xs opacity-60">Mockup Browser shows a box that looks like a browser window.</p>
+        </div>
+    </a>
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/mockup-code.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/mockup-code.webp" alt="Mockup Code" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Mockup Code</h2>
+            <p class="text-xs opacity-60">Mockup Code is used to show a block of code in a box that looks like a code editor.</p>
+        </div>
+    </a>
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/modal.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/modal.webp" alt="Modal" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Modal</h2>
+            <p class="text-xs opacity-60">Modal is used to show a dialog or a box when you click a button.</p>
+        </div>
+    </a>
+
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/navbar.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/navbar.webp" alt="Navbar" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Navbar</h2>
+            <p class="text-xs opacity-60">Navbar is used to show a navigation bar on the top of the page.</p>
+        </div>
+    </a>
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/pagination.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/pagination.webp" alt="Pagination" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Pagination</h2>
+            <p class="text-xs opacity-60">Pagination is a group of buttons that allow the user to navigate between a set of related content.</p>
+        </div>
+    </a>
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/progress.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/progress.webp" alt="Progress" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Progress</h2>
+            <p class="text-xs opacity-60">Progress bar can be used to show the progress of a task or to show the passing of time.</p>
+        </div>
+    </a>
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/radio.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/radio.webp" alt="Radio" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Radio</h2>
+            <p class="text-xs opacity-60">Radio buttons allow the user to select one option from a set.</p>
+        </div>
+    </a>
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/select.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/select.webp" alt="Select" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Select</h2>
+            <p class="text-xs opacity-60">Select is used to pick a value from a list of options.</p>
+        </div>
+    </a>
+
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/sidebar.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/drawer.webp" alt="Sidebar" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Sidebar</h2>
+            <p class="text-xs opacity-60">Sidebar is used to display supplementary information or navigation options.</p>
+        </div>
+    </a>
+
+        <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/skeleton.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/skeleton.webp" alt="Skeleton" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Skeleton</h2>
+            <p class="text-xs opacity-60">Skeleton is a component that can be used to show a loading state of a component.</p>
+        </div>
+    </a>
+
+<a class="card card-compact hover:bg-base-200 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/spinner.html">
+    <figure >
+        <img loading="lazy" class="border-base-content/5 bag-base-100  border" src="../img/spinner.webp" alt="Spinner">
+    </figure> 
+    <div class="card-body">
+        <h2 class="card-title">Spinner</h2> 
+        <p class="text-xs opacity-60">Spinner can be used to show the progress of a task or to show the passing of time.</p></div>
+</a>
+
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/step.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/steps.webp" alt="Steps" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Steps</h2>
+            <p class="text-xs opacity-60">Steps can be used to show a list of steps in a process.</p>
+        </div>
+    </a>
+
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/tab.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/tab.webp" alt="Tabs" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Tabs</h2>
+            <p class="text-xs opacity-60">Tabs can be used to show a list of links in a tabbed format.</p>
+        </div>
+    </a>
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/table.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/table.webp" alt="Table" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Table</h2>
+            <p class="text-xs opacity-60">Table can be used to show a list of data in a table format.</p>
+        </div>
+    </a>
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/textarea.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/textarea.webp" alt="Textarea" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Textarea</h2>
+            <p class="text-xs opacity-60">Textarea allows users to enter text in multiple lines.</p>
+        </div>
+    </a>
+
+            <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/toggle.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/toggle.webp" alt="Toggle" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Toggle</h2>
+            <p class="text-xs opacity-60">Toggle is a checkbox that is styled to look like a switch button.</p>
+        </div>
+    </a>
+
+
+    <a class="card  hover:bg-base-200/20 transition-all shadow-xs duration-200 hover:-translate-y-1" href="../components/tooltip.html">
+        <figure ><img loading="lazy" class="border-base-300/47 bag-base-100  border" src="../img/tooltip.webp" alt="Tooltip" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">Tooltip</h2>
+            <p class="text-xs opacity-60">Tooltip can be used to show a message when hovering over an element.</p>
+        </div>
+    </a>
+
+</div>
+
+
+	
+
+
+
+
+
+
+
+		
+
+  </div>
+</main>
+
+
+<footer class=" w-full border-t  border-base-300/47">
+
+<div class=" text-right  px-2 py-3 text-sm ">
+    <p>© 2025 <a class="font-bold" href="./index.html">Nira UI</a>.</p>
+</div>
+
+</footer>
+
+<script src="../public/rainbow.js"></script>
+<script src="../public/clipboard.js"></script>
+<script src="../public/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+
+<link rel="stylesheet" href="../public/github.css">
+<link rel="stylesheet" href="../public/nira.css">
+<title>Forms Nira UI — Tailwind CSS Components</title>
+<meta name="description" content="Forms are the standard way to receive user inputted data. They can be used htmlFor collecting information from users htmlFor any purpose, such as to complete a purchase, to register htmlFor a service, or to simply subscribe to an email newsletter."/>
+<meta name="keywords" content="introduction,guide,nextjs,Forms Nira UI — Tailwind CSS Components"/>
+<link rel="canonical" href="../index.html"/>
+<meta property="og:title" content="Forms Nira UI — Tailwind CSS Components"/>
+<meta property="og:description" content="Forms are the standard way to receive user inputted data. They can be used htmlFor collecting information from users htmlFor any purpose, such as to complete a purchase, to register htmlFor a service, or to simply subscribe to an email newsletter."/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content="Nira UI"/>
+<meta property="og:image" content="/images/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Forms Nira UI — Tailwind CSS Components"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content=""/>
+<meta name="twitter:title" content="Forms Nira UI — Tailwind CSS Components"/>
+<meta name="twitter:description" content="Forms are the standard way to receive user inputted data. They can be used htmlFor collecting information from users htmlFor any purpose, such as to complete a purchase, to register htmlFor a service, or to simply subscribe to an email newsletter."/>
+<meta name="twitter:image" content="/images/og-image.png"/>
+<meta name="twitter:image:alt" content="Forms Nira UI — Tailwind CSS Components"/>
+<link rel="icon" href="../img/svgviewer-output.svg" type="image/x-icon" sizes="48x48"/>
+</head>
+
+<body class="__variable_e8ce0c font-regular">
+<nav class="bg-opacity-5 sticky top-0 z-50 h-16 w-full border-b px-2 border-base-300/47 backdrop-blur-xl backdrop-filter md:px-4">
+
+<div class="mx-auto flex h-full items-center justify-between p-1 sm:p-3 md:gap-2">
+
+<div class="flex items-center gap-5">
+
+
+<div class="flex items-center gap-6">
+
+<div>
+    <a class="flex items-center gap-2.5" href="../docs/index.html"><img alt="Nira UI Logo" loading="lazy" width="34" height="34"  src="../img/svgviewer-output.svg"/>
+
+
+<span class="text-md font-semibold hidden sm:flex">Nira UI
+</span></a>
+</div>
+
+<div class="text-muted-foreground hidden items-center gap-5 text-sm font-medium md:flex">
+<a class="flex items-center gap-1 text-sm" href="../docs/introduction.html">Docs
+  
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+</a>
+
+ <a class="flex items-center gap-1 text-sm"  rel="noopener noreferrer" href="../components/index.html">Components
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+ <a class="flex items-center gap-1 text-sm" target="_blank" rel="noopener noreferrer" href="https://play.tailwindcss.com/Qz5OQPQCZ2">Playround
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+
+</div>
+
+
+
+
+</div>
+</div>
+
+<div class="flex items-center gap-2">
+
+<div>
+
+<div class="relative max-w-md flex-1 cursor-pointer" type="button" >
+<input type="search" data-slot="input" class="input" placeholder="Search"/>
+</div>
+</div>
+
+<div class="flex gap-2 sm:ml-0">
+    <a class="button-outline" target="_blank" rel="noopener noreferrer" aria-label="View the repository on GitHub" href="https://github.com/thaboyaluya/nira-ui">
+	
+	<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-[1.1rem] w-[1.1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+
+<path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
+
+<select class="select" onchange="setTheme(this.value)" id="theme-toggle">
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="system">System</option>
+
+    <option value="neon">Neon</option>
+   
+  <option value="storm">Storm</option>
+  <option value="forest">Forest</option>
+    <option value="sunset">Sunset</option>
+	<option value="rose">Rose</option>
+	<option value="gold">Gold</option>
+  <option value="corporate">Corporate</option>
+   <option value="retro">Retro</option>
+   <option value="steel">Steel</option>
+   <option value="pastel">Pastel</option>
+   <option value="lofi">Lofi</option>
+   <option value="dracula">Dracula</option>
+	   <option value="midnight">Midnight</option>
+    
+ 
+  
+</select>
+
+
+</div>
+</div>
+</div></nav>
+
+<main class="h-auto px-5 sm:px-8">
+
+<div class="flex flex-row sm:gap-10">
+<div class="sm:w-full sm:max-w-[18rem]">
+    <input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state peer" />
+    <label for="sidebar-mobile-fixed" class="sidebar-overlay z-10"></label>
+    <aside class="sidebar border border-base-300/47 border-r sidebar-mobile sidebar-fixed-left h-full max-w-[18rem] justify-start bg-base-100 z-10   max-sm:fixed max-sm:-translate-x-full  peer-checked:translate-x-0">
+        <section class="sidebar-title items-center p-8"></section>
+        <section class="sidebar-content">
+            <nav class="menu rounded-md">
+                <section class="menu-section px-4">
+                    <span class="menu-title">Docs</span>
+                    <ul class="menu-items">
+                        <li class="py-0.5">
+                            <a href="../docs/introduction.html" class="menu-item " >Introduction</a>
+                        </li>
+
+                        <li class="py-0.5">
+                            <a href="../docs/installation.html" class="menu-item " >Installation</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/usage.html" class="menu-item" >Usage</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/customize.html" class="menu-item" >Customization</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/theme.html" class="menu-item " >Theme</a>
+                        </li>
+                    </ul>
+                </section>
+                <div class="divider my-0"></div>
+                <section class="menu-section px-4">
+                    <span class="menu-title">Components</span>
+                    <ul class="menu-items">
+                        <li>
+                            <input type="checkbox" id="menu-2" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-2">
+                                <div class="flex gap-2">
+                                    <span>Form input</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                  
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/button.html" class="menu-item " >Button</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/button-group.html" class="menu-item " >Button Group</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/checkbox.html" class="menu-item " >Checkbox</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/form.html" class="menu-item menu-active" >Forms</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input-file.html" class="menu-item" >Input File</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input.html" class="menu-item" >Input</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/radio.html" class="menu-item" >Radio</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input-range.html" class="menu-item" >Range</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/select.html" class="menu-item" >Select</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/textarea.html" class="menu-item" >Textarea</a>
+                                        </li>
+                                          <li class="py-0.5 ml-6">
+                                            <a href="../components/toggle.html" class="menu-item" >Toggle</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-3" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-3">
+                                <div class="flex gap-2">
+                                    <span>Navigation</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/breadcrumb.html" class="menu-item" >Breadcrumb</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/drawer.html" class="menu-item" >Drawer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/dropdown.html" class="menu-item" >Dropdown</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/footer.html" class="menu-item" >Footer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/link.html" class="menu-item" >Link</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/navbar.html" class="menu-item" >Navbar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/sidebar.html" class="menu-item" >Sidebar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/tab.html" class="menu-item" >Tab</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-4" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-4">
+                                <div class="flex gap-2">
+                                    <span>Informational</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/accordion.html" class="menu-item" >Accordion</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/alert.html" class="menu-item " >Alert</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/avatar.html" class="menu-item" >Avatar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/badge.html" class="menu-item" >Badge</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/card.html" class="menu-item" >Card</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/divider.html" class="menu-item" >Divider</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/dot.html" class="menu-item" >Dot</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/kbd.html" class="menu-item" >KBD</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/mockup-browser.html" class="menu-item" >Mockup Browser</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/mockup-code.html" class="menu-item" >Mockup code</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/modal.html" class="menu-item" >Modal</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/pagination.html" class="menu-item" >Pagination</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/progress.html" class="menu-item" >Progress</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/skeleton.html" class="menu-item" >Skeleton</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/spinner.html" class="menu-item" >Spinner</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/step.html" class="menu-item" >Step</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/table.html" class="menu-item" >Table</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/tooltip.html" class="menu-item" >Tooltip</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </section>
+    </aside>
+</div>
+	
+
+<div class="grid gap-10 grid-cols-1 sm:grid-cols-2  xl:grid-cols-3">
+
+    <section class="pt-10 sm:pl-[6rem] md:pl-[6.5rem] lg:pl-0 col-span-2">
+        <div class="w-fit">
+            <label for="sidebar-mobile-fixed" class="button-primary button sm:hidden">Open Sidebar</label>
+        </div>
+        <div class="pb-5">
+            <nav aria-label="breadcrumb" data-slot="breadcrumb">
+                <ol data-slot="breadcrumb-list"
+                    class="text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5">
+                    <li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5">
+                        <a href="../docs/index.html">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="hover:text-foreground transition-colors h-4" data-slot="breadcrumb-link" height="1em"
+                            width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                            <path
+                                d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+                            </path>
+                        </svg></a>
+
+                    </li>
+                    <li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true"
+                        class="[&amp;&gt;svg]:size-3.5">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </li>
+                    <li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5"><a
+                            data-slot="breadcrumb-link" class="hover:text-foreground transition-colors"
+                            href="../components/checkbox.html">Checkbox</a></li>
+                    <li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true"
+                        class="[&amp;&gt;svg]:size-3.5">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </li>
+                    <li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5"><span
+                            data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page"
+                            class="text-foreground font-normal b">Forms</span></li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="typography ">
+
+
+            <h1 class="!mb-2 text-3xl !font-semibold">Forms
+            </h1>
+
+            <p class="text-base text-base-content/70 my-4">
+         Nira UI Form components make it easy to build responsive, accessible, and beautifully styled forms with Tailwind CSS.
+            </p>
+      
+<p class="text-base text-base-content/70 my-4">Whether you need a simple login form, a complex billing address form, or forms with icons and validation states, Nira UI provides ready-to-use classes and customization options.</p>
+            
+   <h2 id="default" class="!mb-2 text-3xl !font-semibold">Default Form </h2>
+
+       
+<p class="text-base text-base-content/70 my-4">Use the default form component for simple authentication forms.</p>
+
+
+<form class="mx-auto flex w-full max-w-sm flex-col gap-3" method="post" aria-labelledby="sign-in-heading">
+  <div class="flex flex-col items-center">
+    <h1 id="sign-in-heading" class="text-3xl font-semibold">Sign In</h1>
+    <p class="text-base">Sign in to access your account</p>
+  </div>
+
+  <div class="form-group">
+    <div class="form-field">
+      <label for="signin-email" class="form-label">Email Address</label>
+      <input
+        id="signin-email"
+        name="email"
+        type="email"
+        class="input"
+        placeholder="Type your email"
+        required
+        autocomplete="email"
+        aria-describedby="signin-email-error"
+      />
+      <span id="signin-email-error" class="form-label-alt" role="alert">Please enter a valid email.</span>
+    </div>
+
+    <div class="form-field">
+      <label for="signin-password" class="form-label">Password</label>
+      <input
+        id="signin-password"
+        name="password"
+        type="password"
+        class="input"
+        placeholder="Type your password"
+        required
+        autocomplete="current-password"
+      />
+    </div>
+
+    <div class="form-field">
+      <button type="submit" class="button button-full">Sign in</button>
+    </div>
+  </div>
+</form>
+
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<form class="mx-auto flex w-full max-w-sm flex-col gap-3" method="post" aria-labelledby="sign-in-heading">
+  <div class="flex flex-col items-center">
+    <h1 id="sign-in-heading" class="text-3xl font-semibold">Sign In</h1>
+    <p class="text-base">Sign in to access your account</p>
+  </div>
+
+  <div class="form-group">
+    <div class="form-field">
+      <label for="signin-email" class="form-label">Email Address</label>
+      <input
+        id="signin-email"
+        name="email"
+        type="email"
+        class="input"
+        placeholder="Type your email"
+        required
+        autocomplete="email"
+        aria-describedby="signin-email-error"
+      />
+      <span id="signin-email-error" class="form-label-alt" role="alert">Please enter a valid email.</span>
+    </div>
+
+    <div class="form-field">
+      <label for="signin-password" class="form-label">Password</label>
+      <input
+        id="signin-password"
+        name="password"
+        type="password"
+        class="input"
+        placeholder="Type your password"
+        required
+        autocomplete="current-password"
+      />
+    </div>
+
+    <div class="form-field">
+      <button type="submit" class="button button-full">Sign in</button>
+    </div>
+  </div>
+</form>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+   <h2 id="advanced" class="!mb-2 text-3xl !font-semibold">Advanced Form </h2>
+       
+<p class="text-base text-base-content/70 my-4">For more complex use cases like checkout forms, Nira UI includes a grid-based form layout.</p>
+
+
+<form class="grid grid-cols-12 gap-3" method="post" aria-labelledby="address-form-heading">
+  <h2 id="address-form-heading" class="sr-only">Billing / Shipping Address Form</h2>
+
+  <div class="sm:col-span-6 col-span-12 form-field">
+    <label for="adv-email" class="form-label">Email</label>
+    <input
+      id="adv-email"
+      name="email"
+      type="email"
+      class="input"
+      placeholder="you@example.com"
+      required
+      autocomplete="email"
+    />
+  </div>
+
+  <div class="sm:col-span-6 col-span-12 form-field">
+    <label for="adv-password" class="form-label">Password</label>
+    <input
+      id="adv-password"
+      name="password"
+      type="password"
+      class="input"
+      placeholder="••••••••"
+      required
+      autocomplete="new-password"
+    />
+  </div>
+
+  <div class="col-span-12 form-field">
+    <label for="adv-address1" class="form-label">Address</label>
+    <input
+      id="adv-address1"
+      name="address1"
+      type="text"
+      class="input"
+      placeholder="1234 Main St"
+      required
+      autocomplete="address-line1"
+    />
+  </div>
+
+  <div class="col-span-12 form-field">
+    <label for="adv-address2" class="form-label">Address 2</label>
+    <input
+      id="adv-address2"
+      name="address2"
+      type="text"
+      class="input"
+      placeholder="Apartment, studio, or floor"
+      autocomplete="address-line2"
+    />
+  </div>
+
+  <div class="sm:col-span-4 col-span-12 form-field">
+    <label for="adv-city" class="form-label">City</label>
+    <input
+      id="adv-city"
+      name="city"
+      type="text"
+      class="input"
+      required
+      autocomplete="address-level2"
+    />
+  </div>
+
+  <div class="sm:col-span-4 col-span-12 form-field">
+    <label for="adv-state" class="form-label">State</label>
+    <select
+      id="adv-state"
+      name="state"
+      class="select"
+      required
+      autocomplete="address-level1"
+    >
+      <option value="">Choose...</option>
+      <option value="NY">New York</option>
+      <option value="CA">California</option>
+      <option value="TX">Texas</option>
+      <!-- more states -->
+    </select>
+  </div>
+
+  <div class="sm:col-span-4 col-span-12 form-field">
+    <label for="adv-zip" class="form-label">Zip</label>
+    <input
+      id="adv-zip"
+      name="zip"
+      type="text"
+      class="input"
+      placeholder="Postal code"
+      required
+      autocomplete="postal-code"
+    />
+  </div>
+
+  <div class="col-span-12 form-field">
+    <button type="submit" class="button button-primary">Submit</button>
+  </div>
+</form>
+
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<form class="grid grid-cols-12 gap-3" method="post" aria-labelledby="address-form-heading">
+  <h2 id="address-form-heading" class="sr-only">Billing / Shipping Address Form</h2>
+
+  <div class="sm:col-span-6 col-span-12 form-field">
+    <label for="adv-email" class="form-label">Email</label>
+    <input
+      id="adv-email"
+      name="email"
+      type="email"
+      class="input"
+      placeholder="you@example.com"
+      required
+      autocomplete="email"
+    />
+  </div>
+
+  <div class="sm:col-span-6 col-span-12 form-field">
+    <label for="adv-password" class="form-label">Password</label>
+    <input
+      id="adv-password"
+      name="password"
+      type="password"
+      class="input"
+      placeholder="••••••••"
+      required
+      autocomplete="new-password"
+    />
+  </div>
+
+  <div class="col-span-12 form-field">
+    <label for="adv-address1" class="form-label">Address</label>
+    <input
+      id="adv-address1"
+      name="address1"
+      type="text"
+      class="input"
+      placeholder="1234 Main St"
+      required
+      autocomplete="address-line1"
+    />
+  </div>
+
+  <div class="col-span-12 form-field">
+    <label for="adv-address2" class="form-label">Address 2</label>
+    <input
+      id="adv-address2"
+      name="address2"
+      type="text"
+      class="input"
+      placeholder="Apartment, studio, or floor"
+      autocomplete="address-line2"
+    />
+  </div>
+
+  <div class="sm:col-span-4 col-span-12 form-field">
+    <label for="adv-city" class="form-label">City</label>
+    <input
+      id="adv-city"
+      name="city"
+      type="text"
+      class="input"
+      required
+      autocomplete="address-level2"
+    />
+  </div>
+
+  <div class="sm:col-span-4 col-span-12 form-field">
+    <label for="adv-state" class="form-label">State</label>
+    <select
+      id="adv-state"
+      name="state"
+      class="select"
+      required
+      autocomplete="address-level1"
+    >
+      <option value="">Choose...</option>
+      <option value="NY">New York</option>
+      <option value="CA">California</option>
+      <option value="TX">Texas</option>
+      <!-- more states -->
+    </select>
+  </div>
+
+  <div class="sm:col-span-4 col-span-12 form-field">
+    <label for="adv-zip" class="form-label">Zip</label>
+    <input
+      id="adv-zip"
+      name="zip"
+      type="text"
+      class="input"
+      placeholder="Postal code"
+      required
+      autocomplete="postal-code"
+    />
+  </div>
+
+  <div class="col-span-12 form-field">
+    <button type="submit" class="button button-primary">Submit</button>
+  </div>
+</form>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+<h2 id="soft" class="!mb-2 text-3xl !font-semibold">Soft Form</h2>
+       
+<p class="text-base text-base-content/70 my-4">Create modern, soft-background forms for contact and enquiry pages.</p>
+
+
+<section class="bg-base-200/30 rounded-3xl m-5">
+  <div class="p-8">
+    <form class="space-y-4" method="post" aria-labelledby="contact-form-heading">
+      <h2 id="contact-form-heading" class="text-2xl font-semibold">Send Us an Enquiry</h2>
+      
+      <div class="form-field">
+        <label for="contact-name" class="sr-only">Name</label>
+        <input
+          id="contact-name"
+          name="name"
+          type="text"
+          class="input"
+          placeholder="Name"
+          required
+          autocomplete="name"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div class="form-field">
+          <label for="contact-email" class="sr-only">Email</label>
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            class="input"
+            placeholder="Email address"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="contact-phone" class="sr-only">Phone</label>
+          <input
+            id="contact-phone"
+            name="phone"
+            type="tel"
+            class="input"
+            placeholder="Phone Number"
+            autocomplete="tel"
+          />
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="contact-message" class="sr-only">Message</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          class="textarea max-w-full"
+          placeholder="Message"
+          rows="8"
+          required
+        ></textarea>
+      </div>
+
+      <div class="mt-4 form-field">
+        <button type="submit" class="button button-primary button-full button-rounded">Send Enquiry</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<section class="bg-base-200/30 rounded-3xl m-5">
+  <div class="p-8">
+    <form class="space-y-4" method="post" aria-labelledby="contact-form-heading">
+      <h2 id="contact-form-heading" class="text-2xl font-semibold">Send Us an Enquiry</h2>
+      
+      <div class="form-field">
+        <label for="contact-name" class="sr-only">Name</label>
+        <input
+          id="contact-name"
+          name="name"
+          type="text"
+          class="input"
+          placeholder="Name"
+          required
+          autocomplete="name"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div class="form-field">
+          <label for="contact-email" class="sr-only">Email</label>
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            class="input"
+            placeholder="Email address"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="contact-phone" class="sr-only">Phone</label>
+          <input
+            id="contact-phone"
+            name="phone"
+            type="tel"
+            class="input"
+            placeholder="Phone Number"
+            autocomplete="tel"
+          />
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="contact-message" class="sr-only">Message</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          class="textarea max-w-full"
+          placeholder="Message"
+          rows="8"
+          required
+        ></textarea>
+      </div>
+
+      <div class="mt-4 form-field">
+        <button type="submit" class="button button-primary button-full button-rounded">Send Enquiry</button>
+      </div>
+    </form>
+  </div>
+</section>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+<h2 id="provider" class="!mb-2 text-3xl !font-semibold">Forms with Authentication Providers</h2>
+       
+<p class="text-base text-base-content/70 my-4">Easily integrate OAuth providers (Google, GitHub, etc.) with Nira UI forms.</p>
+
+
+
+<form class="mx-auto flex w-full max-w-lg flex-col rounded-xl border border-base-200 bg-base-200/10 p-4 sm:p-20">
+	<div class="flex w-full flex-col gap-2">
+		<p>Sign in with</p>
+		<div class="flex w-full items-center flex-col gap-2">
+			<button type="button" class="button  gap-2 button-full ">
+				<svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 48 48" enablebackground="new 0 0 48 48" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
+					<path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
+					<path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657        C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
+					<path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36        c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
+					<path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571
+              c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+				</svg>
+				<span>Sign up with google</span>
+			</button>
+			<button type="button" class="button gap-2 button-full">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-5 w-5 fill-primary">
+					<path d="M31.937 6.093c-1.177 0.516-2.437 0.871-3.765 1.032 1.355-0.813 2.391-2.099 2.885-3.631-1.271 0.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 0.521 0.063 1.021 0.172 1.495-5.453-0.255-10.287-2.875-13.52-6.833-0.568 0.964-0.891 2.084-0.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-0.031-2.083-0.328-2.968-0.817v0.079c0 3.181 2.26 5.833 5.26 6.437-0.547 0.145-1.131 0.229-1.724 0.229-0.421 0-0.823-0.041-1.224-0.115 0.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-0.521 0-1.041-0.025-1.563-0.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-0.276 0-0.557-0.021-0.839 1.287-0.917 2.401-2.079 3.281-3.396z"></path>
+				</svg>
+				<span>Sign up with twitter</span>
+			</button>
+			<button type="button" class="button gap-2 button-full">
+				<svg width="21" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+					<path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+				</svg>
+
+				<span>Sign up with github</span>
+			</button>
+		</div>
+	</div>
+	<div class="divider my-6 text-xs text-base-content/50">or continue with</div>
+	<div class="form-group">
+		<div class="form-field">
+			<label class="form-label">Email address</label>
+			<input placeholder="Type here" type="email" class="input w-full">
+			<label class="form-label">
+				<span class="form-label-alt">Please enter a valid email.</span>
+			</label>
+		</div>
+		<div class="form-field">
+			<label class="form-label">
+				<span>Password</span>
+			</label>
+			<div class="form-control">
+				<input placeholder="Type here" type="password" class="input input-full">
+			</div>
+		</div>
+		<div class="form-field">
+			<div class="form-control justify-between">
+				<div class="flex items-center gap-2">
+					<input type="checkbox" class="checkbox ">
+					<a href="#">Remember me</a>
+				</div>
+				<label class="form-label">
+					<a class="link link-underline-hover link-primary text-sm">Forgot your password?</a>
+				</label>
+			</div>
+		</div>
+		<div class="form-field pt-5">
+			<div class="form-control  justify-between">
+				<button type="button" class="button  button-primary w-full">Sign in</button>
+			</div>
+		</div>
+		<div class="form-field">
+			<div class="form-control">
+				<a class="link link-underline-hover link-primary text-sm">Don't have an account? Sign in</a>
+			</div>
+		</div>
+	</div>
+</form>
+
+
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<form class="mx-auto flex w-full max-w-lg flex-col rounded-xl border border-base-200 bg-base-100 p-4 sm:p-20">
+	<div class="flex w-full flex-col gap-2">
+		<p>Sign in with</p>
+		<div class="flex w-full items-center flex-col gap-2">
+			<button type="button" class="button gap-2 button-full">
+				<svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 48 48" enablebackground="new 0 0 48 48" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
+					<path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
+					<path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657 C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
+					<path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36 c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
+					<path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571
+              c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+				</svg>
+				<span>Sign up with google</span>
+			</button>
+		<!-- add  others... -->
+		</div>
+	</div>
+	<div class="divider my-6 text-xs text-base-content/50">or continue with</div>
+	<div class="form-group">
+		<div class="form-field">
+			<label class="form-label">Email address</label>
+			<input placeholder="Type here" type="email" class="input w-full">
+			<label class="form-label">
+				<span class="form-label-alt">Please enter a valid email.</span>
+			</label>
+		</div>
+		<div class="form-field">
+			<label class="form-label">
+				<span>Password</span>
+			</label>
+			<div class="form-control">
+				<input placeholder="Type here" type="password" class="input input-full">
+			</div>
+		</div>
+		<div class="form-field">
+			<div class="form-control justify-between">
+				<div class="flex items-center gap-2">
+					<input type="checkbox" class="checkbox ">
+					<a href="#">Remember me</a>
+				</div>
+				<label class="form-label">
+					<a class="link link-underline-hover link-primary text-sm">Forgot your password?</a>
+				</label>
+			</div>
+		</div>
+		<div class="form-field pt-5">
+			<div class="form-control  justify-between">
+				<button type="button" class="button  button-primary w-full">Sign in</button>
+			</div>
+		</div>
+		<div class="form-field">
+			<div class="form-control">
+				<a class="link link-underline-hover link-primary text-sm">Don't have an account? Sign in</a>
+			</div>
+		</div>
+	</div>
+</form>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+
+
+<h2 id="state" class="!mb-2 text-3xl !font-semibold">Form States</h2>
+
+       
+<p class="text-base text-base-content/70 my-4">Easily show success, warning, and error states with Nira UI classes.</p>
+
+
+
+
+<div class="form-group">
+  <div class="form-field">
+    <label for="state-danger" class="form-label text-danger">Email Address</label>
+    <input
+      id="state-danger"
+      name="email_danger"
+      type="email"
+      class="input max-w-full input-danger"
+      placeholder="Type here"
+      aria-invalid="true"
+      required
+    />
+    <span class="form-label-alt text-danger" role="alert">Please enter a valid email.</span>
+  </div>
+
+  <div class="form-field">
+    <label for="state-success" class="form-label text-success">Email Address</label>
+    <input
+      id="state-success"
+      name="email_success"
+      type="email"
+      class="input max-w-full input-success"
+      placeholder="Type here"
+      aria-invalid="false"
+      required
+    />
+    <span class="form-label-alt text-success">Looks good!</span>
+  </div>
+
+  <div class="form-field">
+    <label for="state-warning" class="form-label text-warning">Email Address</label>
+    <input
+      id="state-warning"
+      name="email_warning"
+      type="email"
+      class="input max-w-full input-warning"
+      placeholder="Type here"
+      aria-invalid="false"
+      required
+    />
+    <span class="form-label-alt text-warning">Please double-check that this email is correct.</span>
+  </div>
+</div>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="form-group">
+  <div class="form-field">
+    <label for="state-danger" class="form-label text-danger">Email Address</label>
+    <input
+      id="state-danger"
+      name="email_danger"
+      type="email"
+      class="input max-w-full input-danger"
+      placeholder="Type here"
+      aria-invalid="true"
+      required
+    />
+    <span class="form-label-alt text-danger" role="alert">Please enter a valid email.</span>
+  </div>
+
+  <div class="form-field">
+    <label for="state-success" class="form-label text-success">Email Address</label>
+    <input
+      id="state-success"
+      name="email_success"
+      type="email"
+      class="input max-w-full input-success"
+      placeholder="Type here"
+      aria-invalid="false"
+      required
+    />
+    <span class="form-label-alt text-success">Looks good!</span>
+  </div>
+
+  <div class="form-field">
+    <label for="state-warning" class="form-label text-warning">Email Address</label>
+    <input
+      id="state-warning"
+      name="email_warning"
+      type="email"
+      class="input max-w-full input-warning"
+      placeholder="Type here"
+      aria-invalid="false"
+      required
+    />
+    <span class="form-label-alt text-warning">Please double-check that this email is correct.</span>
+  </div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+
+
+
+<h2 id="icon" class="!mb-2 text-3xl !font-semibold">Forms with icons</h2>
+
+       
+<p class="text-base text-base-content/70 my-4">Add icons inside form fields for a modern, clean design.</p>
+
+<div class="form-group">
+	<div class="form-control relative w-full">
+		<input type="email" class="input pl-10" placeholder="Enter email" />
+
+		<span class="absolute inset-y-0 left-3 inline-flex items-center">
+		<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+			</svg>
+		</span>
+	</div>
+
+	<div class="form-control relative w-full">
+		<input type="password" class="input pl-10" placeholder="Enter password" />
+
+		<span class="absolute inset-y-0 left-3 inline-flex items-center">
+			   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+			</svg>
+		</span>
+	</div>
+</div>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="form-group">
+	<div class="form-control relative w-full">
+		<input type="email" class="input input-lg  pl-10" placeholder="Enter email" />
+		<span class="absolute inset-y-0 left-3 inline-flex items-center">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+			</svg>
+		</span>
+	</div>
+	<div class="form-control relative w-full">
+		<input type="password" class="input input-lg  pl-10" placeholder="Enter password" />
+		<span class="absolute inset-y-0 left-3 inline-flex items-center">
+           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+			</svg>
+		</span>
+	</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+
+
+
+
+
+<div class="flex items-center justify-between py-5 sm:py-7">
+    <div>
+        <a
+            class="button"
+            href="../components/checkbox.html"
+        >
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-[1rem] w-[1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="m15 18-6-6 6-6"></path>
+            </svg>
+            <p>Checkbox</p>
+        </a>
+    </div>
+    <div>
+        <a
+            class="button"
+            href="../components/input-file.html"
+        >
+            <p>File Input</p>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-[1rem] w-[1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="m9 18 6-6-6-6"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <aside class=" sticky top-16 hidden h-[94.5vh] min-w-[230px] gap-3 py-8 xl:flex xl:flex-col"
+        aria-label="Table of contents">
+
+        <div class="flex w-full flex-col gap-3 pl-2">
+            <h3 class="text-sm font-semibold">On this page</h3>
+
+            <div dir="ltr" data-slot="scroll-area" class="relative pt-0.5 pb-4"
+                style="position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px">
+
+
+                <div 
+                    class="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1"
+                    style="overflow-x:hidden;overflow-y:hidden">
+
+                    <div style="min-width:100%;display:table">
+
+                        <div class="flex flex-col gap-2.5 text-sm">
+                            <a class="pl-0" href="#default">Default Form</a>
+                            <a class="pl-0" href="#advanced">Advanced Form</a>
+                             <a class="pl-0" href="#soft">Soft Form</a>
+                              <a class="pl-0" href="#provider">Form with authentication providers</a>
+                               <a class="pl-0" href="#state">Form State</a>
+                              <a class="pl-0" href="#icon">Form with Icon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-3 pl-2">
+            <h3 class="text-sm font-semibold">Content</h3>
+
+            <div class="flex flex-col gap-2">
+                <a target="_blank" rel="noopener noreferrer"
+                    class="flex items-center text-sm "
+                    href="https://github.com/thaboyaluya/nira-ui/issues/new?title=Feedback%20for%20%22Introduction%22&amp;labels=feedback"><svg
+                        stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                        stroke-linejoin="round" class="mr-1 inline-block h-4 w-4" height="1em" width="1em"
+                        xmlns="http://www.w3.org/2000/svg">
+
+                        <path d="M7 7h10v10"></path>
+
+                        <path d="M7 17 17 7"></path>
+                    </svg> Feedback</a>
+
+            </div>
+        </div><button
+            class="ml-2 flex cursor-pointer items-center opacity-0 transition mt-6 self-start text-sm " id="scroll-top"><svg
+                stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                stroke-linejoin="round" class="mr-1 inline-block h-4 w-4 align-middle" height="1em" width="1em"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <path d="m5 12 7-7 7 7"></path>
+
+                <path d="M12 19V5"></path>
+            </svg>
+
+            <span>Scroll to top
+            </span></button>
+    </aside>
+
+</div>
+	
+
+
+
+
+
+		
+
+  </div>
+</main>
+
+
+
+
+
+
+
+<footer class=" w-full border-t  border-base-300/47">
+
+<div class=" text-right  px-2 py-3 text-sm ">
+    <p>© 2025 <a class="font-bold" href="./index.html">Nira UI</a>.</p>
+</div>
+
+</footer>
+<script src="../public/clipboard.js"></script>
+<script src="../public/rainbow.js"></script>
+<script src="../public/script.js"></script>
+</body>
+</html>
