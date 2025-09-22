@@ -3,8 +3,8 @@
 [project]
 name = "Nira UI"
 type = "Tailwind CSS Component Library"
-website = "https://nira-ui.com"
-documentation = "https://nira-ui.com/docs"
+website = "https://niraui.onrender.com/"
+documentation = "https://niraui.onrender.com/docs/installation.html"
 cdn = "https://cdn.jsdelivr.net/gh/thaboyaluya/nira-ui@master/dist/nira.css"
 github = "https://github.com/thaboyaluya/nira-ui"
 
@@ -43,14 +43,16 @@ github = "https://github.com/thaboyaluya/nira-ui"
 </div>
 
 # MODAL
-<div class="modal" id="my-modal">
-  <div class="modal-box">
-    <h3 class="font-bold text-lg">Hello!</h3>
-    <p class="py-4">This is a modal example.</p>
-    <div class="modal-action">
-      <button class="button">Close</button>
+<div>
+    <input type="checkbox" id="modal-toggle" class="peer hidden">
+    <label for="modal-toggle" class="button">Open Modal</label>
+    <div class="modal-container">
+      <div class="modal-content">
+        <h2 class="modal-title">Modal Title</h2>
+        <p>This is a modal using checkbox toggle.</p>
+        <label for="modal-toggle" class="modal-close">✕</label>
+      </div>
     </div>
-  </div>
 </div>
 
 # ALERT
@@ -66,19 +68,12 @@ github = "https://github.com/thaboyaluya/nira-ui"
 <span class="badge badge-secondary">Beta</span>
 
 # AVATAR
-<div class="avatar">
-  <div class="w-16 rounded-full">
-    <img src="https://i.pravatar.cc/100" />
-  </div>
-</div>
+<img class="avatar" src="https://i.pravatar.cc/100" />
+
 
 # INPUT
-<label class="form-control w-full max-w-xs">
-  <div class="label">
-    <span class="label-text">Email</span>
-  </div>
-  <input type="email" placeholder="you@example.com" class="input input-bordered w-full max-w-xs" />
-</label>
+<input type="email" placeholder="you@example.com" class="input input-bordered w-full max-w-xs" />
+
 
 # INPUT FILE
 <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
