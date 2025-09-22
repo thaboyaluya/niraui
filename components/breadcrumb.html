@@ -7,7 +7,7 @@
 <meta charSet="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="stylesheet" href="../public/github.css">
-<link rel="stylesheet" href="../public/nira.css">
+<link rel="stylesheet" href="../public/nira.css"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4" />
 <title>Breadcrumb Nira UI | TailwindCSS Components</title>
 <meta name="description" content="Easily navigate through your website or application with customizable breadcrumbs."/>
 <meta name="keywords" content="introduction,guide,nextjs,Breadcrumb Nira UI | TailwindCSS Components"/>
@@ -91,7 +91,7 @@
 <div>
 
 <div class="relative max-w-md flex-1 cursor-pointer" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_R_plb_" data-state="closed" data-slot="dialog-trigger">
-<input type="search" data-slot="input" class="input" placeholder="Search"/>
+<div id="docsearch" class="bg-base-100 border-base-300/47"></div>
 </div>
 </div>
 
@@ -689,6 +689,14 @@
 
 <script src="../public/rainbow.js"></script>
 <script src="../public/clipboard.js"></script>
-<script src="../public/script.js"></script>
+<script src="../public/script.js"></script> <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script>
+<script>
+  docsearch({
+  container: '#docsearch',
+  appId: 'NA27DKZC6X',
+  indexName: 'Nira UI Documentation Website',
+  apiKey: '89ed73c8a84edc8585b5c6cb90ec95cc'
+});
+</script>
 </body>
 </html>

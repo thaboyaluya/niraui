@@ -7,12 +7,15 @@
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --radius: 0.625rem;
+   --docsearch-hit-highlight-color:var(--color-base-300)
+
 }
 
 
 @theme inline {
   --color-input: var(--input);
   --color-ring: var(--ring);
+ 
 }
 
 @layer base {
@@ -162,4 +165,62 @@ pre .tag, pre .tag-name {
     @apply relative z-10 rounded-2xl bg-base-100 dark:bg-base-200 p-8;
   }
 }
+.DocSearch-Button{
+  background-color: var(--color-base-100) !important;
+  color: var(--color-base-content) !important;
+  @apply border-base-300/47!
+}
+.DocSearch-Button-Key,.DocSearch-Commands-Key{
+  background-color: var(--color-base-200) !important;
+  color: var(--color-base-content) !important;
+  @apply border-base-300/20!
+}
+.DocSearch-Button-Placeholder,.DocSearch-Search-Icon{
+  color: var(--color-base-content) !important;
+}
+.DocSearch-Modal{
+  @apply bg-base-200!
+}
 
+.DocSearch-Hit,.DocSearch-Hit-Container{
+  @apply text-base-content!
+} 
+.DocSearch-Hit a, .DocSearch-Hit--AskAI{
+  @apply bg-base-300!
+}
+
+.DocSearch-Hit-source{
+  @apply bg-base-200!
+}
+.DocSearch-Form{
+  background: var(--color-base-100) !important;
+  @apply border-b! border-base-300/47!
+}
+
+.DocSearch-Footer{
+  @apply border-t! border-base-300/47! bg-base-100!
+}
+.DocSearch-Clear,.DocSearch-AskAi-Return, .DocSearch-Close, .DocSearch-StreamingIndicator,.DocSearch-Label,.DocSearch-Commands,.DocSearch-Input,.DocSearch-Screen-Icon,.DocSearch-Divider{
+  @apply text-base-content!
+}
+
+.DocSearch-Hit-source {
+    color: var(--color-base-content) !important;
+}
+
+
+.DocSearch-Hit[aria-selected=true]  a {
+    @apply bg-base-400!
+}
+.DocSearch-Divider{
+  @apply border-l border-base-300/47
+}
+
+
+.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-Tree, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-text, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-title {
+    color: var(--color-base-content) !important;
+}
+.DocSearch-Hit-path{
+    @apply text-base-content-200!
+
+}

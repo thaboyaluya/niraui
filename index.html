@@ -7,7 +7,8 @@
 <link rel="stylesheet" href="../public/github.css">
 <link rel="stylesheet" href="../public/nira.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4" />
-<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script>
+
+
 <title>Nira UI – Tailwind CSS Plugin for Components & Themes</title>
 <meta name="description" content="Nira UI provides reusable Tailwind CSS UI components and themes so you can design and ship websites faster."/>
 <meta name="keywords" content="Nira UI, Tailwind CSS plugin, Tailwind UI components, Tailwind CSS themes, Tailwind component library, prebuilt Tailwind UI, customizable Tailwind components, open source Tailwind plugin">
@@ -84,10 +85,8 @@
 <div class="flex items-center gap-2">
 
 <div>
-<div id="docsearch"></div>
-<div class=" relative text-base-content" type="button" >
-<input type="search" data-slot="input" class="input" placeholder="Search"/>
-</div>
+<div id="docsearch" class="bg-base-100 border-base-300/47"></div>
+
 </div>
 
 <div class="flex gap-2 sm:ml-0">
@@ -969,19 +968,27 @@
 </div>
 </footer>
 <script src="../public/clipboard.js"></script>
-<script src="../public/script.js"></script>
-<script src="../public/rainbow.js"></script>
-
+<script src="../public/script.js"></script> <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script>
 <script>
-
-docsearch({
+  docsearch({
   container: '#docsearch',
   appId: 'NA27DKZC6X',
   indexName: 'Nira UI Documentation Website',
   apiKey: '89ed73c8a84edc8585b5c6cb90ec95cc'
 });
-
 </script>
+<script src="../public/rainbow.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script>
+<script>
+  docsearch({
+  container: '#docsearch',
+  appId: 'NA27DKZC6X',
+  indexName: 'Nira UI Documentation Website',
+  apiKey: '89ed73c8a84edc8585b5c6cb90ec95cc'
+});
+</script>
+
 </body>
 
 
