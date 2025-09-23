@@ -1,206 +1,228 @@
-# LLM.txt for Nira UI (Tailwind CSS Component Library)
+# Nira  UI
+Nira UI is a CSS library for Tailwind CSS 4
+Nira UI  provides class names for common UI components
 
-[project]
-name = "Nira UI"
-type = "Tailwind CSS Component Library"
-website = "https://niraui.onrender.com/"
-documentation = "https://niraui.onrender.com/docs/installation.html"
-cdn = "https://cdn.jsdelivr.net/gh/thaboyaluya/nira-ui@master/dist/nira.css"
-github = "https://github.com/thaboyaluya/nira-ui"
+- [Nira UI docs](https://niraui.onrender.com/)
 
-[usage]
-# How to include in a project
-1. Add Tailwind CSS to your project.
-2. Import Nira UI via CDN:
-   <link href="https://cdn.jsdelivr.net/gh/thaboyaluya/nira-ui@master/dist/nira.css" rel="stylesheet" />
+## Nira UI  install notes
+[install guide](https://niraui.onrender.com/docs/installation.html)
+1. NiraUI  requires Tailwind CSS 4
+2. `tailwind.config.js` file is deprecated in Tailwind CSS v4. do not use `tailwind.config.js`. Tailwind CSS v4 only needs `@import "tailwindcss";` in the CSS file if it's a node dependency.
+3. Nira UI  can be installed using `npm i -D nira-ui` and then adding `@plugin "nira-ui/plugin.js";` to the CSS file
+4. Nira UI is suggested to be installed as a dependency but if you really want to use it from CDN, you can use Tailwind CSS and Nira UI CDN files:
+```html
+<link href="https://cdn.jsdelivr.net/gh/thaboyaluya/nira-ui@master/dist/nira.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+```
+5. A CSS file with Tailwind CSS and Nira UI looks like this (if it's a node dependency)
+```css
+@import "tailwindcss";
+@plugin "nira-ui/plugin.js";
+```
 
-3. Or install via npm:
-   npm install nira-ui
+## Nira UI usage 
+1. We can give styles to a HTML element by adding Nira UI class names to it. By adding a component class name, part class names (if there's any available for that component), and modifier class names (if there's any available for that component)
+2. Components can be customized using Tailwind CSS utility classes if the customization is not possible using the existing Nira UI classes. For example `button px-10` sets a custom horizontal padding to a `button`
+3. If customization of Nira UI styles using Tailwind CSS utility classes didn't work because of CSS specificity issues, you can use the `!` at the end of the Tailwind CSS utility class to override the existing styles. For example `button bg-pink-500!` sets a custom background color to a `button` forcefully. This is a last resort solution and should be used sparingly
+4. If a specific component or something similar to it doesn't exist in Nira UI, you can create your own component using Tailwind CSS utility
+5. when using Tailwind CSS `flex` and `grid` for layout, it should be responsive using Tailwind CSS responsive utility prefixes.
+6. Only allowed class names are existing Nira UI class names or Tailwind CSS utility classes.
+7. Ideally, you won't need to write any custom CSS. Using Nira UI class names or Tailwind CSS utility classes is preferred.
+8. suggested - if you need placeholder images, use https://picsum.photos/200/300 with the size you want
+9. suggested - when designing , don't add a custom font unless it's necessary
+10. don't add `bg-base-100 text-base-content` to body unless it's necessary
+11. For design decisions, use Refactoring UI book best practices
 
-# -------------------------------------------------
-# EXAMPLES
-# -------------------------------------------------
+Nira UI  class names are one of the following categories. these type names are only for reference and are not used in the actual code
+- `component`: the required component class
+- `part`: a child part of a component
+- `style`: sets a specific style to component or part
+- `color`: sets a specific color to component or part
+- `size`: sets a specific size to component or part
+- `placement`: sets a specific placement to component or part
+- `direction`: sets a specific direction to component or part
+- `modifier`: modifies the component or part in a specific way
 
-# BUTTON
-<button class="button button-primary">Primary</button>
-<button class="button button-secondary">Secondary</button>
-<button class="button-outline">Outline</button>
+## Nira UI 5 colors
 
-# BUTTON GROUP
-<div class="button-group">
-  <button class="button">Left</button>
-  <button class="button">Middle</button>
-  <button class="button">Right</button>
-</div>
+### Nira UI color names
+- `primary`: Primary brand color, The main color of your brand
+- `secondary`: Secondary brand color, The optional, secondary color of your brand
+- `base-100`:-100 Base surface color of page, used for blank backgrounds
+- `base-200`:-200 Base color, darker shade, to create elevations
+- `base-300`:-300 Base color, even more darker shade, to create elevations
+- `base-content`: Foreground content color to use on base color
+- `success`: Success color, For success/safe messages
+- `warning`: Warning color, For warning/caution messages
+- `error`: Error color, For error/danger/destructive messages
 
-# CARD
-<div class="card w-96 shadow-md">
-  <div class="card-body">
-    <h2 class="card-title">Card Title</h2>
-    <p>Card content goes here.</p>
-    <button class="button button-primary">Action</button>
-  </div>
-</div>
+### Nira UI color rules
+1. Nira UI adds semantic color names to Tailwind CSS colors
+2. Nira UI color names can be used in utility classes, like other Tailwind CSS color names. for example, `bg-primary` will use the primary color for the background
+3. Nira UI color names include variables as value so they can change based the theme
+4. There's no need to use `dark:` for Nira UI color names
+5. Ideally only Nira UI color names should be used for colors so the colors can change automatically based on the theme
+6. If a Tailwind CSS color name (like `red-500`) is used, it will be same red color on all themes
+7. If a Nira UI color name (like `primary`) is used, it will change color based on the theme
+8. Using Tailwind CSS color names for text colors should be avoided because Tailwind CSS color `text-gray-800` on `bg-base-100` would be unreadable on a dark theme - because on dark theme, `bg-base-100` is a dark color
+9. `*-content` colors should have a good contrast compared to their associated colors
+10. suggestion - when designing a page use `base-*` colors for majority of the page. use `primary` color for important elements
 
-# MODAL
-<div>
-    <input type="checkbox" id="modal-toggle" class="peer hidden">
-    <label for="modal-toggle" class="button">Open Modal</label>
-    <div class="modal-container">
-      <div class="modal-content">
-        <h2 class="modal-title">Modal Title</h2>
-        <p>This is a modal using checkbox toggle.</p>
-        <label for="modal-toggle" class="modal-close">✕</label>
-      </div>
-    </div>
-</div>
+### Nira UI default theme variable reference
+```css
 
-# ALERT
-<div class="alert alert-success">
-  <span>Successfully saved!</span>
-</div>
-<div class="alert alert-error">
-  <span>Something went wrong!</span>
-</div>
+/*-- Light --*/
+--color-primary: #2fc6f8;
+--color-secondary: #a835fa;
+--color-success: #02ce57;
+--color-danger: #f51d2f;
+--color-warning: #fabf2b;
+--color-base-content: oklch(21% 0.006 285.885);
+--color-base-content-100: oklch(30% 0.006 285.885);
+--color-base-content-200: oklch(39% 0.006 285.885);
+--color-base-content-300: oklch(48% 0.006 285.885);
+--color-base-100: oklch(100% 0.00011 271.152);
+--color-base-200: oklch(95% 0.00011 271.152);
+--color-base-300: oklch(83% 0.00011 271.152);
+--color-base-400: oklch(80% 0.00011 271.152);
 
-# BADGE
-<span class="badge badge-primary">New</span>
-<span class="badge badge-secondary">Beta</span>
+/*-- Dark --*/
+--color-primary: #00bcff;
+--color-secondary: #9810fa;
+--color-success: #00a63e;
+--color-danger: #e7000b;
+--color-warning: #f0b100;
+--color-base-content: oklch(100% 0.00011 271.152);
+--color-base-content-100: oklch(91% 0.00011 271.152);
+--color-base-content-200: oklch(82% 0.00011 271.152);
+--color-base-content-300: oklch(73% 0.00011 271.152);
+--color-base-100: oklch(15% 0 0);
+--color-base-200: oklch(23% 0 0);
+--color-base-300: oklch(29% 0 0);
+--color-base-400: oklch(35% 0 0);
 
-# AVATAR
-<img class="avatar" src="https://i.pravatar.cc/100" />
+/* ...rest of themes are similar light and dark but different colors */
+```
+#### Rules
+- All CSS variables above are required
+- Colors can be OKLCH or hex or other formats
+
+## Nira UI  components
+
+Form / Input:
+- Button → https://niraui.onrender.com/components/button.html  
+  Standard clickable button with multiple styles and sizes.
+
+- Button Group → https://niraui.onrender.com/components/button-group.html  
+  Groups buttons together for related actions.
+
+- Checkbox → https://niraui.onrender.com/components/checkbox.html  
+  Input option allowing multiple selections.
+
+- Forms → https://niraui.onrender.com/components/form.html  
+  Pre-styled form layouts for inputs and labels.
+
+- Input → https://niraui.onrender.com/components/input.html  
+  Text field for user data entry.
+
+- Input File → https://niraui.onrender.com/components/input-file.html  
+  Styled file upload input.
+
+- Range → https://niraui.onrender.com/components/input-range.html  
+  Slider control for selecting numeric values.
+
+- Radio → https://niraui.onrender.com/components/radio.html  
+  Input option allowing single selection in a group.
+
+- Select → https://niraui.onrender.com/components/select.html  
+  Dropdown menu for selecting from options.
+
+- Textarea → https://niraui.onrender.com/components/textarea.html  
+  Multi-line text input.
 
 
-# INPUT
-<input type="email" placeholder="you@example.com" class="input input-bordered w-full max-w-xs" />
+Navigation:
+- Breadcrumb → https://niraui.onrender.com/components/breadcrumbs.html  
+  Shows hierarchical navigation paths.
+
+- Drawer → https://niraui.onrender.com/components/drawer.html  
+  Slide-out panel for menus or content.
+
+- Dropdown → https://niraui.onrender.com/components/dropdown.html  
+  Menu triggered by a button or link.
+
+- Footer → https://niraui.onrender.com/components/footer.html  
+  Prebuilt site footer layout.
+
+- Link → https://niraui.onrender.com/components/link.html  
+  Styled hyperlink variations.
+
+- Navbar → https://niraui.onrender.com/components/navbar.html  
+  Top navigation bar with links and actions.
+
+- Sidebar → https://niraui.onrender.com/components/sidebar.html  
+  Vertical navigation or content panel.
+
+- Tabs → https://niraui.onrender.com/components/tabs.html  
+  Switches between content sections.
 
 
-# INPUT FILE
-<input type="file" class="file-input file-input-bordered w-full max-w-xs" />
+Informational / Display:
+- Accordion → https://niraui.onrender.com/components/accordion.html  
+  Expand/collapse sections, only one open at a time.
 
-# CHECKBOX
-<label class="label cursor-pointer">
-  <span class="label-text">Accept terms</span>
-  <input type="checkbox" class="checkbox" />
-</label>
+- Alert → https://niraui.onrender.com/components/alert.html  
+  Notifies users about events or status changes.
 
-# RADIO
-<div class="form-control">
-  <label class="label cursor-pointer">
-    <span class="label-text">Option 1</span>
-    <input type="radio" name="radio-1" class="radio checked:bg-blue-500" checked />
-  </label>
-</div>
+- Avatar → https://niraui.onrender.com/components/avatar.html  
+  Circular thumbnail for users or brands.
 
-# SELECT
-<select class="select select-bordered w-full max-w-xs">
-  <option disabled selected>Pick one</option>
-  <option>Option 1</option>
-  <option>Option 2</option>
-</select>
+- Badge → https://niraui.onrender.com/components/badge.html  
+  Small indicator for status, counts, or labels.
 
-# RANGE
-<input type="range" min="0" max="100" class="range range-primary" />
+- Card → https://niraui.onrender.com/components/card.html  
+  Container for grouping and displaying content.
 
-# PROGRESS
-<progress class="progress progress-primary w-56" value="40" max="100"></progress>
+- Divider → https://niraui.onrender.com/components/divider.html  
+  Horizontal/vertical content separator.
 
-# SPINNER (LOADING)
-<span class="loading loading-spinner text-primary"></span>
+- Dot → https://niraui.onrender.com/components/dot.html  
+  Tiny status indicator (e.g. online/offline).
 
-# NAVBAR
-<div class="navbar bg-base-100 shadow">
-  <div class="flex-1">
-    <a class="button button-ghost text-xl">Nira UI</a>
-  </div>
-  <div class="flex-none">
-    <button class="button button-primary">Login</button>
-  </div>
-</div>
+- Kbd → https://niraui.onrender.com/components/kbd.html  
+  Displays keyboard shortcuts in UI.
 
-# PAGINATION
-<div class="join">
-  <button class="join-item button">«</button>
-  <button class="join-item button">1</button>
-  <button class="join-item button">2</button>
-  <button class="join-item button">»</button>
-</div>
+- Mockup Browser → https://niraui.onrender.com/components/mockup-browser.html  
+  Box styled like a browser window.
 
-# ACCORDION
-<div class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
-  <input type="checkbox" />
-  <div class="collapse-title text-lg font-medium">Accordion Title</div>
-  <div class="collapse-content">
-    <p>Accordion content goes here.</p>
-  </div>
-</div>
+- Mockup Code → https://niraui.onrender.com/components/mockup-code.html  
+  Box styled like a code editor with syntax.
 
-# TABS
-<div role="tablist" class="tabs tabs-bordered">
-  <a role="tab" class="tab tab-active">Tab 1</a>
-  <a role="tab" class="tab">Tab 2</a>
-  <a role="tab" class="tab">Tab 3</a>
-</div>
+- Modal → https://niraui.onrender.com/components/modal.html  
+  Overlay dialog window triggered by user action.
 
-# TABLE
-<div class="overflow-x-auto">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Jane Doe</td>
-        <td>Developer</td>
-        <td>Blue</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+- Pagination → https://niraui.onrender.com/components/pagination.html  
+  Page navigation controls.
 
-# DROPDOWN
-<div class="dropdown">
-  <label tabindex="0" class="button m-1">Menu</label>
-  <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-    <li><a>Item 1</a></li>
-    <li><a>Item 2</a></li>
-  </ul>
-</div>
+- Progress → https://niraui.onrender.com/components/progress.html  
+  Bar showing task or time completion.
 
-# TOOLTIP
-<div class="tooltip" data-tip="Hello!">
-  <button class="button">Hover me</button>
-</div>
+- Skeleton → https://niraui.onrender.com/components/skeleton.html  
+  Placeholder loading state for content.
 
-# PROGRESS STEPS
-<ul class="steps">
-  <li class="step step-primary">Step 1</li>
-  <li class="step">Step 2</li>
-  <li class="step">Step 3</li>
-</ul>
+- Spinner → https://niraui.onrender.com/components/spinner.html  
+  Animated loading indicator.
 
-# BREADCRUMB
-<div class="breadcrumbs text-sm">
-  <ul>
-    <li><a>Home</a></li>
-    <li><a>Library</a></li>
-    <li>Add</li>
-  </ul>
-</div>
+- Steps → https://niraui.onrender.com/components/steps.html  
+  Shows a process broken into steps.
 
-[llm_instructions]
-- Always generate HTML using Nira UI classes.
-- Assume Tailwind CSS + Nira UI are already included.
-- Use semantic HTML wherever possible.
-- Support light/dark mode with the `data-theme` attribute.
-- Components should be responsive by default.
-- Prefer minimal markup unless advanced features are requested.
+- Table → https://niraui.onrender.com/components/table.html  
+  Tabular data layout.
 
-[themes]
-- light
-- dark
-- system (auto detect via prefers-color-scheme)
+- Toggle → https://niraui.onrender.com/components/toggle.html  
+  Switch-style on/off input.
+
+- Tooltip → https://niraui.onrender.com/components/tooltip.html  
+  Small popup message on hover or focus.
+
+[Nira UI Componenets](https://niraui.onrender.com/components/index.html)
