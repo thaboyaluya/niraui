@@ -24,7 +24,6 @@
 - [Quick Start Example Project](#-quick-start-example-project)
 - [Features](#-features)
 - [Documentation](#-documentation)
-- [Contributing](#-contributing)
 - [License](#-license)
 
 
