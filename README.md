@@ -13,7 +13,7 @@
 
 </div>
 
----
+
 
 ## 📖 Table of Contents
 - [Introduction](#-introduction)
@@ -27,7 +27,7 @@
 - [Contributing](#-contributing)
 - [License](#-license)
 
----
+
 
 ## 🚀 Introduction
 
@@ -35,7 +35,6 @@
 
 You can install it through **NPM** or load it directly from a **CDN**.
 
----
 
 ## 📦 Installation
 
@@ -54,8 +53,6 @@ Make sure you have [Node.js](https://nodejs.org) and [Tailwind CSS](https://tail
    @plugin "nira-ui/plugin.js";
    ```
 
----
-
 ### Installing via CDN
 
 If you don’t want to set up Node.js or Tailwind locally, you can include Nira UI directly from a CDN:
@@ -67,7 +64,7 @@ If you don’t want to set up Node.js or Tailwind locally, you can include Nira 
 
 Browse the [components gallery](https://niraui.onrender.com/components/index.html), copy the code you need, and paste it into your project.
 
----
+
 
 ##  ⚡ Usage
 
@@ -79,7 +76,6 @@ Once installed, you can start using [Nira UI components](https://niraui.onrender
 
 For full examples and customization options, check the [documentation](https://niraui.onrender.com/docs/customize.html).
 
----
 
 ## 🏁 Quick Start Example Project
 
@@ -109,23 +105,18 @@ Here’s a minimal HTML project you can use to test Nira UI quickly (via CDN):
 
 Simply save this as `index.html` and open it in your browser to see Nira UI in action. 🎉
 
----
-
 ## ✨ Features
 -  Prebuilt, customizable Tailwind CSS components  
 -  Install via **NPM** or load via **CDN**  
 -  Simple plugin integration with Tailwind CSS v4  
 -  Copy-paste ready components for rapid prototyping 
 
----
+
 
 ## 📚 Documentation
 
 Full documentation, component previews, and examples are available here:  
 👉 [Nira UI Docs](https://niraui.onrender.com/index.html)
-
----
-
 
 
 ## 📄 License
