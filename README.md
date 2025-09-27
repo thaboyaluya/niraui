@@ -9,7 +9,9 @@
 [![NPM Version](https://img.shields.io/npm/v/nira-ui?color=00BFFF&label=nira-ui)](https://www.npmjs.com/package/nira-ui) 
 [![License](https://img.shields.io/github/license/thaboyaluya/nira-ui?color=green)](LICENSE) 
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-blue?logo=tailwindcss)](https://tailwindcss.com)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-orange.svg)](CONTRIBUTING.md) 
+![NPM Downloads](https://img.shields.io/npm/dw/nira-ui)
+
+![Static Badge](https://img.shields.io/badge/Nira%20UI-it's%20amazing-red)
 
 </div>
 
