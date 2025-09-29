@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon</title>
+  <link rel="stylesheet" href="../public/nira.css">
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black  flex items-center justify-center min-h-screen">
+  <div class="text-center max-w-lg px-6">
+    <div class="mb-6 flex justify-center">
+      <div class="h-16 w-16 flex items-center justify-center rounded-full bg-white shadow-lg">
+        <span class="text-2xl font-bold animate-bounce">🚀</span>
+      </div>
+    </div>
+
+    <h1 class="text-4xl md:text-5xl text-white font-extrabold mb-4">
+      We’re <span class="text-white">Launching Soon!</span>
+    </h1>
+    <p class="text-white/70 mb-8">
+      This page  is under construction, but we’re preparing something amazing for you. Stay tuned!
+    </p>
+
+ 
+
+    <!-- Countdown -->
+    <div id="countdown" class="grid grid-cols-4 gap-4 mt-10">
+      <div class="p-4 card rounded-xl">
+        <p id="days" class="text-3xl font-bold">00</p>
+        <span class="text-base-content/70 text-sm">Days</span>
+      </div>
+      <div class="p-4 card rounded-xl">
+        <p id="hours" class="text-3xl font-bold">00</p>
+        <span class="text-base-content/70 text-sm">Hours</span>
+      </div>
+      <div class="p-4 card rounded-xl">
+        <p id="minutes" class="text-3xl font-bold">00</p>
+        <span class="text-base-content/70 text-sm">Minutes</span>
+      </div>
+      <div class="p-4 card rounded-xl">
+        <p id="seconds" class="text-3xl font-bold">00</p>
+        <span class="text-base-content/70 text-sm">Seconds</span>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- Countdown Script -->
+  <script>
+    // Set your launch date here (YYYY-MM-DD HH:MM:SS)
+    const launchDate = new Date("2025-12-31T23:59:59").getTime();
+
+    const timer = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance <= 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = `
+          <div class="col-span-4 p-6 bg-green-600 rounded-xl text-white font-bold text-xl">
+            We are Live! 🎉
+          </div>
+        `;
+        return;
+      }
+
+      // Time calculations
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Update HTML
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+    }, 1000);
+  </script>
+</body>
+</html>
