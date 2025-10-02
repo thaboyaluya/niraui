@@ -428,21 +428,26 @@
             <h1 class="!mb-2 text-3xl !font-semibold">🚀 Nira UI Installation Guide
             </h1>
 
+            <p class="text-base text-base-content/70 my-4">Nira UI is a Tailwind CSS plugin that gives you access to prebuilt, customizable UI components like buttons, cards, alerts, and more all without extra JavaScript.</p>
+
+            <p class="text-base text-base-content/70 my-4">Whether you’re setting up a full Tailwind project or just testing in plain HTML, installation is simple and fast.</p>
+
             <section>
   
-                <h2 class="text-base text-base-content/70 my-4" id="install-nira-ui">How to install Nira UI as a Tailwind CSS plugin?</h2>
+                <h2 class="!mb-2 text-3xl !font-semibold my-4" id="install-nira-ui">Method 1: Install Nira UI via NPM</h2>
 
 
-                <p class="text-base text-base-content/70 my-4">You need <a class="link link-underline"
-                        href="https://nodejs.org/en/download/">Node.js</a> and <a class="link link-underline"
+                <p class="text-base text-base-content/70 my-4">Before installing, make sure you have: <a class=" link-underline"
+                        href="https://nodejs.org/en/download/">Node.js</a> and <a class=" link-underline"
                         href="https://tailwindcss.com/docs/installation/" target="_blank"
                         rel="noopener noreferrer">Tailwind CSS</a> installed.</p>
 
 
-
+ <p class="text-base text-base-content/70 mb-4">This is the recommended method for modern projects.</p>
                 <p class="text-base text-base-content/70 mb-4">Step 1: Install Nira UI via NPM</p>
 
-                <p>Run this command in your project directory:</p>
+           <p class="text-base text-base-content/70 mb-4">Run the following command in your project directory:</p>     
+
 
 
                 <figure class="highlight my-4 text-start">
@@ -456,8 +461,9 @@
                 </figure>
 
 
-                <p class="text-base text-base-content/70 mb-4">Step 2: Add Nira UI to Your app.css</p>
-                <p>Import Tailwind CSS and add Nira UI as a plugin inside your main CSS file (<code class="code">app.css</code>, <code class="code">main.css</code>, or similar):</p>
+                <p class="text-base text-base-content/70 mb-4">Step 2. Add Nira UI to Your CSS</p>
+
+                <p class="text-base text-base-content/70 mb-4">Import Tailwind and enable the Nira UI plugin in your main CSS file(<code class="code">app.css</code>, <code class="code">main.css</code>, or similar):</p>
 
 
                 <figure class="highlight my-4 text-start">
@@ -471,17 +477,30 @@
                         </svg></button>
                 </figure>
 
-<p class="my-4">That’s it 🎉 — you can now use Nira UI class names like  <code class="code">button</code> <code class="code">card</code>, and more in your project.</p>
+<p class="text-base text-base-content/70 mb-4">That’s it 🎉  you can now use Nira UI class names like  <code class="code">button</code> <code class="code">card</code>, and more in your project.</p>
+
+<p class="text-base text-base-content/70 mb-4">Example:</p>
+<figure class="highlight my-4 text-start">
+    <pre><code data-language="html"><button class="button">Click Me</button></code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+    d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+<button class="button">Click Me</button>
            
 
 
-                <h2 id="nira-ui-cdn" class="!mb-2 text-3xl !font-semibold">Use Nira UI from a CDN (No Installation)
+                <h2 id="nira-ui-cdn" class="!mb-2 text-3xl !font-semibold mt-3">Method 2: Use Nira UI from a CDN (No Installation)
                 </h2>
 
-                <h2 class="text-base text-base-content/70 my-4">If you don’t want to set up Node.js or Tailwind locally, you can load Nira UI directly from a CDN.</h2>
+                <h2 class="text-base text-base-content/70 my-4">If you don’t want to set up Node.js or Tailwind locally, you can try Nira UI instantly in any plain HTML file by using the CDN version.</h2>
 
 
-                <p class="mb-2">Add the following inside your  <code class="code">head</code> tag:</p>
+                <p class="text-base text-base-content/70 mb-4">Add the following inside your  <code class="code">head</code> tag:</p>
 
                 <figure class="highlight my-2 text-left">
                     <pre ><code data-language="html">
@@ -497,8 +516,15 @@
                 </figure>
 
 
-<p>This will give you instant access to Nira UI classes in any plain HTML file</p>
+<p class="text-base text-base-content/70 my-4">This will give you instant access to Nira UI classes in any plain HTML file</p>
 
+
+
+<h2 id="next-steps" class="!mb-2 text-3xl !font-semibold mt-3">Next Steps</h2>
+
+<p class="text-base text-base-content/70 my-4">Explore the  <a class="link-underline" href="../components/index.html">components library</a> to start building UI faster</p>
+
+<p class="text-base text-base-content/70 my-4">Explore the various  <a class="link-underline" href="../docs/theme.html">themes</a> available</p>
 
 
 
@@ -552,6 +578,7 @@
                         <div class="flex flex-col gap-2.5 text-sm">
                             <a class="pl-0" href="#install-nira-ui">How to Install Nira UI ?</a>
                             <a class="pl-0" href="#nira-ui-cdn">Nira UI CDN</a>
+                            <a class="pl-0" href="#next-steps">Next Steps</a>
 
                         </div>
                     </div>
