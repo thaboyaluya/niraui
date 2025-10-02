@@ -428,7 +428,7 @@
         <div class="typography ">
 
 
-            <h1 class="!mb-2 text-3xl !font-semibold">Nira UI - Usage
+            <h1 class="!mb-2 text-3xl !font-semibold">Nira UI – Usage Guide
             </h1>
 
             <section>
@@ -437,13 +437,18 @@
 
 
                 <p class="text-base text-base-content/70 my-4">
-                    Once you  <a class="link link-underline" href="../docs/installation.html"> installed Nira UI </a>, you can use component classes like button, card, etc.These classes are built on top of Tailwind CSS and allow you to design faster with cleaner, more readable code.
+                    Once you  <a class="link-underline" href="../docs/installation.html"> installed Nira UI </a>, you can use component classes like button, card, etc.These classes are built on top of Tailwind CSS, giving you:
                 </p>
+                <ul class="list-disc ml-3">
+                    <li class="text-base text-base-content/70 my-4">Cleaner, more readable HTML</li>
+                    <li class="text-base text-base-content/70 my-4">Faster design with fewer decisions</li>
+                    <li class="text-base text-base-content/70 my-4">Full compatibility with Tailwind utilities for customization</li>
+                </ul>
 
-
+<h2 class="!mb-2 text-3xl !font-semibold mt-3">Without Nira UI (Tailwind CSS only)</h2>
 
                   <p class="text-base text-base-content/70 my-4">
-                  Here’s how you would normally create a button using only Tailwind CSS utility classes:
+                To create a simple button in plain Tailwind CSS, you’d typically write:
                 </p>
 <figure class="highlight my-4 text-start">
  <pre><code data-language="html"><button
@@ -458,7 +463,7 @@
                         </svg></button>
                 </figure>
 
-    <p class="mb-4">This works, but it requires writing many utility classes for every button.</p>
+    <p class="text-base text-base-content/70 my-4">This works  but requires many utility classes for every button.</p>
 
     <button
   class="inline-block cursor-pointer rounded-md bg-sky-800 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-sky-900">
@@ -467,9 +472,9 @@
 
 
 
- 
+ <h2 class="!mb-2 text-3xl !font-semibold mt-3">With Nira UI (Simplified)</h2>
     <p class="text-base text-base-content/70 my-4">
-    With Nira UI, you can simplify this by using the button component class:
+   With Nira UI, you can achieve the same result with a single, semantic class:
     </p>
 
     <figure class="highlight my-4 text-start">
@@ -484,10 +489,12 @@
 
 <button class="button">Button</button>
 
+<p class="text-base text-base-content/70 my-4">This keeps your code clean, consistent, and easier to maintain.</p>
 
 
+ <h2 class="!mb-2 text-3xl !font-semibold mt-3">Using Variants</h2>
     <p class="text-base text-base-content/70 my-4">
-        Nira UI also comes with additional utility classes you can combine with components, such as button-primary:
+     Nira UI comes with component variants that extend functionality. For example:
     </p>
 
     <figure class="highlight my-4 text-start">
@@ -501,12 +508,15 @@
     </figure>
 
 <button class="button button-primary">Button</button>
-           
+
+<p class="text-base text-base-content/70 my-4">This instantly applies the primary color style without extra setup.</p>
 
 
+
+ <h2 class="!mb-2 text-3xl !font-semibold mt-3">Combining with Tailwind Utilities</h2>
 
     <p class="text-base text-base-content/70 my-4">
-       Because Nira UI is fully compatible with Tailwind, you can still use Tailwind’s utility classes alongside components for custom designs:
+    Since Nira UI is fully compatible with Tailwind CSS, you can still apply utility classes for deeper customization:
     </p>
 
     <figure class="highlight my-4 text-start">
@@ -522,7 +532,7 @@
 <button class="button w-64 rounded-full">Button</button>
 
                
-
+<p class="text-base text-base-content/70 my-4">Here, the button uses Nira UI’s base styling (button) while also applying custom Tailwind utilities (<code class="code">w-64</code> and <code class="code">rounded-full</code>  ).</p>
 
 
 
