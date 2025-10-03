@@ -167,16 +167,14 @@ pre .tag, pre .tag-name {
 }
 .DocSearch-Button{
   background-color: var(--color-base-100) !important;
-  color: var(--color-base-content) !important;
-  @apply border-base-300/47!
+   @apply text-base-content/70!  border-base-300/47!
 }
 .DocSearch-Button-Key,.DocSearch-Commands-Key{
   background-color: var(--color-base-200) !important;
-  color: var(--color-base-content) !important;
-  @apply border-base-300/20!
+   @apply text-base-content/70! border-base-300/20!
 }
 .DocSearch-Button-Placeholder,.DocSearch-Search-Icon{
-  color: var(--color-base-content) !important;
+  @apply text-base-content/70!
 }
 .DocSearch-Modal{
   @apply bg-base-200!
@@ -201,11 +199,11 @@ pre .tag, pre .tag-name {
   @apply border-t! border-base-300/47! bg-base-100!
 }
 .DocSearch-Clear,.DocSearch-AskAi-Return, .DocSearch-Close, .DocSearch-StreamingIndicator,.DocSearch-Label,.DocSearch-Commands,.DocSearch-Input,.DocSearch-Screen-Icon,.DocSearch-Divider{
-  @apply text-base-content!
+ @apply text-base-content/70!
 }
 
 .DocSearch-Hit-source {
-    color: var(--color-base-content) !important;
+     @apply text-base-content/70!
 }
 
 
@@ -218,9 +216,68 @@ pre .tag, pre .tag-name {
 
 
 .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-Tree, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-text, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-title {
-    color: var(--color-base-content) !important;
+     @apply text-base-content/70!
 }
 .DocSearch-Hit-path{
     @apply text-base-content-200!
 
+}
+
+.DocSearch-Container {
+  @apply bg-base-100/80!
+}
+
+.DocSearch-Commands-Key {
+      @apply border! border-base-300/47! text-sm
+}
+.cls-1, .cls-2 {
+    @apply fill-primary!
+}
+
+.DocSearch-Input {
+   @apply placeholder:text-primary!
+}
+.DocSearch-Title {
+  @apply text-primary!
+}
+
+.DocSearch-Screen-Icon {
+  @apply text-primary! stroke-none!
+}
+
+.DocSearch-Hit[aria-selected=true] .DocSearch-Hit--AskAI, .DocSearch-Hit[aria-selected=true] a {
+  --docsearch-hit-highlight-color:var(--color-base-400);
+    background-color: var(--docsearch-hit-highlight-color) !important;
+}
+
+.DocSearch-Hit[aria-selected=true] .DocSearch-Hit-action, .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-icon, .DocSearch-Hit[aria-selected=true] mark {
+  --docsearch-highlight-color:var(--color-base-content);
+    color: var(--docsearch-highlight-color);
+}
+
+.DocSearch-Hit-icon{
+  --docsearch-secondary-text-color:var(--color-base-content);
+    color: var(--docsearch-secondary-text-color);
+}
+
+.DocSearch-Hit mark {
+    --docsearch-highlight-color:var(--color-base-content);
+    color: var(--docsearch-highlight-color);
+}
+.DocSearch-Divider {
+    @apply border-l! border-base-300/47!
+}
+
+.DocSearch-AskAi-Return:hover, .DocSearch-Close:hover, .DocSearch-StreamingIndicator:hover {
+    --docsearch-soft-primary-color:var(--color-base-200);
+    background: var(--docsearch-soft-primary-color);
+}
+#docsearch,.DocSearch-Button{
+  @apply rounded-full!
+}
+.DocSearch-Button-Key{
+  @apply text-sm! rounded-full! bg-base-100!
+}
+.DocSearch-Modal {
+  @apply bg-base-100/80!
 }
