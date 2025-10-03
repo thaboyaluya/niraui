@@ -209,7 +209,7 @@
 <div class="hidden lg:flex items-center justify-center">
   <div class="h-[400px] w-px bg-base-200/70 relative">
     <span class="absolute -left-1 top-1/4 w-2 h-2 rounded-full animate-bounce bg-primary"></span>
-    <span class="absolute -left-1 top-2/4 w-2 h-2 rounded-full animate-bounce bg-black"></span>
+    <span class="absolute -left-1 top-2/4 w-2 h-2 rounded-full animate-bounce bg-base-content"></span>
     <span class="absolute -left-1 top-3/4 w-2 h-2 rounded-full animate-bounce bg-primary"></span>
   </div>
 </div>
@@ -221,7 +221,7 @@
   <div class="w-[500px] h-[500px] rounded-full bg-gradient-to-br from-primary/30 via-secondary/2 to-transparent blur-3xl opacity-50"></div>
 </div>
 
-  <button class="button animate-float absolute top-8 left-8" style="animation-delay: 0s;">button</button>
+  <button class="button animate-float absolute top-8 left-8 bg-base-200/20" style="animation-delay: 0s;">button</button>
 
   <div class="alert animate-float text-left w-[400px] alert-primary-transparent absolute top-28 left-8" style="animation-delay: 0.3s;">
     <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -238,7 +238,7 @@
     </div>
   </div>
 
-  <div class="card  absolute animate-float top-1/2 left-8 w-[280px] -translate-y-1/2" style="animation-delay: 0.9s;">
+  <div class="card  absolute animate-float top-1/2 left-8 w-[280px] -translate-y-1/2 bg-base-200/20" style="animation-delay: 0.9s;">
     <div class="form-group">
       <div class="form-field">
         <label class="form-label">Email address</label>
@@ -255,11 +255,11 @@
 
   <img loading="lazy" class="avatar-xl absolute animate-float top-8 right-8" style="animation-delay: 0.6s;" src="../img/ferr-studio-G2Qjx1y9aAM-unsplash.jpg" alt="Avatar">
 
-  <button type="button" class="tooltip tooltip-primary button tooltip-n absolute animate-float top-32 right-10" data-content="Build beautiful apps faster" style="animation-delay: 1.3s;">
+  <button type="button" class="tooltip tooltip-primary button tooltip-n absolute animate-float top-32 right-10 bg-base-200/20" data-content="Build beautiful apps faster" style="animation-delay: 1.3s;">
     Click Me !
   </button>
 
-  <nav class="absolute animate-float bottom-60 right-10" style="animation-delay: 1.5s;">
+  <nav class="absolute animate-float bottom-60 right-10 bg-base-200/20" style="animation-delay: 1.5s;">
     <ul class="pagination">
       <li class="page-item disabled"><a class="page-link">Previous</a></li>
       <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -269,17 +269,17 @@
     </ul>
   </nav>
 
-  <div class="card absolute animate-float bottom-29 right-25 w-[250px]" style="animation-delay: 1.7s;">
+  <div class="card absolute animate-float bottom-29 right-25 w-[250px] bg-base-200/20" style="animation-delay: 1.7s;">
     <input type="text" class="input input-primary" readonly value="npm i nira-ui">
   </div>
 
-   <div class="card  absolute animate-float top-60 right-50 " style="animation-delay: 1.7s;">
+   <div class="card  absolute animate-float top-60 right-50 bg-base-200/20 " style="animation-delay: 1.7s;">
     <div class="spinner spinner-primary spinner-xl" role="status" aria-label="loading">
   <span class="sr-only">Loading...</span>
 </div>
   </div>
 
-  <div class="card absolute animate-float top-50 right-1 " style="animation-delay: 2s;">
+  <div class="card absolute animate-float top-50 right-1 bg-base-200/20 " style="animation-delay: 2s;">
     <div class="flex gap-2">
       <p class="text-2xl leading-none">🌞</p>
       <label for="hs-basic-usage1p" class="switch">
@@ -313,8 +313,8 @@
   </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
   
-  <div class="card-wrapper shadow-lg transition">
-    <div class="card-content text-center pt-6">
+  <div class="card-wrapper shadow-lg transition ">
+    <div class="card-content text-center pt-6  ">
       <div class="text-primary mb-4 text-4xl">📦</div>
       <h3 class="text-xl font-semibold mb-2">Pre-Built UI</h3>
       <p class="text-base-content/70">
@@ -324,7 +324,7 @@
   </div>
 
 
-  <div class="rounded-2xl bg-base-100 text-center backdrop-blur-xl border border-base-300/40 shadow-lg p-8 transition">
+  <div class="rounded-2xl  text-center backdrop-blur-xl border border-base-300/40 shadow-lg p-8 transition bg-base-100">
     <div class="text-primary mb-4 text-4xl">⚡</div>
     <h3 class="text-xl font-semibold mb-2">Fast Setup</h3>
     <p class="text-base-content/70">
@@ -333,8 +333,8 @@
   </div>
 
 
-  <div class="card-wrapper shadow-lg transition">
-    <div class="card-content text-center pt-6">
+  <div class="card-wrapper shadow-lg transition ">
+    <div class="card-content text-center pt-6 ">
       <div class="text-primary mb-4 text-4xl">🎨</div>
       <h3 class="text-xl font-semibold mb-2">Customizable</h3>
       <p class="text-base-content/70">
@@ -658,11 +658,11 @@ Instead of long HTML utility chains, you can just use:
       <div
             class="grid max-w-sm grid-cols-4 gap-4 px-10 pt-10 md:max-w-lg md:gap-10 xl:max-w-none xl:px-6 xl:pt-0 "
         >
-            <div></div>
+           
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI vue"
                 src="../img/vue.svg"
@@ -670,8 +670,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI react"
                 src="../img/react.svg"
@@ -679,8 +679,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI svelte"
                 src="../img/svelte.svg"
@@ -688,8 +688,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI qwik"
                 src="../img/qwik.svg"
@@ -697,8 +697,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI laravel"
                 src="../img/laravel.svg"
@@ -706,8 +706,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI nextjs"
                 src="../img/nextjs.svg"
@@ -715,8 +715,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI solidjs"
                 src="../img/solidjs.svg"
@@ -724,8 +724,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI preact"
                 src="../img/preact.svg"
@@ -733,8 +733,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI phoenix"
                 src="../img/phoenix.svg"
@@ -742,8 +742,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI nuxtjs"
                 src="../img/nuxtjs.svg"
@@ -751,8 +751,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI astro"
                 src="../img/astro.svg"
@@ -760,8 +760,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI angular"
                 src="../img/angular.svg"
@@ -769,8 +769,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI vite"
                 src="../img/vite.svg"
@@ -778,8 +778,8 @@ Instead of long HTML utility chains, you can just use:
             />
             <img
                 loading="lazy"
-                width="80"
-                height="80"
+                width="50"
+                height="50"
                 class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
                 alt="Nira UI rails"
                 src="../img/rails.svg"

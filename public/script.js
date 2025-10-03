@@ -22,13 +22,13 @@ function setTheme(theme) {
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      const savedTheme = localStorage.getItem("theme") || "system";
+      const savedTheme = localStorage.getItem("theme") || "dark";
       document.getElementById("theme-toggle").value = savedTheme;
       setTheme(savedTheme);
 
       // Listen for system preference change
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-        const current = localStorage.getItem("theme") || "system";
+        const current = localStorage.getItem("theme") || "dark";
         if (current === "system") setTheme("system");
       });
       

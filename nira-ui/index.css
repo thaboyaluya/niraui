@@ -162,7 +162,7 @@ pre .tag, pre .tag-name {
 
   /* Card body */
   .card-content {
-    @apply relative z-10 rounded-2xl bg-base-100 dark:bg-base-200 p-8;
+    @apply relative z-10 rounded-2xl bg-base-100 p-8;
   }
 }
 .DocSearch-Button{
