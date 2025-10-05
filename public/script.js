@@ -22,13 +22,13 @@ function setTheme(theme) {
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      const savedTheme = localStorage.getItem("theme") || "dark";
+      const savedTheme = localStorage.getItem("theme") || "light";
       document.getElementById("theme-toggle").value = savedTheme;
       setTheme(savedTheme);
 
       // Listen for system preference change
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-        const current = localStorage.getItem("theme") || "dark";
+        const current = localStorage.getItem("theme") || "light";
         if (current === "system") setTheme("system");
       });
       
@@ -41,9 +41,9 @@ function setTheme(theme) {
       e.preventDefault()
 
       if(checkbox.checked){
-       setTheme('dark')
+       setTheme('midnight')
       }else{
-         setTheme('light')
+         setTheme('sunset')
       }
     })
 
@@ -117,3 +117,7 @@ scrollTopBtn.addEventListener('click', () => {
     });
 }
 );
+
+[...document.getElementsByClassName('year')].forEach(el => {
+  el.textContent = new Date().getFullYear();
+});

@@ -1,82 +1,753 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon</title>
-  <link rel="stylesheet" href="../public/nira.css">
-</head>
-<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black  flex items-center justify-center min-h-screen">
-  <div class="text-center max-w-lg px-6">
-    <div class="mb-6 flex justify-center">
-      <div class="h-16 w-16 flex items-center justify-center rounded-full bg-white shadow-lg">
-        <span class="text-2xl font-bold animate-bounce">🚀</span>
-      </div>
-    </div>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="../public/nira.css">
+<link rel="stylesheet" href="../public/github.css"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4" />
+<title>The most common mistake when using Tailwind CSS (and how to fix it) — Tailwind CSS Components</title>
+<meta name="description" content="Learn the most common mistake developers make with Tailwind CSS using dynamic class names—and how to fix it with safelists, regex, and proper configuration to avoid production build issues. "/>
+<meta name="keywords" content="introduction,guide,nextjs,Learn the most common mistake developers make with Tailwind CSS using dynamic class names—and how to fix it with safelists, regex, and proper configuration to avoid production build issues."/>
 
-    <h1 class="text-4xl md:text-5xl text-white font-extrabold mb-4">
-      We’re <span class="text-white">Launching Soon!</span>
-    </h1>
-    <p class="text-white/70 mb-8">
-      This page  is under construction, but we’re preparing something amazing for you. Stay tuned!
-    </p>
+<meta property="og:title" content="Learn the most common mistake developers make with Tailwind CSS using dynamic class names—and how to fix it with safelists, regex, and proper configuration to avoid production build issues."/>
+<meta property="og:description" content="Learn the most common mistake developers make with Tailwind CSS using dynamic class names—and how to fix it with safelists, regex, and proper configuration to avoid production build issues. "/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content="Nira UI"/>
+<meta property="og:image" content="../img/nira homepage.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Nira UI Documentation"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content=""/>
+<meta name="twitter:title" content="Introduction to Nira UI – Tailwind CSS Made Simple"/>
+<meta name="twitter:description" content="Learn the most common mistake developers make with Tailwind CSS using dynamic class names—and how to fix it with safelists, regex, and proper configuration to avoid production build issues."/>
+<meta name="twitter:image" content="../img/nira homepage.png"/>
+<meta name="twitter:image:alt" content="Nira UI Documentation"/>
+<link rel="icon" href="../img/svgviewer-output.svg" type="image/x-icon" sizes="48x48"/>
+
+<script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "Article", "headline": "The Most Common Tailwind CSS Mistake (and How to Fix It)", "description": "Learn the most common mistake developers make with Tailwind CSS using dynamic class names and how to fix it with safelists, regex, and proper configuration to avoid production build issues.", "author": { "@type": "Person", "name": "Nira UI Team" }, "publisher": { "@type": "Organization", "name": "Nira UI", "url": "https://niraui.onrender.com/" }, "mainEntityOfPage": { "@type": "WebPage", "@id": "https://niraui.onrender.com/blog/common-mistake-when-using-tailwind.html" }, "datePublished": "2025-10-05", "dateModified": "2025-10-05" }
+</script>
+
+
+
+<script type="application/ld+json"> { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Why do Tailwind classes work in development but not in production?", "acceptedAnswer": { "@type": "Answer", "text": "Because development mode caches previously generated classes, while production rebuilds from scratch and removes unused ones." } }, { "@type": "Question", "name": "Can I safely use dynamic Tailwind class names?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, but you must safelist them or define them as full strings." } }, { "@type": "Question", "name": "What’s the best method for large projects with many dynamic classes?", "acceptedAnswer": { "@type": "Answer", "text": "Use a regex safelist in tailwind.config.js for scalability." } } ] } </script>
+
+
+
+
+
+<script type="application/ld+json"> { "@context": "https://schema.org", "@type": "HowTo", "name": "How to Fix Dynamic Class Name Issues in Tailwind CSS", "description": "A step-by-step guide to fixing the most common Tailwind CSS mistake—using dynamic class names incorrectly.", "step": [ { "@type": "HowToStep", "name": "Use Full Class Names as Variables", "text": "Assign the full Tailwind class name as a variable instead of using string interpolation.", "image": "https://niraui.onrender.com/img/tailwind-mistake.webp" }, { "@type": "HowToStep", "name": "Add a Safelist File", "text": "Create a safelist.txt file that includes all possible class names, and add it to your Tailwind config.", "image": "https://niraui.onrender.com/img/tailwind-mistake.webp" }, { "@type": "HowToStep", "name": "Use the Safelist Option in Config", "text": "Add a safelist array directly in your tailwind.config.js file for the dynamic classes you need.", "image": "https://niraui.onrender.com/img/tailwind-mistake.webp" }, { "@type": "HowToStep", "name": "Bonus: Use Regex Safelist", "text": "For scalable projects, use regex patterns in the safelist option to dynamically generate matching class names.", "image": "https://niraui.onrender.com/img/tailwind-mistake.webp" } ] } </script>
+
+
+
+<script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Organization", "name": "Nira UI", "url": "https://niraui.onrender.com/", "logo": "https://niraui.onrender.com/img/svgviewer-output.svg", "sameAs": [ "https://x.com/aluya_rume?s=21&t=HltJfYrUnW0H8qx_kjaUdQ", "https://github.com/thaboyaluya/nira-ui", "https://www.npmjs.com/package/nira-ui" ], "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "url": "https://niraui.onrender.com/index.html" } } </script>
+
+
+<script type="application/ld+json"> { "@context": "https://schema.org", "@type": "HowTo", "name": "Fix Tailwind CSS Dynamic Class Issue", "step": [ { "@type": "HowToStep", "text": "Identify where you used dynamic class names (like bg-${color}-500)." }, { "@type": "HowToStep", "text": "Switch to explicit mapping or safelist known classes." }, { "@type": "HowToStep", "text": "In Tailwind v4, use @source inline(...) in your CSS files." }, { "@type": "HowToStep", "text": "Build your app in production mode to confirm fixes." } ] } </script>
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://niraui.onrender.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://niraui.onrender.com/blog/index.html" },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "The most common mistake when using Tailwind CSS (and how to fix it)",
+            "item": "https://niraui.onrender.com/blog/common-mistake-when-using-tailwind.html"
+        }
+    ]
+}
+</script>
+
+</head>
+
+<body class="__variable_e8ce0c font-regular">
+<nav class="bg-opacity-5 sticky top-0 z-50 h-16 w-full border-b px-2 border-base-300/47 backdrop-blur-xl backdrop-filter md:px-4">
+
+<div class="mx-auto flex h-full items-center justify-between p-1 sm:p-3 md:gap-2">
+
+<div class="flex items-center gap-5">
+
+
+<div class="flex items-center gap-6">
+
+<div>
+    <a class="flex items-center gap-2.5" href="../index.html"><img alt="Nira UI Logo" loading="lazy" width="34" height="34"  src="../img/svgviewer-output.svg"/>
+
+
+<span class="text-md font-semibold hidden sm:flex">Nira UI
+</span></a>
+</div>
+
+<div class="text-muted-foreground hidden items-center gap-5 text-sm font-medium md:flex">
+<a class="flex items-center gap-1 text-sm" href="../blog/index.html">Blog
+  
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+</a>
+
+ <a class="flex items-center gap-1 text-sm"  rel="noopener noreferrer" href="../components/index.html">Components
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+ <a class="flex items-center gap-1 text-sm" target="_blank" rel="noopener noreferrer" href="https://play.tailwindcss.com/c2N1LWcxyJ">Playround
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a> <a class="flex items-center gap-1 text-sm" target="_blank" rel="noopener noreferrer" href="https://discord.gg/aqJhzbtb">Discord
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+
+
+</div>
+
+
+
+
+</div>
+</div>
+
+<div class="flex items-center gap-2">
+
+<div>
+
+<div class="relative max-w-md flex-1 cursor-pointer" type="button" >
+<div id="docsearch" class="bg-base-100 border-base-300/47"></div>
+</div>
+</div>
+
+<div class="flex gap-2 sm:ml-0">
+    <a class="button-outline" target="_blank" rel="noopener noreferrer" aria-label="View the repository on GitHub" href="https://github.com/thaboyaluya/nira-ui">
+	
+	<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-[1.1rem] w-[1.1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+
+<path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
+
+<select class="select" onchange="setTheme(this.value)" id="theme-toggle">
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="system">System</option>
+
+   
+  <option value="storm">Storm</option>
+ 
+    <option value="sunset">Sunset</option>
+	<option value="rose">Rose</option>
+	<option value="gold">Gold</option>
+  <option value="corporate">Corporate</option>
+   <option value="retro">Retro</option>
+   <option value="steel">Steel</option>
+   <option value="pastel">Pastel</option>
+   <option value="lofi">Lofi</option>
+   <option value="dracula">Dracula</option>
+	   <option value="midnight">Midnight</option>
+    
+ 
+  
+</select>
+
+
+</div>
+</div>
+</div></nav>
+
+<main class="h-auto px-5 sm:px-8">
+<div class="flex flex-row sm:gap-10">
+	<div class="sm:w-full sm:max-w-[18rem]">
+    <input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state peer" />
+    <label for="sidebar-mobile-fixed" class="sidebar-overlay z-10"></label>
+    <aside class="sidebar border border-base-300/47 border-r sidebar-mobile sidebar-fixed-left h-full max-w-[18rem] justify-start bg-base-100 z-10   max-sm:fixed max-sm:-translate-x-full  peer-checked:translate-x-0">
+        <section class="sidebar-title items-center p-8"></section>
+        <section class="sidebar-content">
+            <nav class="menu rounded-md">
+                <section class="menu-section px-4">
+                    <span class="menu-title">Docs</span>
+                    <ul class="menu-items">
+                        <li class="py-0.5">
+                            <a href="../docs/introduction.html" class="menu-item menu-active" >Introduction</a>
+                        </li>
+
+                        <li class="py-0.5">
+                            <a href="../docs/installation.html" class="menu-item" >Installation</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/usage.html" class="menu-item" >Usage</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/customize.html" class="menu-item" >Customization</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/theme.html" class="menu-item " >Theme</a>
+                        </li>
+                    </ul>
+                </section>
+                <div class="divider my-0"></div>
+                <section class="menu-section px-4">
+                    <span class="menu-title">Components</span>
+                    <ul class="menu-items">
+                        <li>
+                            <input type="checkbox" id="menu-2" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-2">
+                                <div class="flex gap-2">
+                                    <span>Form input</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                  
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/button.html" class="menu-item" >Button</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/button-group.html" class="menu-item" >Button Group</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/checkbox.html" class="menu-item" >Checkbox</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/form.html" class="menu-item" >Forms</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input-file.html" class="menu-item" >Input File</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input.html" class="menu-item" >Input</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/radio.html" class="menu-item" >Radio</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input-range.html" class="menu-item" >Range</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/select.html" class="menu-item" >Select</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/textarea.html" class="menu-item" >Textarea</a>
+                                        </li>
+                                          <li class="py-0.5 ml-6">
+                                            <a href="../components/toggle.html" class="menu-item" >Toggle</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-3" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-3">
+                                <div class="flex gap-2">
+                                    <span>Navigation</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/breadcrumb.html" class="menu-item" >Breadcrumb</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/drawer.html" class="menu-item" >Drawer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/dropdown.html" class="menu-item" >Dropdown</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/footer.html" class="menu-item" >Footer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/link.html" class="menu-item" >Link</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/navbar.html" class="menu-item" >Navbar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/sidebar.html" class="menu-item" >Sidebar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/tab.html" class="menu-item" >Tab</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-4" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-4">
+                                <div class="flex gap-2">
+                                    <span>Informational</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/accordion.html" class="menu-item" >Accordion</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/alert.html" class="menu-item" >Alert</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/avatar.html" class="menu-item" >Avatar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/badge.html" class="menu-item" >Badge</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/card.html" class="menu-item" >Card</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/divider.html" class="menu-item" >Divider</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/dot.html" class="menu-item" >Dot</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/kbd.html" class="menu-item" >KBD</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/mockup-browser.html" class="menu-item" >Mockup Browser</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/mockup-code.html" class="menu-item" >Mockup code</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/modal.html" class="menu-item" >Modal</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/pagination.html" class="menu-item" >Pagination</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/progress.html" class="menu-item" >Progress</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/skeleton.html" class="menu-item" >Skeleton</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/spinner.html" class="menu-item" >Spinner</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/step.html" class="menu-item" >Step</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/table.html" class="menu-item" >Table</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/tooltip.html" class="menu-item" >Tooltip</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+        </section>
+    </aside>
+</div>
+
+<div class="grid gap-10 grid-cols-1 sm:grid-cols-2  xl:grid-cols-3">
 
  
+<section class="pt-10 sm:pl-[6rem] md:pl-[6.5rem] lg:pl-0 col-span-2">
+            <div class="w-fit">
+            <label for="sidebar-mobile-fixed" class="button-primary button sm:hidden">Open Sidebar</label>
+        </div>
 
-    <!-- Countdown -->
-    <div id="countdown" class="grid grid-cols-4 gap-4 mt-10">
-      <div class="p-4 card rounded-xl">
-        <p id="days" class="text-3xl font-bold">00</p>
-        <span class="text-base-content/70 text-sm">Days</span>
-      </div>
-      <div class="p-4 card rounded-xl">
-        <p id="hours" class="text-3xl font-bold">00</p>
-        <span class="text-base-content/70 text-sm">Hours</span>
-      </div>
-      <div class="p-4 card rounded-xl">
-        <p id="minutes" class="text-3xl font-bold">00</p>
-        <span class="text-base-content/70 text-sm">Minutes</span>
-      </div>
-      <div class="p-4 card rounded-xl">
-        <p id="seconds" class="text-3xl font-bold">00</p>
-        <span class="text-base-content/70 text-sm">Seconds</span>
-      </div>
-    </div>
+<div class="pb-5"><nav aria-label="breadcrumb" data-slot="breadcrumb">
+<ol data-slot="breadcrumb-list" class="text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5">
+<li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5">
+	<a href="./index.html">
+	<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="hover:text-foreground transition-colors h-4" data-slot="breadcrumb-link" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+
+<path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+	</a>
+</li>
+<li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true" class="[&amp;&gt;svg]:size-3.5"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="m9 18 6-6-6-6"></path></svg></li>
+<li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5">
+
+<span data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page" class="text-foreground font-normal ">Introduction
+</span></li>
+</ol></nav>
+</div>
+
+<div class="typography">
+	
+<section>
+
+
+<img loading="lazy"  class="card p-0" src="../img/tailwind-mistake.webp" alt="The most common mistake when using Tailwind CSS (and how to fix it)" />
+
+
+
+
+<h1 class="!my-4 text-3xl !font-semibold" id="get started">The most common mistake when using Tailwind CSS (and how to fix it)</h1>
+
+<p class="text-base text-base-content/70 mb-4">As a maintainer of Nira UI, I interact with developers daily on GitHub issues and discussions. One of the most common mistakes I see when using Tailwind CSS is surprisingly simple to avoid—but it trips up even experienced developers.</p>
+
+
+<p class="text-base text-base-content/70 mb-4">If you’ve struggled with dynamic Tailwind class names not working in production, this guide is for you.</p>
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">The Mistake</h2>
+
+<p class="text-base text-base-content/70 mb-4">Tailwind CSS is designed to be utility-first. You typically use it like this:</p>
+
+<figure class="highlight my-4 text-start"><pre><code data-language="html"><div class="bg-red-500"></div>
+<div class="bg-green-500"></div>
+<div class="bg-blue-500"></div></code></pre>
+    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+</figure>
+
+<p class="text-base text-base-content/70 mb-4">Tailwind CSS is designed to be utility-first. You typically use it like this:</p>
+ 
+<figure class="highlight my-4 text-start"><pre><code data-language="html"><div class="bg-{{ color }}-500"></div>
+</code></pre>
+    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+</figure>
+
+
+<p class="text-base text-base-content/70 mb-4">Or with Nira UI buttons:</p>
+
+<figure class="highlight my-4 text-start"><pre><code data-language="html"><div class="btn btn-{{ type }}"></div>
+</code></pre>
+    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+</figure>
+
+
+
+<p class="text-base text-base-content/70 mb-4">This works perfectly in development but breaks in production builds.</p>
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Why Dynamic Classes Break in Production</h2>
+
+
+
+<p class="text-base text-base-content/70 mb-4">Tailwind CSS scans your HTML and JavaScript files to detect class names and generate CSS.</p>
+
+
+<ul class="list-disc ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4">When you write <span class="code">bg-{{ color }}-500</span> ,Tailwind cannot detect the actual class names (bg-red-500, bg-green-500) because they are dynamically generated.</li>
+
+    <li class="ml-3 text-base text-base-content/70 mb-4">As a result, those CSS classes are not included in the final production build.</li>
+</ul>
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">How to Fix It</h2>
+
+<p class="text-base text-base-content/70 mb-4">There are three recommended ways to handle dynamic Tailwind CSS classes properly:</p>
+
+
+<h3 class="!mb-2 text-lg !font-semibold">1. Use Full Class Names as Variables</h3>
+
+<p class="text-base text-base-content/70 mb-4">Instead of embedding partial class names, store the complete class name in a variable:</p>
+
+
+
+<figure class="highlight my-4 text-start"><pre><code data-language="javascript">
+let color = 'bg-red-500';
+<div class="{{ color }}"></div>
+</code></pre>
+    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+</figure>
+
+<p class="text-base text-base-content/70 mb-4">This ensures Tailwind can detect the exact class name and include it in the build.</p>
+
+<h3 class="!mb-2 text-lg !font-semibold">2. Add a Safelist File</h3>
+
+<p class="text-base text-base-content/70 mb-4">Create a safelist.txt file containing all dynamic classes:</p>
+
+<figure class="highlight my-4 text-start"><pre><code data-language="javascript">
+bg-red-500
+bg-green-500
+bg-blue-500
+</code></pre>
+    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+</figure>
+
+<p class="text-base text-base-content/70 mb-4">Then include it in your tailwind.config.js:</p>
+
+<figure class="highlight my-4 text-start"><pre><code data-language="javascript">
+module.exports = {
+  content: ["./path/safelist.txt", "./pages/**/*.{html,js}", "./components/**/*.{html,js}"],
+  // ...
+}
+</code></pre>
+    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+</figure>
+
+
+
+<h3 class="!mb-2 text-lg !font-semibold">3. Use the Safelist Option in Tailwind Config</h3>
+
+<p class="text-base text-base-content/70 mb-4">You can also define a safelist directly in tailwind.config.js:</p>
+
+<figure class="highlight my-4 text-start"><pre><code data-language="javascript">
+module.exports = {
+  content: ["./pages/**/*.{html,js}", "./components/**/*.{html,js}"],
+  safelist: [
+    "bg-red-500",
+    "bg-green-500",
+    "bg-blue-500",
+  ],
+}
+</code></pre>
+    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+</figure>
+
+
+<h3 class="!mb-2 text-sm !font-semibold">Advanced: Regex Patterns</h3>
+
+<figure class="highlight my-4 text-start"><pre><code data-language="javascript">
+module.exports = {
+  content: ["./pages/**/*.{html,js}", "./components/**/*.{html,js}"],
+  safelist: [
+    "bg-teal-700",
+    {
+      pattern: /bg-(red|green|blue)-(400|500|600)/,
+    },
+  ],
+}
+</code></pre>
+    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+</figure>
+
+<p class="text-base text-base-content/70 mb-4">This is ideal for dynamic class names generated in loops or components.</p>
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Tailwind v4 Migration Notes</h2>
+
+<p class="text-base text-base-content/70 mb-4">Tailwind v4 changes how you safelist classes. The safelist option is no longer the primary method. Instead, use the new <span class="code">@source inline(...)</span>  directive:</p>
+
+<figure class="highlight my-4 text-start"><pre><code data-language="css">
+@import "tailwindcss"; 
+@source inline("bg-red-500", "bg-green-500", "bg-blue-500"); 
+/* With brace expansion */
+@source inline("{hover:,}bg-{red,green,blue}-500");
+</code></pre>
+    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+</figure>
+
+
+<p class="text-base text-base-content/70 mb-4">This tells Tailwind to always include those classes in your CSS, even if they don’t appear literally in your HTML or JSX.</p>
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Final Thought</h2>
+
+<ul class="list-disc ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4">Tailwind only generates CSS for class names it can detect. Dynamic strings like <span class="code">bg-{{ color }}-500</span> are invisible to Tailwind.</li>
+
+    <li class="ml-3 text-base text-base-content/70 mb-4">Development may work due to cached styles, but production builds require explicit classes.</li>
+        <li class="ml-3 text-base text-base-content/70 mb-4">Use variables, safelist files, or the safelist option to ensure your dynamic classes work consistently.</li>
+</ul>
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Further Reading:</h2>
+
+
+<ul class="list-disc ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4"><a class="link-underline" href="https://tailwindcss.com/docs/content-configuration#safelisting-classes" target="_blank" rel="noopener noreferrer"> Tailwind CSS: Using Dynamic Class Names <span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" data-rtl-flip="" class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"><path d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"></path></svg></span></a></li>
+  <li class="ml-3 text-base text-base-content/70 mb-4"><a class="link-underline" href="../docs/introduction.html">Nira UI Documentation  <span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" data-rtl-flip="" class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"><path d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"></path></svg></span></a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+</section>
+
+<aside class="toc sticky top-16 hidden h-[94.5vh] min-w-[230px] gap-3 py-8 xl:flex xl:flex-col" aria-label="Table of contents">
+
+<div class="flex w-full flex-col gap-3 pl-2">
+	<h3 class="text-sm font-semibold">On this page</h3>
+
+<div dir="ltr" data-slot="scroll-area" class="relative pt-0.5 pb-4" style="position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px">
+
+
+<div data-radix-scroll-area-viewport="" data-slot="scroll-area-viewport" class="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1" style="overflow-x:hidden;overflow-y:hidden">
+
+<div style="min-width:100%;display:table">
+
+<div class="flex flex-col gap-2.5 text-sm ">
+	<a class="pl-0" href="#get started">The most common mistake when using Tailwind CSS (and how to fix it)</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="flex flex-col gap-3 pl-2"><h3 class="text-sm font-semibold">Content</h3>
+
+<div class="flex flex-col gap-2">
+	<a target="_blank" rel="noopener noreferrer" class="flex items-center text-sm" href="https://github.com/thaboyaluya/nira-ui/issues/new?title=Feedback%20for%20%22Introduction%22&amp;labels=feedback"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-1 inline-block h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg> Feedback</a>
+
+</div>
+</div><button class="ml-2 flex cursor-pointer items-center opacity-0 transition mt-6 self-start text-sm " id="scroll-top"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-1 inline-block h-4 w-4 align-middle" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="m5 12 7-7 7 7"></path>
+
+<path d="M12 19V5"></path></svg>
+
+<span>Scroll to top
+</span></button>
+</aside>
+
 
 
   </div>
+</div>
 
-  <!-- Countdown Script -->
-  <script>
-    // Set your launch date here (YYYY-MM-DD HH:MM:SS)
-    const launchDate = new Date("2025-12-31T23:59:59").getTime();
 
-    const timer = setInterval(function () {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
 
-      if (distance <= 0) {
-        clearInterval(timer);
-        document.getElementById("countdown").innerHTML = `
-          <div class="col-span-4 p-6 bg-green-600 rounded-xl text-white font-bold text-xl">
-            We are Live! 🎉
-          </div>
-        `;
-        return;
-      }
 
-      // Time calculations
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      // Update HTML
-      document.getElementById("days").innerText = days;
-      document.getElementById("hours").innerText = hours;
-      document.getElementById("minutes").innerText = minutes;
-      document.getElementById("seconds").innerText = seconds;
-    }, 1000);
-  </script>
+
+</main>
+<footer class=" w-full border-t  border-base-300/47">
+
+<div class=" text-right  px-2 py-3 text-sm ">
+    <p>© <span class="year"></span> <a class="font-bold" href="./index.html">Nira UI</a>.</p>
+</div>
+
+</footer>
+<script src="../public/script.js"></script>
+<script src="../public/clipboard.js"></script>
+<script src="../public/rainbow.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script>
+<script>
+  docsearch({
+  container: '#docsearch',
+  appId: 'NA27DKZC6X',
+  indexName: 'Nira UI Documentation Website',
+  apiKey: '89ed73c8a84edc8585b5c6cb90ec95cc'
+});
+</script>
 </body>
 </html>

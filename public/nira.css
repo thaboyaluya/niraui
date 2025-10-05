@@ -8,10 +8,13 @@
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-green-400: oklch(79.2% 0.209 151.711);
+    --color-green-500: oklch(72.3% 0.219 149.579);
     --color-green-600: oklch(62.7% 0.194 149.214);
+    --color-teal-700: oklch(51.1% 0.096 186.391);
     --color-sky-400: oklch(74.6% 0.16 232.661);
     --color-sky-800: oklch(44.3% 0.11 240.79);
     --color-sky-900: oklch(39.1% 0.09 240.876);
+    --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-purple-600: oklch(55.8% 0.288 302.321);
     --color-pink-400: oklch(71.8% 0.202 349.761);
@@ -247,6 +250,9 @@
   .pointer-events-none {
     pointer-events: none;
   }
+  .invisible {
+    visibility: hidden;
+  }
   .visible {
     visibility: visible;
   }
@@ -450,6 +456,9 @@
   .my-8 {
     margin-block: calc(var(--spacing) * 8);
   }
+  .ms-0\.5 {
+    margin-inline-start: calc(var(--spacing) * 0.5);
+  }
   .me-3 {
     margin-inline-end: calc(var(--spacing) * 3);
   }
@@ -619,6 +628,9 @@
   .h-80 {
     height: calc(var(--spacing) * 80);
   }
+  .h-\[0\.75em\] {
+    height: 0.75em;
+  }
   .h-\[1\.1rem\] {
     height: 1.1rem;
   }
@@ -690,6 +702,9 @@
   }
   .w-80 {
     width: calc(var(--spacing) * 80);
+  }
+  .w-\[0\.75em\] {
+    width: 0.75em;
   }
   .w-\[1\.1rem\] {
     width: 1.1rem;
@@ -1069,8 +1084,14 @@
   .bg-base-content {
     background-color: var(--color-base-content);
   }
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
   .bg-danger {
     background-color: var(--color-danger);
+  }
+  .bg-green-500 {
+    background-color: var(--color-green-500);
   }
   .bg-green-600 {
     background-color: var(--color-green-600);
@@ -1093,6 +1114,9 @@
   .bg-primary {
     background-color: var(--color-primary);
   }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
   .bg-secondary {
     background-color: var(--color-secondary);
   }
@@ -1101,6 +1125,9 @@
   }
   .bg-success {
     background-color: var(--color-success);
+  }
+  .bg-teal-700 {
+    background-color: var(--color-teal-700);
   }
   .bg-transparent {
     background-color: transparent;
@@ -1198,6 +1225,9 @@
   }
   .stroke-current {
     stroke: currentcolor;
+  }
+  .stroke-\[0\.75\] {
+    stroke-width: 0.75;
   }
   .p-0 {
     padding: calc(var(--spacing) * 0);
