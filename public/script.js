@@ -101,6 +101,7 @@ function fallbackMessage(action) {
 
 const scrollTopBtn = document.getElementById('scroll-top');
 
+if(scrollTopBtn){
 window.addEventListener('scroll', () => {
     if (window.scrollY > 500) {
         scrollTopBtn.classList.add('opacity-100');
@@ -117,6 +118,9 @@ scrollTopBtn.addEventListener('click', () => {
     });
 }
 );
+}
+
+
 
 [...document.getElementsByClassName('year')].forEach(el => {
   el.textContent = new Date().getFullYear();
