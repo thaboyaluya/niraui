@@ -1,0 +1,53 @@
+name: 📖 Documentation Feedback
+description: Give feedback on docs, tutorials, or examples (e.g., "Introduction" page).
+title: "Feedback: [Section or Page Title]"
+labels: ["feedback", "docs"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to share feedback! 🙌  
+        Please be as specific as possible so we can improve quickly.
+
+  - type: input
+    id: section
+    attributes:
+      label: 📍 Section / Page
+      description: Which part of the docs are you giving feedback on? (e.g., Introduction, Installation)
+      placeholder: e.g., Introduction page
+
+  - type: textarea
+    id: what-you-liked
+    attributes:
+      label: ✅ What you liked
+      description: Tell us what worked well, what was clear, or what you found helpful.
+      placeholder: e.g., The examples were simple and easy to follow.
+
+  - type: textarea
+    id: what-could-be-improved
+    attributes:
+      label: ⚡ What could be improved
+      description: Where did you feel lost, confused, or think more clarity is needed?
+      placeholder: e.g., The installation steps are missing a command for Tailwind config.
+
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: 💡 Suggestions
+      description: Share specific suggestions, rewrites, or ideas to make it better.
+      placeholder: e.g., Break the second paragraph into smaller sections.
+
+  - type: textarea
+    id: audience
+    attributes:
+      label: 🎯 Audience considerations
+      description: Is the content too advanced, too basic, or mismatched for the target audience?
+      placeholder: e.g., Beginners may not know what "purgeCSS" means.
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: ✍️ Example rewrite or code suggestion
+      description: Optional, but if you can rewrite a sentence, suggest a code snippet, or share an example, add it here.
+      placeholder: e.g., Change "commponents" → "components".
