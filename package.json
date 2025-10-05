@@ -7,7 +7,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "docs": "npx @tailwindcss/cli -i ./nira-ui/index.css -o ./public/nira.css --watch"
+    "docs": "npx @tailwindcss/cli -i ./nira-ui/index.css -o ./public/nira.css --minify --watch"
   },
   "author": "",
   "license": "ISC",
