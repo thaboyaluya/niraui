@@ -444,15 +444,15 @@
 
 <h1 class="!my-4 text-3xl !font-semibold" id="get started">The most common mistake when using Tailwind CSS (and how to fix it)</h1>
 
-<p class="text-base text-base-content/70 mb-4">As a maintainer of Nira UI, I interact with developers daily on GitHub issues and discussions. One of the most common mistakes I see when using Tailwind CSS is surprisingly simple to avoid—but it trips up even experienced developers.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">As a maintainer of Nira UI, I interact with developers daily on GitHub issues and discussions. One of the most common mistakes I see when using Tailwind CSS is surprisingly simple to avoid—but it trips up even experienced developers.</p>
 
 
-<p class="text-base text-base-content/70 mb-4">If you’ve struggled with dynamic Tailwind class names not working in production, this guide is for you.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">If you’ve struggled with dynamic Tailwind class names not working in production, this guide is for you.</p>
 
 
 <h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">The Mistake</h2>
 
-<p class="text-base text-base-content/70 mb-4">Tailwind CSS is designed to be utility-first. You typically use it like this:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind CSS is designed to be utility-first. You typically use it like this:</p>
 
 <figure class="highlight my-4 text-start"><pre><code data-language="html"><div class="bg-red-500"></div>
 <div class="bg-green-500"></div>
@@ -465,7 +465,7 @@
         </svg></button>
 </figure>
 
-<p class="text-base text-base-content/70 mb-4">Tailwind CSS is designed to be utility-first. You typically use it like this:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind CSS is designed to be utility-first. You typically use it like this:</p>
  
 <figure class="highlight my-4 text-start"><pre><code data-language="html"><div class="bg-{{ color }}-500"></div>
 </code></pre>
@@ -478,7 +478,7 @@
 </figure>
 
 
-<p class="text-base text-base-content/70 mb-4">Or with Nira UI buttons:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Or with Nira UI buttons:</p>
 
 <figure class="highlight my-4 text-start"><pre><code data-language="html"><div class="btn btn-{{ type }}"></div>
 </code></pre>
@@ -492,7 +492,7 @@
 
 
 
-<p class="text-base text-base-content/70 mb-4">This works perfectly in development but breaks in production builds.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">This works perfectly in development but breaks in production builds.</p>
 
 
 
@@ -501,7 +501,7 @@
 
 
 
-<p class="text-base text-base-content/70 mb-4">Tailwind CSS scans your HTML and JavaScript files to detect class names and generate CSS.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind CSS scans your HTML and JavaScript files to detect class names and generate CSS.</p>
 
 
 <ul class="list-disc ml-3">
@@ -515,12 +515,12 @@
 
 <h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">How to Fix It</h2>
 
-<p class="text-base text-base-content/70 mb-4">There are three recommended ways to handle dynamic Tailwind CSS classes properly:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">There are three recommended ways to handle dynamic Tailwind CSS classes properly:</p>
 
 
 <h3 class="!mb-2 text-lg !font-semibold">1. Use Full Class Names as Variables</h3>
 
-<p class="text-base text-base-content/70 mb-4">Instead of embedding partial class names, store the complete class name in a variable:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Instead of embedding partial class names, store the complete class name in a variable:</p>
 
 
 
@@ -536,11 +536,11 @@ let color = 'bg-red-500';
         </svg></button>
 </figure>
 
-<p class="text-base text-base-content/70 mb-4">This ensures Tailwind can detect the exact class name and include it in the build.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">This ensures Tailwind can detect the exact class name and include it in the build.</p>
 
 <h3 class="!mb-2 text-lg !font-semibold">2. Add a Safelist File</h3>
 
-<p class="text-base text-base-content/70 mb-4">Create a safelist.txt file containing all dynamic classes:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Create a safelist.txt file containing all dynamic classes:</p>
 
 <figure class="highlight my-4 text-start"><pre><code data-language="javascript">
 bg-red-500
@@ -555,7 +555,7 @@ bg-blue-500
         </svg></button>
 </figure>
 
-<p class="text-base text-base-content/70 mb-4">Then include it in your tailwind.config.js:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Then include it in your tailwind.config.js:</p>
 
 <figure class="highlight my-4 text-start"><pre><code data-language="javascript">
 module.exports = {
@@ -575,7 +575,7 @@ module.exports = {
 
 <h3 class="!mb-2 text-lg !font-semibold">3. Use the Safelist Option in Tailwind Config</h3>
 
-<p class="text-base text-base-content/70 mb-4">You can also define a safelist directly in tailwind.config.js:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">You can also define a safelist directly in tailwind.config.js:</p>
 
 <figure class="highlight my-4 text-start"><pre><code data-language="javascript">
 module.exports = {
@@ -617,11 +617,11 @@ module.exports = {
         </svg></button>
 </figure>
 
-<p class="text-base text-base-content/70 mb-4">This is ideal for dynamic class names generated in loops or components.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">This is ideal for dynamic class names generated in loops or components.</p>
 
 <h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Tailwind v4 Migration Notes</h2>
 
-<p class="text-base text-base-content/70 mb-4">Tailwind v4 changes how you safelist classes. The safelist option is no longer the primary method. Instead, use the new <span class="code">@source inline(...)</span>  directive:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind v4 changes how you safelist classes. The safelist option is no longer the primary method. Instead, use the new <span class="code">@source inline(...)</span>  directive:</p>
 
 <figure class="highlight my-4 text-start"><pre><code data-language="css">
 @import "tailwindcss"; 
@@ -638,7 +638,7 @@ module.exports = {
 </figure>
 
 
-<p class="text-base text-base-content/70 mb-4">This tells Tailwind to always include those classes in your CSS, even if they don’t appear literally in your HTML or JSX.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">This tells Tailwind to always include those classes in your CSS, even if they don’t appear literally in your HTML or JSX.</p>
 
 
 <h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Final Thought</h2>
