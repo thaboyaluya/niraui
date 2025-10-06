@@ -283,36 +283,30 @@ pre .tag, pre .tag-name {
 }
 
 .logo {
-  transition: all 0.5s linear;
+  transition: transform 0.3s ease;
 }
 
 .logo:hover {
-  animation: flipBounce 1.2s ease-in-out;
+  animation: logoBounce 0.9s cubic-bezier(0.28, 0.84, 0.42, 1);
 }
 
-@keyframes flipBounce {
+@keyframes logoBounce {
   0% {
-    transform: perspective(400px) rotateY(0deg) scale(1);
+    transform: scale(1) translateY(0);
   }
-
-  30% {
-    transform: perspective(400px) rotateY(100deg) scale(0.9);
+  20% {
+    transform: scale(1.1, 0.9) translateY(-6px);
   }
-
-  50% {
-    transform: perspective(400px) rotateY(180deg) scale(0.85);
-    filter: brightness(1.2);
+  40% {
+    transform: scale(0.95, 1.05) translateY(3px);
   }
-
-  70% {
-    transform: perspective(400px) rotateY(260deg) scale(0.95);
+  60% {
+    transform: scale(1.03, 0.97) translateY(-3px);
   }
-
-  90% {
-    transform: perspective(400px) rotateY(350deg) scale(1.05);
+  80% {
+    transform: scale(0.98, 1.02) translateY(2px);
   }
-
   100% {
-    transform: perspective(400px) rotateY(360deg) scale(1);
+    transform: scale(1) translateY(0);
   }
 }
