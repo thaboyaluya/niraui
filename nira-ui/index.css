@@ -281,3 +281,65 @@ pre .tag, pre .tag-name {
 .DocSearch-Modal {
   @apply bg-base-100/80!
 }
+
+.logo:hover {
+    -webkit-transition: all 0.5s 
+linear;
+    transition: all 0.5s 
+linear;
+    -webkit-animation: logoanimation 1.3s;
+    animation: logoanimation 1.3s;
+}
+@-webkit-keyframes logoanimation {
+    35% {
+        -webkit-transform: perspective(210px) rotateY(-60deg) scale(0.8, 0.95);
+        transform: perspective(210px) rotateY(-60deg) scale(0.8, 0.95)
+    }
+
+    45% {
+        -webkit-transform: perspective(210px) rotateY(-60deg) rotateX(-30deg) scale(0.8, 0.95);
+        transform: perspective(210px) rotateY(-60deg) rotateX(-30deg) scale(0.8, 0.95)
+    }
+
+    55% {
+        -webkit-transform: perspective(210px) rotateY(-60deg) rotateX(0deg) scale(0.8, 0.95);
+        transform: perspective(210px) rotateY(-60deg) rotateX(0deg) scale(0.8, 0.95)
+    }
+
+    65% {
+        -webkit-transform: perspective(210px) rotateY(-60deg) scale(0.8, 0.95);
+        transform: perspective(210px) rotateY(-60deg) scale(0.8, 0.95)
+    }
+
+    100% {
+        -webkit-transform: perspective(0px) rotateY(0deg) rotateX(0);
+        transform: perspective(0px) rotateY(0deg) rotateX(0)
+    }
+}
+
+@keyframes logoanimation {
+    35% {
+        -webkit-transform: perspective(210px) rotateY(-60deg) scale(0.8, 0.95);
+        transform: perspective(210px) rotateY(-60deg) scale(0.8, 0.95)
+    }
+
+    45% {
+        -webkit-transform: perspective(210px) rotateY(-60deg) rotateX(-30deg) scale(0.8, 0.95);
+        transform: perspective(210px) rotateY(-60deg) rotateX(-30deg) scale(0.8, 0.95)
+    }
+
+    55% {
+        -webkit-transform: perspective(210px) rotateY(-60deg) rotateX(0deg) scale(0.8, 0.95);
+        transform: perspective(210px) rotateY(-60deg) rotateX(0deg) scale(0.8, 0.95)
+    }
+
+    65% {
+        -webkit-transform: perspective(210px) rotateY(-60deg) scale(0.8, 0.95);
+        transform: perspective(210px) rotateY(-60deg) scale(0.8, 0.95)
+    }
+
+    100% {
+        -webkit-transform: perspective(0px) rotateY(0deg) rotateX(0);
+        transform: perspective(0px) rotateY(0deg) rotateX(0)
+    }
+}
