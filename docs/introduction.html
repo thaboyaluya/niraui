@@ -437,15 +437,20 @@
 </div>
 
 
-<h2 class="!my-5  text-3xl !font-semibold" id="what-is-nira-ui">What is Nira UI ?</h2>
+<h2 class="!my-5  text-3xl !font-semibold" id="what-is-nira-ui">Introduction: What is Nira UI?</h2>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Nira UI is a Tailwind CSS plugin that provides a collection of prebuilt, high-level CSS class names. Instead of writing long utility chains, you get clean, meaningful component classes like <code class="code">button</code> ,<code class="code">card</code>, or <code class="code">alert</code>.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Nira UI is a lightweight Tailwind CSS component library and plugin that provides a collection of prebuilt, high-level CSS class names.</p>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">This makes your code faster to write, easier to read, and simpler to maintain — without losing the flexibility of Tailwind utilities.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Instead of chaining multiple Tailwind utilities together, you can use simple, semantic classes like <code class="code">button</code> ,<code class="code">card</code>, or <code class="code">alert</code> making your code faster to write, easier to read, and simpler to maintain. </p>
 
-<h2 class="!mb-2 text-3xl !font-semibold" id="how-does-nira-ui-work">How does Nira UI works ?</h2>
+<p class="text-sm md:text-base text-base-content/70 mb-4">With Nira UI, you keep the flexibility of Tailwind utilities while gaining the convenience of a ready-made design system.</p>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Nira UI is published as an NPM package.</p>
+<h2 class="!mb-2 text-3xl !font-semibold" id="how-does-nira-ui-work">How Nira UI Works</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Nira UI is available as an <a class="link-underline" href="https://www.npmjs.com/package/nira-ui" target="_blank" rel="noopener noreferrer">NPM package</a> and integrates seamlessly with your Tailwind CSS setup.</p>
+
+
+<p class="text-sm md:text-base text-base-content/70">Installation</p>
 
       <figure class="highlight my-4 text-start">
                     <pre><code data-language="javascript">npm i nira-ui</code></pre>
@@ -457,7 +462,7 @@
                         </svg></button>
                 </figure>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4"> Once installed as a dev dependency, you simply add it as a Tailwind CSS plugin:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4"> Once installed  you simply add it as a Tailwind CSS plugin</p>
                             <figure class="highlight my-4 text-start">
                     <pre><code data-language="css">@import "tailwindcss";
 @plugin "nira-ui/plugin.js";</code></pre>
@@ -472,26 +477,58 @@
 
 <h2 class="!mb-2 text-3xl !font-semibold" id="why-should-i-use-nira-ui">Why Use Nira UI?</h2>
 
-<p>Nira UI is built for developers who want both speed and consistency in their workflow.<strong> Use it if you:</strong></p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Nira UI is built for developers who value speed, consistency, and scalability in their projects.</p>
+
+<strong> Use it if you:</strong>
 
 <ul class="ps-[1.4rem] list-disc">
-    <li class="my-2 text-base text-base-content/70"> Are tired of repeating long Tailwind utility class chains</li>
-    <li class="my-2 text-base text-base-content/70">Want cleaner, more readable code that scales across projects</li>
-    <li class="my-2 text-base text-base-content/70">Need themes and dark mode out of the box</li>
-    <li class="my-2 text-base text-base-content/70">Prefer a ready-made design system for common UI components</li>
+    <li class="my-2 text-base text-base-content/70"> Want to build faster without writing long utility chains</li>
+    <li class="my-2 text-base text-base-content/70">Need consistent, themeable components with dark mode out of the box</li>
+    <li class="my-2 text-base text-base-content/70">Prefer clean, reusable class names for common UI elements</li>
+    <li class="my-2 text-base text-base-content/70">Want to prototype quickly while keeping full Tailwind customization</li>
     <li class="my-2 text-base text-base-content/70">Value fast prototyping without sacrificing customization</li>
-    <li class="my-2 text-base text-base-content/70">Want standard UI patterns without reinventing them</li>
+    <li class="my-2 text-base text-base-content/70">Need a simple design system that scales across multiple projects</li>
 </ul>
 
 
-<h2 class="!mb-2 text-3xl !font-semibold" id="how-can-i-support-nira-ui">How can I support Nira UI?</h2>
+<h2 class="!mb-2 text-3xl !font-semibold" id="example-usage">Example Usage</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Here’s how simple it is to create a styled button with Nira UI:</p>
+
+    <figure class="highlight my-4 text-start">
+                    <pre><code data-language="html"><button class="button">Click Me</button></code></pre>
+                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </figure>
+
+<button class="button">Click Me</button>
+
+
+
+<h2 class="!mb-2 text-3xl !font-semibold mt-3" id="who-for">Who Is Nira UI For?</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Nira UI is perfect for developers working with Tailwind CSS 4, Next.js, React, Vite, or Astro who want a clean, consistent design language for building responsive interfaces faster.</p>
+
+
+
+
+
+<h2 class="!mb-2 text-3xl !font-semibold" id="how-can-i-support-nira-ui">How to Support the Project</h2>
 <p class="text-sm md:text-base text-base-content/70 mb-4">Nira UI is an open-source project maintained by developers for the community. Here’s how you can support it:</p>
 
 <ul class="">
-    <li class="my-2 text-base text-base-content/70">⭐ Use Nira UI in your projects and share feedback</li>
-    <li class="my-2 text-base text-base-content/70">📢 Spread the word in dev communities, meetups, or online</li>
+    <li class="my-2 text-base text-base-content/70">⭐ Using Nira UI in your projects and sharing feedback</li>
+    <li class="my-2 text-base text-base-content/70">📢 Spreading the word in developer communities and meetups</li>
     <li class="my-2 text-base text-base-content/70">❤️ Sponsor the project via  <a class="link-underline" href="https://opencollective.com/nira-ui" target="_blank" rel="noopener noreferrer">Open Collective</a></li>
+    <li class="my-2 text-base text-base-content/70">🧑‍💻 Contributing to the codebase on <a class="link-underline" href="https://github.com/thaboyaluya/nira-ui" target="_blank" rel="noopener noreferrer">GitHub</a></li>
 </ul>
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Bring speed, simplicity, and structure to your Tailwind CSS workflow with Nira UI.</p>
 </section>
 
 <div class="flex items-center justify-between py-5 sm:py-7">
@@ -528,6 +565,8 @@
 	<a class="pl-0" href="#what-is-nira-ui">What is Nira UI ?</a>
 	<a class="pl-0" href="#how-does-nira-ui-work">How does Nira UI work ?</a>
 	<a class="pl-0" href="#why-should-i-use-nira-ui">Why should I use Nira UI ?</a>
+    <a class="pl-0" href="#example-usage">Example Usage</a>
+    <a class="pl-0" href="#who-for">Who is Nira UI For ? </a>
 	<a class="pl-0" href="#how-can-i-support-nira-ui">How can I support Nira UI</a>
 </div>
 </div>
