@@ -1556,6 +1556,12 @@
       color: color-mix(in oklab, var(--color-base-content) 90%, transparent);
     }
   }
+  .text-black {
+    color: var(--color-black);
+  }
+  .text-black\! {
+    color: var(--color-black) !important;
+  }
   .text-blue-600 {
     color: var(--color-blue-600);
   }
