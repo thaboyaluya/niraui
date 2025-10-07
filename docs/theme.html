@@ -444,19 +444,19 @@
         <div class="typography ">
 
 
-            <h1 class="!mb-2 text-3xl !font-semibold">Tailwind CSS Theming - Nira UI
+            <h1 class="!mb-2 text-3xl !font-semibold">Tailwind CSS Theming – Nira UI
             </h1>
 
             <section>
   
-                <h2 class="mb-2" id="how-to-use-nira-ui-theme">How to use Nira UI themes?</h2>
+                <h2 class="mb-2 text-2xl" id="how-to-use-nira-ui-theme">How to Use Nira UI Themes</h2>
 
 
                 <p class="text-base text-base-content/70 my-4">
-                   One of the most powerful features of Nira UI is its collection of 10+ built-in themes. With a single attribute, you can instantly transform your entire website’s look and feel. This saves hours of design decisions and lets you focus on building.
+                 One of the most powerful features of Nira UI is its collection of built-in Tailwind CSS themes. With over 10 pre-made color schemes, you can instantly transform your website’s look and feel using a single attribute.
                 </p>
 
-
+<p class="text-base text-base-content/70 my-4">Whether you want a dark theme, light theme, or creative color palette, Nira UI makes theming effortless.</p>
 
           
 
@@ -464,10 +464,10 @@
      <h2 class="!mb-2 text-3xl !font-semibold" id="enable-built-in-theme">Enable a built-in theme</h2>
 
 
-<p class="text-base text-base-content/70 my-4">To enable a theme, simply add the <code class="code">data-theme</code> attribute to your HTML:</p>
+<p class="text-base text-base-content/70 my-4">To enable a theme, simply add the <code class="code">data-theme</code> attribute to your HTML element</p>
 
 <figure class="highlight my-4 text-start">
-<pre><code data-language="html">&lt;html data-theme="forest"&gt;&lt;/html&gt;
+<pre><code data-language="html">&lt;html data-theme="midnight"&gt;&lt;/html&gt;
 </code></pre>
 <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
     viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -476,7 +476,7 @@
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 </svg></button>
 </figure>
-<p class="mb-4">This example applies the Forest theme to your whole page.</p>
+<p class="text-base text-base-content/70 my-4">This applies the Forest theme globally to your page. You can switch themes anytime just change the value of <code class="code">data-theme</code>.</p>
 
 
     <h2 class="!mb-2 text-3xl !font-semibold" id="list-of-theme">List of themes</h2>
@@ -503,11 +503,7 @@
   <p class="text-sm opacity-80">Mysterious, quiet, and dreamlike mood.</p>
 </div>
 
-<div class="card cursor-pointer" onclick="setTheme('neon')" data-theme="neon">
-  <div class="text-4xl mb-3">⚡</div>
-  <h2 class="font-bold text-lg">Neon</h2>
-  <p class="text-sm opacity-80">Bold, energetic, and futuristic vibes.</p>
-</div>
+
 
 <div class="card cursor-pointer" onclick="setTheme('steel')" data-theme="steel">
   <div class="text-4xl mb-3">🛡️</div>
@@ -521,11 +517,7 @@
   <p class="text-sm opacity-80">Intense, moody, and full of energy.</p>
 </div>
 
-<div class="card cursor-pointer" onclick="setTheme('forest')" data-theme="forest">
-  <div class="text-4xl mb-3">🌲</div>
-  <h2 class="font-bold text-lg">Forest</h2>
-  <p class="text-sm opacity-80">Peaceful, natural, and grounding.</p>
-</div>
+
 
 <div class="card cursor-pointer" onclick="setTheme('sunset')" data-theme="sunset">
   <div class="text-4xl mb-3">🌅</div>
@@ -585,7 +577,7 @@
 
 
 
-<p class="text-base text-base-content/70 my-4">Themes don’t have to apply to the entire page you can apply them to any section of your HTML.</p>
+<p class="text-base text-base-content/70 my-4">You don’t have to apply a theme globally  Nira UI supports section-based theming. This allows you to mix and preview different styles on one page.</p>
 
  <figure class="highlight my-4 text-start">
 <pre><code data-language="html">
@@ -604,12 +596,12 @@
 </svg></button>
 </figure>
 
-<p class="mb-4">This makes it easy to mix and match themes or preview different styles within one project.</p>
+<p class="text-base text-base-content/70 my-4">Perfect for documentation previews, dashboards, or multi-brand layouts.</p>
 
 <h2 class="!mb-2 text-3xl !font-semibold" id="default-theme-variable-reference">Default theme variable reference</h2>
 
 
-<p class="text-base text-base-content/70 my-4">For customization, here's a complete list of the theme variables included by default when you use Nira UI into your project.</p>
+<p class="text-base text-base-content/70 my-4">Every theme in Nira UI is built on CSS custom properties, which makes theming consistent and customizable. Here’s a sample of the default variables for Light and Dark themes:</p>
 
  <figure class="highlight my-4 text-start">
 <pre><code data-language="css">
@@ -653,6 +645,8 @@
 </svg></button>
 </figure>
 
+<p class="text-base text-base-content/70 my-4">You can use these variables directly in your own CSS for custom Tailwind themes or overrides.</p>
+
 
 <h2 class="!mb-2 text-3xl !font-semibold" id="base-colors">Base colors</h2>
 
@@ -660,7 +654,7 @@
 
 <div class="grid gap-3 sm:grid-cols-2">
     <div class="w-full border-none bg-transparent pt-2">
-        <p class="text-3xl ">Background Color</p>
+        <p class="text-3xl ">Background Colors</p>
         <div class="my-3 divider"></div>
         <div class="flex min-w-fit flex-col gap-5">
             <div class="flex flex-col gap-4">
@@ -679,7 +673,7 @@
         </div>
     </div>
     <div class="w-full border-none bg-transparent pt-2">
-        <p class="text-3xl ">Text Color</p>
+        <p class="text-3xl ">Text Colors</p>
       <div class="my-3 divider"></div>
         <div class="flex min-w-fit flex-col gap-5">
             <div class="flex flex-col gap-4">
@@ -711,7 +705,7 @@
 
 <div class="grid gap-3 sm:grid-cols-2">
     <div class="w-full border-none bg-transparent pt-2">
-        <p class="text-3xl ">Default Background</p>
+        <p class="text-3xl ">Base Background</p>
         <div class="my-3 divider"></div>
         <div class="flex min-w-fit flex-col gap-5">
             <div class="flex flex-col gap-4">
@@ -728,7 +722,7 @@
         </div>
     </div>
     <div class="w-full border-none bg-transparent pt-2">
-        <p class="text-3xl ">Content</p>
+        <p class="text-3xl ">Content Colors</p>
       <div class="my-3 divider"></div>
         <div class="flex min-w-fit flex-col gap-5">
             <div class="flex flex-col gap-4">
@@ -749,6 +743,78 @@
         </div>
     </div>
 </div>
+
+
+ <h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="create-theme">Create Your Own Tailwind CSS Theme</h2>
+ <p class="text-base text-base-content/70 my-4">Nira UI themes are fully customizable. To create your own theme, define your custom variables and apply them with a data-theme name:</p>
+
+ <figure class="highlight my-4 text-start">
+<pre><code data-language="css">
+[data-theme="mytheme"] {
+--color-primary: oklch(72.895% 0.13049 86.648);
+--color-secondary: #2E004F;
+--color-accent: #E8C66A;
+--color-success: #3AA76D;
+--color-danger: #B3261E;
+--color-warning: #F6C851;
+--color-base-content: oklch(21% 0.13049 86.648);
+--color-base-content-100: oklch(30% 0.13049 86.648);
+--color-base-content-200: oklch(39% 0.13049 86.648);
+--color-base-content-300: oklch(48% 0.13049 86.648);
+--color-base-100: oklch(100% 0.13049 86.648);
+--color-base-200: oklch(95% 0.13049 86.648);
+--color-base-300: oklch(83% 0.13049 86.648);
+--color-base-400: oklch(80% 0.13049 86.648);
+}
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+<p class="text-base text-base-content/70 my-4">Then use it in your HTML:</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">&lt;html data-theme="mytheme"&gt;&lt;/html&gt;
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+<p class="text-base text-base-content/70 my-4">Or on any <a class="link-underline" href="../components/index.html">Nira UI Components</a></p>
+
+<div class="card" data-theme="mytheme">
+  <h2 class="text-base font-semibold">My Theme</h2>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Calm, focused, and easy on the eyes. Great for dashboards and coding tools.</p>
+  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
+<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
+</div>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="card" data-theme="mytheme">
+  <h2 class="text-base font-semibold">My Theme</h2>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Calm, focused, and easy on the eyes. Great for dashboards and coding tools.</p>
+  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
+<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
+</div>
+
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
 
 
  <h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="theme-showcase">Nira UI Theme Showcase</h2>
@@ -779,12 +845,7 @@
 <button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
 </div>
 
-<div class="card" data-theme="neon">
-  <h2 class="text-base font-semibold">⚡ Neon Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Bold,and eye-catching.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
+
 
 <div class="card" data-theme="steel">
   <h2 class="text-base font-semibold">🛡️ Steel Theme</h2>
@@ -801,13 +862,6 @@
 </div>
 
 
-
-<div class="card" data-theme="forest">
-  <h2 class="text-base font-semibold">🌲 Forest Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Grounding, natural, and soothing.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
 
 <div class="card" data-theme="sunset">
   <h2 class="text-base font-semibold">🌅 Sunset Theme</h2>
@@ -882,7 +936,7 @@
 </figure>
 
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Step 2: Add it as a plugin:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Add it as a Tailwind CSS plugin</p>
 
 
                 <figure class="highlight my-4 text-start">
@@ -912,7 +966,7 @@
 
 
 
-
+<p class="text-base text-base-content/70 my-4">Now your entire project adapts instantly to the selected theme!</p>
 
 
 
@@ -1070,6 +1124,7 @@
                            <a class="pl-0" href="#use-theme-on-section-of-page">How to use Nira UI Theme on a section of page?</a>
                            <a class="pl-0" href="#default-theme-variable-reference">Default Theme Variable</a>
                            <a class="pl-0" href="#base-colors">Base Colors</a>
+                           <a href="#create-theme" class="pl-o">Create Your Own Tailwind CSS Theme</a>
                            <a class="pl-0" href="#theme-showcase">Nira UI Theme</a>
                            <a class="pl-0" href="#theme-project">Nira UI Theme in Your Project</a>
                         </div>

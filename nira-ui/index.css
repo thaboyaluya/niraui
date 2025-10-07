@@ -1,7 +1,22 @@
 @import "tailwindcss";
 @plugin 'nira-ui/plugin.js';
 
-
+[data-theme="mytheme"] {
+  --color-primary: oklch(72.895% 0.13049 86.648);
+  --color-secondary: #2E004F;
+  --color-accent: #E8C66A;
+  --color-success: #3AA76D;
+  --color-danger: #B3261E;
+  --color-warning: #F6C851;
+--color-base-content: oklch(21% 0.13049 86.648);
+--color-base-content-100: oklch(30% 0.13049 86.648);
+--color-base-content-200: oklch(39% 0.13049 86.648);
+--color-base-content-300: oklch(48% 0.13049 86.648);
+--color-base-100: oklch(100% 0.13049 86.648);
+--color-base-200: oklch(95% 0.13049 86.648);
+--color-base-300: oklch(83% 0.13049 86.648);
+--color-base-400: oklch(80% 0.13049 86.648);
+}
 
 :root {
   --input: oklch(0.922 0 0);
