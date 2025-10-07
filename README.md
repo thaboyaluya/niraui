@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://niraui.onrender.com/img/svgviewer-output.svg" width="80" height="80" loading="lazy" alt="Nira UI logo">
+<img src="https://niraui.onrender.com/img/nira-ui-logo-transparent.ico" width="80" height="80" loading="lazy" alt="Nira UI logo">
 
 🎉 🚀 **Nira UI** provides reusable Tailwind CSS UI components and themes so you can design and ship websites faster.
 
