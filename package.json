@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "nira-ui": "^1.17.0",
+    "nira-ui": "^1.23.0",
     "tailwindcss": "^4.1.13"
   },
   "name": "nira-docs",
