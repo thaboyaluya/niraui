@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/><meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../public/nira.css">
+<link rel="stylesheet" href="../public/github.css"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4" />
+<title>The Ultimate Tailwind CSS Guide — 2025 Edition</title>
+<meta name="description" content="A practical, up-to-date Tailwind CSS guide for 2025 — setup (v3 & v4), utility classes, theming, dark mode, plugins, and production tips to build fast, responsive UIs."/>
+<meta name="keywords" content="introduction,guide,nextjs,The Ultimate Tailwind CSS Guide — 2025 Edition"/>
+
+<meta property="og:title" content="The Ultimate Tailwind CSS Guide — 2025 Edition"/>
+<meta property="og:description" content="A practical, up-to-date Tailwind CSS guide for 2025 — setup (v3 & v4), utility classes, theming, dark mode, plugins, and production tips to build fast, responsive UIs."/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content="Nira UI"/>
+<meta property="og:image" content="../img/nira homepage.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="The Ultimate Tailwind CSS Guide — 2025 Edition"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content=""/>
+<meta name="twitter:title" content="The Ultimate Tailwind CSS Guide — 2025 Edition"/>
+<meta name="twitter:description" content="A practical, up-to-date Tailwind CSS guide for 2025 — setup (v3 & v4), utility classes, theming, dark mode, plugins, and production tips to build fast, responsive UIs."/>
+<meta name="twitter:image" content="../img/nira homepage.png"/>
+<meta name="twitter:image:alt" content="The Ultimate Tailwind CSS Guide — 2025 Edition"/>
+<link rel="icon" href="../img/nira-ui-logo-transparent.ico" type="image/x-icon" sizes="48x48"/>
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "blog", "item": "https://niraui.onrender.com/blog/index.html" },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tailwind CSS Guide",
+            "item": "https://niraui.onrender.com/blog/complete-guide-to-tailwind-css.html"
+        }
+    ]
+}
+</script>
+</head>
+
+<body class="__variable_e8ce0c font-regular">
+<nav class="bg-opacity-5 sticky top-0 z-50 h-16 w-full border-b px-2 border-base-300/47 backdrop-blur-xl backdrop-filter md:px-4">
+
+<div class="mx-auto flex h-full items-center justify-between p-1 sm:p-3 md:gap-2">
+
+<div class="flex items-center gap-5">
+
+
+<div class="flex items-center gap-6">
+
+<div>
+    <a class="flex items-center gap-2.5 logo" href="../index.html"><img alt="Nira UI Logo" loading="lazy" width="34" height="34"  src="../img/nira-ui-logo-transparent.ico"/>
+
+
+<span class="text-md font-semibold hidden sm:flex">Nira UI
+</span></a>
+</div>
+
+<div class="text-muted-foreground hidden items-center gap-5 text-sm font-medium md:flex">
+<a class="flex items-center gap-1 text-sm" href="../blog/index.html">Blog
+  
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+</a>
+
+ <a class="flex items-center gap-1 text-sm"  rel="noopener noreferrer" href="../components/index.html">Components
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+ <a class="flex items-center gap-1 text-sm" target="_blank" rel="noopener noreferrer" href="https://play.tailwindcss.com/c2N1LWcxyJ">Playround
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a> <a class="flex items-center gap-1 text-sm" target="_blank" rel="noopener noreferrer" href="https://discord.gg/aqJhzbtb">Discord
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+
+
+</div>
+
+
+
+
+</div>
+</div>
+
+<div class="flex items-center gap-2">
+
+<div>
+
+<div class="relative max-w-md flex-1 cursor-pointer" type="button" >
+<div id="docsearch" class="bg-base-100 border-base-300/47"></div>
+</div>
+</div>
+
+<div class="flex gap-2 sm:ml-0">
+    <a class="button-outline" target="_blank" rel="noopener noreferrer" aria-label="View the repository on GitHub" href="https://github.com/thaboyaluya/nira-ui">
+	
+	<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-[1.1rem] w-[1.1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+
+<path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
+
+<select class="select" onchange="setTheme(this.value)" id="theme-toggle">
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="system">System</option>
+
+   
+  <option value="storm">Storm</option>
+ 
+    <option value="sunset">Sunset</option>
+	<option value="rose">Rose</option>
+	<option value="gold">Gold</option>
+  <option value="corporate">Corporate</option>
+   <option value="retro">Retro</option>
+   <option value="steel">Steel</option>
+   <option value="pastel">Pastel</option>
+   <option value="lofi">Lofi</option>
+   <option value="dracula">Dracula</option>
+	   <option value="midnight">Midnight</option>
+    
+ 
+  
+</select>
+
+
+</div>
+</div>
+</div></nav>
+
+<main class="h-auto px-5 sm:px-8">
+<div class="flex flex-row sm:gap-10">
+	<div class="sm:w-full sm:max-w-[18rem]">
+    <input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state peer" />
+    <label for="sidebar-mobile-fixed" class="sidebar-overlay z-10"></label>
+    <aside class="sidebar border border-base-300/47 border-r sidebar-mobile sidebar-fixed-left h-full max-w-[18rem] justify-start bg-base-100 z-10   max-sm:fixed max-sm:-translate-x-full  peer-:translate-x-0">
+        <section class="sidebar-title items-center p-8"></section>
+        <section class="sidebar-content">
+            <nav class="menu rounded-md">
+                <section class="menu-section px-4">
+                    <span class="menu-title">Docs</span>
+                    <ul class="menu-items">
+                        <li class="py-0.5">
+                            <a href="../docs/introduction.html" class="menu-item menu-active" >Introduction</a>
+                        </li>
+
+                        <li class="py-0.5">
+                            <a href="../docs/installation.html" class="menu-item" >Installation</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/usage.html" class="menu-item" >Usage</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/customize.html" class="menu-item" >Customization</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/theme.html" class="menu-item " >Theme</a>
+                        </li>
+                    </ul>
+                </section>
+                <div class="divider my-0"></div>
+                <section class="menu-section px-4">
+                    <span class="menu-title">Components</span>
+                    <ul class="menu-items">
+                        <li>
+                            <input type="checkbox" id="menu-2" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-2">
+                                <div class="flex gap-2">
+                                    <span>Form input</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                  
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/button.html" class="menu-item" >Button</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/button-group.html" class="menu-item" >Button Group</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/checkbox.html" class="menu-item" >Checkbox</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/form.html" class="menu-item" >Forms</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input-file.html" class="menu-item" >Input File</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input.html" class="menu-item" >Input</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/radio.html" class="menu-item" >Radio</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input-range.html" class="menu-item" >Range</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/select.html" class="menu-item" >Select</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/textarea.html" class="menu-item" >Textarea</a>
+                                        </li>
+                                          <li class="py-0.5 ml-6">
+                                            <a href="../components/toggle.html" class="menu-item" >Toggle</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-3" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-3">
+                                <div class="flex gap-2">
+                                    <span>Navigation</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/breadcrumb.html" class="menu-item" >Breadcrumb</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/drawer.html" class="menu-item" >Drawer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/dropdown.html" class="menu-item" >Dropdown</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/footer.html" class="menu-item" >Footer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/link.html" class="menu-item" >Link</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/navbar.html" class="menu-item" >Navbar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/sidebar.html" class="menu-item" >Sidebar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/tab.html" class="menu-item" >Tab</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-4" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-4">
+                                <div class="flex gap-2">
+                                    <span>Informational</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/accordion.html" class="menu-item" >Accordion</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/alert.html" class="menu-item" >Alert</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/avatar.html" class="menu-item" >Avatar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/badge.html" class="menu-item" >Badge</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/card.html" class="menu-item" >Card</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/divider.html" class="menu-item" >Divider</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/dot.html" class="menu-item" >Dot</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/kbd.html" class="menu-item" >KBD</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/mockup-browser.html" class="menu-item" >Mockup Browser</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/mockup-code.html" class="menu-item" >Mockup code</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/modal.html" class="menu-item" >Modal</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/pagination.html" class="menu-item" >Pagination</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/progress.html" class="menu-item" >Progress</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/skeleton.html" class="menu-item" >Skeleton</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/spinner.html" class="menu-item" >Spinner</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/step.html" class="menu-item" >Step</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/table.html" class="menu-item" >Table</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/tooltip.html" class="menu-item" >Tooltip</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section> <div class="divider my-0 sm:hidden"></div>
+                <section class="menu-section px-4">
+<div class=" text-sm font-medium justify-items-start flex flex-col sm:hidden">
+<a class="flex menu-item items-center gap-1" href="../blog/index.html">Blog
+  
+</a>
+
+ <a class="flex menu-item items-center gap-1 "  rel="noopener noreferrer" href="../components/index.html">Components
+
+</a>
+
+ <a class="flex menu-item items-center gap-1 " target="_blank" rel="noopener noreferrer" href="https://play.tailwindcss.com/c2N1LWcxyJ">Tailwind Playround
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a> <a class="flex menu-item items-center gap-1 " target="_blank" rel="noopener noreferrer" href="https://discord.gg/aqJhzbtb">Discord
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+
+
+</div>
+                </section>
+            </nav>
+        </section>
+    </aside>
+</div>
+
+<div class="grid gap-10 grid-cols-1 sm:grid-cols-2  xl:grid-cols-3">
+
+ 
+<section class="pt-10 sm:pl-[6rem] md:pl-[6.5rem] lg:pl-0 col-span-2">
+            <div class="w-fit">
+            <label for="sidebar-mobile-fixed" class="button-primary button sm:hidden">Open Sidebar</label>
+        </div>
+
+<div class="pb-5"><nav aria-label="breadcrumb" data-slot="breadcrumb">
+<ol data-slot="breadcrumb-list" class="text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5">
+<li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5">
+	<a title="Home Page" href="./index.html">
+	<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="hover:text-foreground transition-colors h-4" data-slot="breadcrumb-link" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+
+<path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+	</a>
+</li>
+<li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true" class="[&amp;&gt;svg]:size-3.5"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="m9 18 6-6-6-6"></path></svg></li>
+<li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5">
+
+<span data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page" class="text-foreground font-normal ">Introduction
+</span></li>
+</ol></nav>
+</div>
+
+<div class="typography">
+	
+<section>
+
+
+<img loading="lazy"  class="card p-0 " src="../img/tailwind-css-guide-features-examples.jpg" alt="The Ultimate Tailwind CSS Guide — 2025 Edition" />
+
+
+
+
+<h1 class="!my-4 text-2xl md:text-3xl !font-semibold" id="get started">The Ultimate Tailwind CSS Guide in <span class="year"></span></h1>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4"><a class="link-underline" href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind CSS</a> is a utility-first framework that lets you design responsive interfaces directly in HTML. This 2025 guide shows how to install Tailwind (v3 & v4), master utilities, set up dark mode & theming, and ship lean CSS to production.</p>
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Unlike traditional frameworks like  <a class="link-underline" href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a> or <a class="link-underline" href="https://bulma.io/" target="_blank" rel="noopener noreferrer">Bulma</a> , which rely on pre-built UI components, Tailwind CSS gives you low-level utility classes that you can combine to create completely custom designs without ever leaving your HTML.</p>
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">What Is Tailwind CSS?</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind CSS is a utility-first CSS framework packed with pre-defined classes that handle nearly every aspect of web styling : layout, spacing, typography, colors, borders, shadows, and more.</p>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Instead of writing custom CSS rules, you simply apply these classes directly to your HTML elements.</p>
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Traditional CSS vs. Tailwind CSS</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Traditional CSS approach:</p>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<!-- Traditional CSS -->
+<div class="card">
+  <h2 class="title">Hello, World!</h2>
+  <p class="content">This is a sample text.</p>
+</div>
+</code></pre>
+                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </figure>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="css">
+.card {
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.content {
+  font-size: 1rem;
+  color: #6b7280;
+}
+</code></pre>
+                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </figure>
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind CSS approach:</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="p-4 bg-gray-100 rounded-lg">
+  <h2 class="text-xl font-bold mb-2">Hello, World!</h2>
+  <p class="text-gray-600">This is a sample text.</p>
+</div>  
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
+                </figure>
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">With Tailwind, you skip writing custom CSS altogether. Everything is handled inline, which means  switching between HTML and CSS files.</p>
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Why Choose Tailwind CSS?</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind CSS offers several advantages:</p>
+
+
+<ul class="list-decimal ml-3">
+    <li class="ml-3 text-base text-base-content/70 mb-4"> Faster Development</li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">You can style directly in your markup no need to flip between HTML and CSS files. This drastically cuts down on development time and makes iteration effortless.</p> 
+    <li class="ml-3 text-base text-base-content/70 mb-4">Consistent Design</li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Utility classes like <code class="code">p-4</code> or <code class="code">text-gray-600</code> ensure uniform spacing, colors, and typography throughout your project.</p>
+
+    <li class="ml-3 text-base text-base-content/70 mb-4">Consistent Design</li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind is fully configurable. The <code class="code">tailwind.config.js</code> file lets you customize everything—from colors and breakpoints to fonts and spacing scales.</p>
+
+      <li class="ml-3 text-base text-base-content/70 mb-4">Built-In Responsive Design</li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind is mobile-first by design. Responsive utilities like <code class="code">md:bg-blue-500</code> or <code class="code">lg:text-2xl</code> make building adaptive layouts intuitive.</p>
+
+
+    
+      <li class="ml-3 text-base text-base-content/70 mb-4">Lightweight in Production</li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind automatically removes unused styles in production using <a class="link-underline" href="https://purgecss.com/" target="_blank" rel="noopener noreferrer">PurgeCSS </a>, keeping your CSS bundle extremely small.</p>
+
+ 
+</ul>
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Getting Started with Tailwind CSS</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">There are multiple ways to use Tailwind via <a class="link-underline" href="https://tailwindcss.com/docs/installation/play-cdn" target="_blank" rel="noopener noreferrer">CDN</a>, npm, or through frameworks like  
+    <a class="link-underline" href="https://tailwindcss.com/docs/installation/framework-guides/nextjs" target="_blank" rel="noopener noreferrer">Next.js</a>,  
+    <a class="link-underline" href="https://tailwindcss.com/docs/installation/framework-guides/laravel/vite" target="_blank" rel="noopener noreferrer">Laravel</a>, 
+    <a class="link-underline" href="https://tailwindcss.com/docs/installation/framework-guides/angular" target="_blank" rel="noopener noreferrer">Angular</a>,
+    <a class="link-underline" href="https://tailwindcss.com/docs/installation/framework-guides/sveltekit" target="_blank" rel="noopener noreferrer">Sveltekit</a>,
+    <a class="link-underline" href="https://tailwindcss.com/docs/installation/framework-guides/laravel/vite" target="_blank" rel="noopener noreferrer">Laravel</a>
+    or 
+    <a class="link-underline" href="https://tailwindcss.com/docs/installation/framework-guides" target="_blank" rel="noopener noreferrer">other frameworks</a>.</p>
+
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Let’s walk through the npm setup, which gives you the most control.</p>
+
+
+
+
+
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">How to install Tailwind CSS V4</h2>
+
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Install tailwindcss and @tailwindcss/cli via npm.</p>
+
+<iframe src="https://www.youtube.com/embed/sHnG8tIYMB4" title="How to install Tailwind CSS V4" class="w-full h-96 card p-0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="javascript">
+npm install tailwindcss @tailwindcss/cli
+</code></pre>
+                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </figure>
+
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Add the <code class="code">@import "tailwindcss";</code> import to your main CSS file.</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="javascript">
+@import "tailwindcss";
+</code></pre>
+                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </figure>
+
+
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Run the CLI tool to scan your source files for classes and build your CSS.</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="javascript">
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Add your compiled CSS file to the <code class="code">&lt;head&gt;</code> and start using Tailwind’s utility classes to style your content.</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;link href="./output.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 class="text-3xl font-bold underline"&gt;
+    Hello world!
+  &lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">How to install Tailwind CSS V3</h2>
+
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Install tailwindcss via npm, and create your <code class="code">tailwind.config.js</code> file.</p>
+<iframe src="https://www.youtube.com/embed/CDBpPwRBKj0?rel=0" title="How to install Tailwind CSS V3" class="w-full h-96 card p-0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="javascript">
+npm install -D tailwindcss@3
+npx tailwindcss init
+</code></pre>
+                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </figure>
+
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Add the paths to all of your template files in your tailwind.config.js file.</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="javascript">
+ /** @type {import('tailwindcss').Config} */
+export default {
+   content: ["./src/**/*.{html,js}"],
+   theme: {
+     extend: {},
+   },
+   plugins: [],
+ }
+</code></pre>
+                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </figure>
+
+
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Add the <code class="code">@tailwind</code> directives for each of Tailwind’s layers to your main CSS file.</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="javascript">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</code></pre>
+                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </figure>
+
+
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Run the CLI tool to scan your template files for classes and build your CSS.
+
+</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="javascript">
+npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+</code></pre>
+                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </figure>
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Add your compiled CSS file to the <code class="code">&lt;head&gt;</code> and start using Tailwind’s utility classes to style your content.</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;link href="./output.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 class="text-3xl font-bold underline"&gt;
+    Hello world!
+  &lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+
+
+
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">A Deep Dive into Tailwind’s Utility Classes</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind CSS is all about combining small, single-purpose classes to build complex interfaces. Let’s explore some common utility categories with examples.</p>
+
+<h2 class="!mb-2 text-lg !font-semibold" id="how-does-nira-ui-work">Spacing (Padding & Margin)</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind provides utility classes for controlling padding and margin. These classes follow a scale (e.g. <code class="code">pt-4</code>, <code class="code">mt-2</code>  ), where each number corresponds to a specific value in <code class="code">rem</code>:</p>
+
+
+<div class="p-4 mb-6">
+  <p class="mt-2 text-gray-700">This element has padding and margin.</p>
+</div>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="p-4 mb-6">
+  <p class="mt-2 text-gray-700">This element has padding and margin.</p>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+
+
+
+<ul class="list-disc ml-3 pt-4">
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">p-4</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Adds padding of 1rem (16px).</p> 
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">mt-2</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Adds a top margin of 0.5rem (8px).</p>
+
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">mb-6</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Adds a bottom margin of 1.5rem (24px).</p>
+
+      
+
+ 
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="!mb-2 text-lg !font-semibold" id="how-does-nira-ui-work">Colors and Backgrounds</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind offers an extensive color palette that you can use for text, backgrounds, borders, and more:</p>
+
+<div class="bg-red-500 text-white p-4 rounded-lg">
+  <h2 class="text-xl">Welcome to Tailwind CSS Complete!</h2>
+</div>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="bg-red-500 text-white p-4 rounded-lg">
+  <h2 class="text-xl">Welcome to Tailwind CSS!</h2>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+
+
+
+<ul class="list-disc ml-3 pt-4">
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">bg-red-500</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Applies a medium red background color.</p> 
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">text-white</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Sets the text color to white.</p>
+
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">rounded-lg</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Adds a large border-radius for rounded corners.</p>
+
+      
+
+ 
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="!mb-2 text-lg !font-semibold" id="how-does-nira-ui-work">Typography</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind’s typography utilities let you control font size, weight, line height, letter spacing, and more:</p>
+
+
+<p class="text-lg font-semibold leading-relaxed tracking-wide text-gray-800">
+  Tailwind gives you fine-grained control over typography.
+</p>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<p class="text-lg font-semibold leading-relaxed tracking-wide text-gray-800">
+  Tailwind gives you fine-grained control over typography.
+</p>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+
+
+<ul class="list-disc ml-3 pt-4">
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">text-lg</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Sets the font size to 1.125rem.</p> 
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">font-semibold</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Applies a semi-bold font weight.</p>
+
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">leading-relaxed</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Adjusts line height for improved readability.</p>
+
+        <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">tracking-wide</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Increases letter spacing.</p>
+
+      
+
+ 
+</ul>
+
+
+
+
+<h2 class="!mb-2 text-lg !font-semibold" id="how-does-nira-ui-work">State Variants (Hover, Focus, Active, etc.)</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind provides utility classes for different element states, such as hover:, focus:, and active:</p>
+
+<button class="bg-green-500 hover:bg-green-700 focus:ring-2 py-2 px-4 rounded-lg"> Hover or Focus Me</button>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<button class="bg-green-500 hover:bg-green-700 focus:ring-2 py-2 px-4 rounded-lg"> Hover or Focus Me
+</button>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+<ul class="list-disc ml-3 pt-4">
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">hover:bg-green-700</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Applies a dark green background-color on hover state.</p> 
+</ul>
+
+
+
+
+
+<h2 class="!mb-2 text-lg !font-semibold" id="how-does-nira-ui-work">Easy Animations and Transitions</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind makes it simple to add smooth transitions and animations with pre-defined utility classes.</p>
+
+<img class="transition-transform duration-300 hover:scale-110 avatar-lg" src="../img/ferr-studio-G2Qjx1y9aAM-unsplash.jpg" alt="Animated Image">
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<img class="transition-transform duration-300 hover:scale-110" src="../img/ferr-studio-G2Qjx1y9aAM-unsplash.jpg" alt="Animated Image">
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="!mb-2 text-lg !font-semibold" id="how-does-nira-ui-work">Flexbox and Grid</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind excels at building responsive layouts with its Flexbox and Grid utilities:</p>
+
+<div class="flex justify-between items-center">
+  <div class="p-4 bg-green-200">Item 1</div>
+  <div class="p-4 bg-green-300">Item 2</div>
+  <div class="p-4 bg-green-400">Item 3</div>
+</div>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="flex justify-between items-center">
+  <div class="p-4 bg-green-200">Item 1</div>
+  <div class="p-4 bg-green-300">Item 2</div>
+  <div class="p-4 bg-green-400">Item 3</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+
+
+
+<ul class="list-disc ml-3 pt-4">
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">flex</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Enables Flexbox</p> 
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">justify-between</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Distributes space between child elements.</p>
+
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">items-center</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Aligns items vertically in the center.</p>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="!mb-2 text-lg !font-semibold" id="how-does-nira-ui-work">Responsive design</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">With Tailwind’s responsive utilities, you can apply styles at different breakpoints:</p>
+
+<div class="text-sm md:text-lg lg:text-2xl">
+  This text scales with screen size.
+</div>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="text-sm md:text-lg lg:text-2xl">
+  This text scales with screen size.
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+
+
+
+
+<ul class="list-disc ml-3 pt-4">
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">text-sm</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Applies small text on mobile screens.</p> 
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">md:text-lg</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Increases text size at the `md` (768px) breakpoint.</p>
+
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">lg:text-2xl</code></li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Sets a larger text size at the `lg` (1024px) breakpoint.</p>
+</ul>
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">How to customize Tailwind CSS V4</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">If you want to change things like your color palette, spacing scale, typography scale, or breakpoints, add your customizations using the <code class="code">@theme</code> directive in your CSS:</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="css">
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  --breakpoint-3xl: 120rem;
+  --color-avocado-100: oklch(0.99 0 0);
+  --color-avocado-200: oklch(0.98 0.04 113.22);
+  --color-avocado-300: oklch(0.94 0.11 115.03);
+  --color-avocado-400: oklch(0.92 0.19 114.08);
+  --color-avocado-500: oklch(0.84 0.18 117.33);
+  --color-avocado-600: oklch(0.53 0.12 118.34);
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+  /* ... */
+}
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Learn more about customizing your theme in the <a class="link-underline" href="https://tailwindcss.com/docs/theme" target="_blank" rel="noopener noreferrer">theme variables documentation</a>.</p>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">You can also <a class="link-underline" href="https://tailwindcss.com/docs/adding-custom-styles" target="_blank" rel="noopener noreferrer">add custom styles</a> to your tailwind projects.</p>
+
+
+
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">How to customize Tailwind CSS V3</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">If you want to change things like your color palette, spacing scale, typography scale, or breakpoints, add your customizations to the theme section of your <code class="code">tailwind.config.js</code> file:</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="javascript">
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
+    colors: {
+      'blue': '#1fb6ff',
+      'pink': '#ff49db',
+      'orange': '#ff7849',
+      'green': '#13ce66',
+      'gray-dark': '#273444',
+      'gray': '#8492a6',
+      'gray-light': '#d3dce6',
+    },
+    fontFamily: {
+      sans: ['Graphik', 'sans-serif'],
+      serif: ['Merriweather', 'serif'],
+    },
+    extend: {
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+      }
+    }
+  }
+}
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Learn more about customizing your theme in the <a class="link-underline" href="https://v3.tailwindcss.com/docs/theme" target="_blank" rel="noopener noreferrer">theme variables documentation</a>.</p>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">You can also <a class="link-underline" href="https://v3.tailwindcss.com/docs/adding-custom-styles" target="_blank" rel="noopener noreferrer">add custom styles</a> to your tailwind projects.</p>
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Dark Mode Support</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind includes a <code class="code">dark</code> variant that lets you style your site differently when dark mode is enabled:</p>
+
+
+
+
+
+<div class="grid grid-cols-1 sm:grid-cols-2">
+    <div class="p-8 pt-7">
+        <p class="mb-2 text-sm font-medium text-gray-500">Light mode</p>
+        <div class="rounded-lg bg-white px-6 py-8 shadow-xl ring ring-gray-900/5">
+            <div>
+                <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg"
+                    ><svg
+                        class="h-6 w-6 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        ></path></svg></span>
+            </div>
+            <p class="mt-5 text-base font-medium tracking-tight text-gray-900">Writes upside-down</p>
+            <p class="mt-2 text-sm text-gray-500">
+                The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in
+                outer space.
+            </p>
+        </div>
+    </div>
+    <div class="bg-gray-900 p-8 pt-7">
+        <p class="mb-2 text-sm font-medium text-gray-400">Dark mode</p>
+        <div class="rounded-lg bg-gray-800 px-6 py-8 shadow-xl ring ring-gray-900/5">
+            <div>
+                <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg"
+                    ><svg
+                        class="h-6 w-6 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        ></path></svg></span>
+            </div>
+            <p class="mt-5 text-base font-medium tracking-tight text-white">Writes upside-down</p>
+            <p class="mt-2 text-sm text-gray-400">
+                The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in
+                outer space.
+            </p>
+        </div>
+    </div>
+</div>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-cols-1 sm:grid-cols-2">
+    <div class="p-8 pt-7">
+        <p class="mb-2 text-sm font-medium text-gray-500">Light mode</p>
+        <div class="rounded-lg bg-white px-6 py-8 shadow-xl ring ring-gray-900/5">
+            <div>
+                <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg"
+                    ><svg
+                        class="h-6 w-6 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        ></path></svg></span>
+            </div>
+            <p class="mt-5 text-base font-medium tracking-tight text-gray-900">Writes upside-down</p>
+            <p class="mt-2 text-sm text-gray-500">
+                The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in
+                outer space.
+            </p>
+        </div>
+    </div>
+    <div class="bg-gray-900 p-8 pt-7">
+        <p class="mb-2 text-sm font-medium text-gray-400">Dark mode</p>
+        <div class="rounded-lg bg-gray-800 px-6 py-8 shadow-xl ring ring-gray-900/5">
+            <div>
+                <span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg"
+                    ><svg
+                        class="h-6 w-6 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        ></path></svg></span>
+            </div>
+            <p class="mt-5 text-base font-medium tracking-tight text-white">Writes upside-down</p>
+            <p class="mt-2 text-sm text-gray-400">
+                The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in
+                outer space.
+            </p>
+        </div>
+    </div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">By default this uses the <code class="code">prefers-color-scheme</code> CSS media feature, but you can also build sites that support <a href="https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually" class="link-underline" target="_blank" rel="noopener noreferrer">toggling dark mode manually</a> by overriding the dark variant.</p>
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Learn more about <a class="link-underline" href="https://tailwindcss.com/docs/dark-mode" target="_blank" rel="noopener noreferrer">Tailwind dark mode support</a></p>
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Tailwind Plugins</h2>
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind’s plugin system extends its functionality. For example, you can use the <code class="code">nira-ui</code> plugin to get get pre-built ui components</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="javascript">
+npm install nira-ui
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Use the <code class="code">@plugin</code> directive to load a legacy JavaScript-based plugin:</p>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="css">
+@import "tailwindcss";
+@plugin "nira-ui/plugin.js";
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">The <code class="code">@plugin</code> directive accepts either a package name or a local path.</p>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">After Nira UI pulgin is installed, then you can use its components in your Tailwind projects.For example this is a default button out of the box:</p>
+
+<button class="button">Button</button>
+    <figure class="highlight my-4 text-start">
+ <pre><code data-language="html"><button class="button">Button</button></code></pre>
+        <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg></button>
+    </figure>
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Check out <a class="link-underline" href="../blog/tailwindcss-plugin.html">9  Tailwind CSS Plugins that you should know about in <span class="year"></span> . </a></p>
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Common Misconceptions About Tailwind CSS</h2>
+
+<ul class="ml-3 list-decimal">
+    <li class="text-sm md:text-base text-base-content/70 mb-4 font-bold">It’s Just Inline Styles on Steroids:</li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4"> While it may seem that Tailwind’s utility classes are similar to inline styles, they’re more powerful. Tailwind utilities are responsive, customizable, and reusable, allowing for much cleaner and maintainable code.</p>
+
+
+    <li class="text-sm md:text-base text-base-content/70 mb-4 font-bold">Tailwind Bloats HTML with Too Many Classes:</li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">While Tailwind does involve adding more classes to your HTML, this trade-off provides better scalability, consistency, and control over your design. Additionally, you can use tools like `@apply` in your CSS or extract reusable components in your JavaScript framework (like React) to reduce repetition.</p>
+
+        <li class="text-sm md:text-base text-base-content/70 mb-4 font-bold">It’s Harder to Create Unique Designs:</li>
+    <p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind is highly customizable. You’re not limited to default styles  you can define your own color palettes, spacing scales, and more, allowing you to build completely unique designs.</p>
+
+
+</ul>
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Frequently Asked Questions (FAQ)</h2>
+
+
+<div class="accordion-group my-4 border border-base-300/47 rounded-lg text-base-content/70">
+  <div class="accordion p-4">
+<input type="checkbox" id="acc1" class="peer hidden" >
+    <label for="acc1" class="accordion-title">
+      What is Tailwind CSS and how does it differ from other CSS frameworks?
+      <svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </label>
+    <div class="accordion-content">
+      <p>
+Tailwind CSS is a utility-first CSS framework that allows developers to write more concise and maintainable CSS code by providing pre-defined classes. It differs from traditional CSS frameworks like Bootstrap in that it doesn't come with pre-designed UI components, instead focusing on providing a set of utility classes to style elements.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion p-4">
+    <input type="checkbox" id="acc2" class="peer hidden" >
+    <label for="acc2" class="accordion-title">
+     How do I install Tailwind CSS in my project?
+      <svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </label>
+    <div class="accordion-content">
+      <p>
+      You can install Tailwind CSS via NPM/Yarn by running the command `npm install tailwindcss` or `yarn add tailwindcss`, or use a CDN by including the Tailwind CSS link in your HTML file. You can also use a package manager like npm or yarn to install it.
+      </p>
+    </div>
+  </div>
+
+
+  <div class="accordion p-4">
+    <input type="checkbox" id="acc3" class="peer hidden" >
+    <label for="acc3" class="accordion-title">
+      What is the utility-first approach in Tailwind CSS?
+      <svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </label>
+    <div class="accordion-content">
+      <p>
+        The utility-first approach in Tailwind CSS means that instead of writing custom CSS code, you use pre-defined utility classes to style your HTML elements. This approach promotes a more efficient and maintainable way of writing CSS code.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion p-4">
+    <input type="checkbox" id="acc4" class="peer hidden" >
+    <label for="acc4" class="accordion-title">
+      Can I use Tailwind CSS with popular frameworks like React, Vue, or Angular?
+      <svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </label>
+    <div class="accordion-content">
+      <p>
+    Yes, Tailwind CSS can be used with popular frameworks like React, Vue, Angular, and Svelte. You can integrate it into your project by following the installation instructions for your specific framework.
+      </p>
+    </div>
+  </div>
+
+    <div class="accordion p-4">
+    <input type="checkbox" id="acc5" class="peer hidden" >
+    <label for="acc5" class="accordion-title">
+    How do I create responsive designs with Tailwind CSS?
+      <svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </label>
+    <div class="accordion-content">
+      <p>
+     You can create responsive designs with Tailwind CSS by using its breakpoint system and responsive modifiers, which allow you to apply different styles based on screen size.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion p-4">
+    <input type="checkbox" id="acc6" class="peer hidden" >
+    <label for="acc6" class="accordion-title">
+    How do I create responsive designs with Tailwind CSS?
+      <svg class="accordion-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </label>
+    <div class="accordion-content">
+      <p>
+     You can create responsive designs with Tailwind CSS by using its breakpoint system and responsive modifiers, which allow you to apply different styles based on screen size.
+      </p>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Final Thoughts</h2>
+
+<p class=" text-base text-base-content/70 mb-4">Tailwind CSS isn’t just another framework it’s a modern way of thinking about design and development. Its utility-first approach empowers you to build fast, stay consistent, and customize everything to fit your brand or project.</p>
+
+<p class=" text-base text-base-content/70 mb-4">Whether you’re a beginner crafting your first layout or a senior developer architecting scalable design systems, Tailwind CSS is a framework that grows with you.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+</section>
+
+<aside class="toc sticky top-16 hidden h-[94.5vh] min-w-[230px] gap-3 py-8 xl:flex xl:flex-col" aria-label="Table of contents">
+
+<div class="flex w-full flex-col gap-3 pl-2">
+	<h3 class="text-sm font-semibold">On this page</h3>
+
+<div dir="ltr" data-slot="scroll-area" class="relative pt-0.5 pb-4" style="position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px">
+
+
+<div data-radix-scroll-area-viewport="" data-slot="scroll-area-viewport" class="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1" style="overflow-x:hidden;overflow-y:hidden">
+
+<div style="min-width:100%;display:table">
+
+<div class="flex flex-col gap-2.5 text-sm ">
+	<a class="pl-0" href="#get started">The Ultimate Tailwind CSS Guide in <span class="year"></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="flex flex-col gap-3 pl-2"><h3 class="text-sm font-semibold">Content</h3>
+
+<div class="flex flex-col gap-2">
+	<a target="_blank" rel="noopener noreferrer" class="flex items-center text-sm" href="https://github.com/thaboyaluya/nira-ui/issues/new?title=Share%20Your%20Feedback&labels=feedback"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-1 inline-block h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg> Feedback</a>
+
+</div>
+</div><button class="ml-2 flex cursor-pointer items-center opacity-0 transition mt-6 self-start text-sm " id="scroll-top"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-1 inline-block h-4 w-4 align-middle" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="m5 12 7-7 7 7"></path>
+
+<path d="M12 19V5"></path></svg>
+
+<span>Scroll to top
+</span></button>
+</aside>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+</main>
+<footer class=" w-full border-t  border-base-300/47">
+
+<div class=" text-right  px-2 py-3 text-sm ">
+    <p>© <span class="year"></span> <a class="font-bold" href="./index.html">Nira UI</a>.</p>
+</div>
+
+</footer>
+<script src="../public/clipboard.js"></script><script src="../public/script.js"></script>
+<script src="../public/rainbow.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script>
+<script>
+  docsearch({
+  container: '#docsearch',
+  appId: 'NA27DKZC6X',
+  indexName: 'Nira UI Documentation Website',
+  apiKey: '89ed73c8a84edc8585b5c6cb90ec95cc'
+});
+</script>
+</body>
+</html>
