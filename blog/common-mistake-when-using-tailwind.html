@@ -473,15 +473,18 @@
 
 <h1 class="!my-4 text-2xl md:text-3xl !font-semibold" id="get started">The most common mistake when using Tailwind CSS (and how to fix it)</h1>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">As a maintainer of Nira UI, I interact with developers daily on GitHub issues and discussions. One of the most common mistakes I see when using Tailwind CSS is surprisingly simple to avoid—but it trips up even experienced developers.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">As a maintainer of Nira UI, I interact daily with developers who run into the same Tailwind CSS issue:
+dynamic class names that disappear in production.</p>
 
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">If you’ve struggled with dynamic Tailwind class names not working in production, this guide is for you.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">If your Tailwind classes like <code class="code">bg-{{ color }}-500</code> or <code class="code">button-{{ type }}</code> work in development but vanish after building, you’re not alone.</p>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">This guide will show you why it happens  and how to fix it using the Tailwind CSS safelist and new Tailwind 4 features.</p>
 
 
-<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">The Mistake</h2>
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">The Common Mistake: Dynamic Tailwind Classes</h2>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind CSS is designed to be utility-first. You typically use it like this:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind CSS is utility-first you typically use it like this:</p>
 
 <figure class="highlight my-4 text-start"><pre><code data-language="html"><div class="bg-red-500"></div>
 <div class="bg-green-500"></div>
@@ -494,7 +497,7 @@
         </svg></button>
 </figure>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind CSS is designed to be utility-first. You typically use it like this:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">But developers often try dynamic versions:</p>
  
 <figure class="highlight my-4 text-start"><pre><code data-language="html"><div class="bg-{{ color }}-500"></div>
 </code></pre>
@@ -507,9 +510,9 @@
 </figure>
 
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Or with Nira UI buttons:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Or with frameworks and libraries like Nira UI:</p>
 
-<figure class="highlight my-4 text-start"><pre><code data-language="html"><div class="btn btn-{{ type }}"></div>
+<figure class="highlight my-4 text-start"><pre><code data-language="html"><div class="button button-{{ type }}"></div>
 </code></pre>
     <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
             viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -521,35 +524,34 @@
 
 
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">This works perfectly in development but breaks in production builds.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">It seems clean, but here’s the catch:</p>
 
-
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind can’t detect dynamic class names during the build process.</p>
 
 
 <h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Why Dynamic Classes Break in Production</h2>
 
 
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind CSS scans your HTML and JavaScript files to detect class names and generate CSS.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind uses a content scanning system to detect which classes to include in the final CSS.
+When you use dynamic syntax <code class="code">(bg-{{ color }}-500)</code>, Tailwind’s scanner can’t see the full class, so it purges it.</p>
 
 
-<ul class="list-disc ml-3">
-  <li class="ml-3 text-base text-base-content/70 mb-4">When you write <span class="code">bg-{{ color }}-500</span> ,Tailwind cannot detect the actual class names (bg-red-500, bg-green-500) because they are dynamically generated.</li>
-
-    <li class="ml-3 text-base text-base-content/70 mb-4">As a result, those CSS classes are not included in the final production build.</li>
-</ul>
+<p class="text-sm md:text-base text-base-content/70 mb-4">That’s why your dynamic styles disappear in production — Tailwind thinks they’re unused.</p>
 
 
 
 
-<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">How to Fix It</h2>
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">How to Fix It: Safelisting in Tailwind CSS</h2>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">There are three recommended ways to handle dynamic Tailwind CSS classes properly:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">The safelist feature tells Tailwind to always include certain classes even if they’re not detected automatically.</p>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Here are three reliable ways to safelist dynamic Tailwind classes.</p>
 
 
 <h3 class="!mb-2 text-lg !font-semibold">1. Use Full Class Names as Variables</h3>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Instead of embedding partial class names, store the complete class name in a variable:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Instead of partial strings, store the complete class name in your variable:</p>
 
 
 
@@ -567,9 +569,9 @@ let color = 'bg-red-500';
 
 <p class="text-sm md:text-base text-base-content/70 mb-4">This ensures Tailwind can detect the exact class name and include it in the build.</p>
 
-<h3 class="!mb-2 text-lg !font-semibold">2. Add a Safelist File</h3>
+<h3 class="!mb-2 text-lg !font-semibold">2. Add a Tailwind CSS safelist file</h3>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Create a safelist.txt file containing all dynamic classes:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Create a <code class="code">safelist.txt</code> with all possible class variations:</p>
 
 <figure class="highlight my-4 text-start"><pre><code data-language="javascript">
 bg-red-500
@@ -602,9 +604,9 @@ module.exports = {
 
 
 
-<h3 class="!mb-2 text-lg !font-semibold">3. Use the Safelist Option in Tailwind Config</h3>
+<h3 class="!mb-2 text-lg !font-semibold">3. Use the Safelist Option in <code class="code">tailwind.config.js</code></h3>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">You can also define a safelist directly in tailwind.config.js:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">You can define a safelist directly in your configuration file:</p>
 
 <figure class="highlight my-4 text-start"><pre><code data-language="javascript">
 module.exports = {
@@ -625,8 +627,8 @@ module.exports = {
 </figure>
 
 
-<h3 class="!mb-2 text-sm !font-semibold">Advanced: Regex Patterns</h3>
-
+<h3 class="!mb-2 text-sm !font-semibold">Advanced: Regex Safelist Patterns</h3>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind also supports regex-based safelists, great for color loops or component variations:</p>
 <figure class="highlight my-4 text-start"><pre><code data-language="javascript">
 module.exports = {
   content: ["./pages/**/*.{html,js}", "./components/**/*.{html,js}"],
@@ -648,9 +650,9 @@ module.exports = {
 
 <p class="text-sm md:text-base text-base-content/70 mb-4">This is ideal for dynamic class names generated in loops or components.</p>
 
-<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Tailwind v4 Migration Notes</h2>
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Tailwind 4 Safelist Changes: @source inline()</h2>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind v4 changes how you safelist classes. The safelist option is no longer the primary method. Instead, use the new <span class="code">@source inline(...)</span>  directive:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">In Tailwind CSS v4, the safelist option is evolving.Instead of defining safelists in your JS config, you can now safelist classes inline in your CSS:</p>
 
 <figure class="highlight my-4 text-start"><pre><code data-language="css">
 @import "tailwindcss"; 
@@ -667,17 +669,21 @@ module.exports = {
 </figure>
 
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">This tells Tailwind to always include those classes in your CSS, even if they don’t appear literally in your HTML or JSX.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">This new Tailwind 4 safelist syntax makes it easier to manage included classes  and it’s perfect for frameworks like React or Vue that use dynamic props.</p>
 
 
 <h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Final Thought</h2>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Tailwind only generates CSS for class names it can see. Dynamic strings like <span class="code">bg-{{ color }}-500</span> are invisible unless you safelist them.</p>
 
+<p class="text-sm md:text-base text-base-content/70 mb-4">To prevent Tailwind from purging important styles:</p>
 <ul class="list-disc ml-3">
-  <li class="ml-3 text-base text-base-content/70 mb-4">Tailwind only generates CSS for class names it can detect. Dynamic strings like <span class="code">bg-{{ color }}-500</span> are invisible to Tailwind.</li>
 
-    <li class="ml-3 text-base text-base-content/70 mb-4">Development may work due to cached styles, but production builds require explicit classes.</li>
-        <li class="ml-3 text-base text-base-content/70 mb-4">Use variables, safelist files, or the safelist option to ensure your dynamic classes work consistently.</li>
+    <li class="ml-3 text-base text-base-content/70 mb-4">Use full class variables</li>
+        <li class="ml-3 text-base text-base-content/70 mb-4">Add a Tailwind safelist file</li>
+        <li class="ml-3 text-base text-base-content/70 mb-4">Or use the Tailwind 4 @source inline directive</li>
 </ul>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">These techniques guarantee that your dynamic Tailwind CSS classes work smoothly across development and production.</p>
 
 
 <h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Further Reading:</h2>
