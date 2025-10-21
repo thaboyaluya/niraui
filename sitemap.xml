@@ -42,6 +42,12 @@
     <changefreq>daily</changefreq>
     <priority>0.4</priority>
   </url>
+    <url>
+    <loc>https://niraui.onrender.com/blog/tailwind-css-grid.html</loc>
+    <lastmod>2025-10-18T15:34:04+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.4</priority>
+  </url>
   <url>
     <loc>https://niraui.onrender.com/components/accordion.html</loc>
     <lastmod>2025-10-18T15:34:04+00:00</lastmod>

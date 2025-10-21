@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/><meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="../public/nira.css">
+<link rel="stylesheet" href="../public/github.css"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4" />
+<title>Master CSS Grid in Tailwind CSS</title>
+<meta name="description" content="Learn how to use CSS Grid with Tailwind CSS to build responsive layouts. Includes examples, alignment tips, and a full grid utilities cheatsheet."/>
+<meta name="keywords" content="introduction,guide,nextjs,Master CSS Grid in Tailwind CSS"/>
+<meta property="og:title" content="Master CSS Grid in Tailwind CSS"/>
+<meta property="og:description" content="Learn how to use CSS Grid with Tailwind CSS to build responsive layouts. Includes examples, alignment tips, and a full grid utilities cheatsheet."/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content="Nira UI"/>
+<meta property="og:image" content="../img/nira homepage.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Master CSS Grid in Tailwind CSS"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content=""/>
+<meta name="twitter:title" content="Master CSS Grid in Tailwind CSS"/>
+<meta name="twitter:description" content="Learn how to use CSS Grid with Tailwind CSS to build responsive layouts. Includes examples, alignment tips, and a full grid utilities cheatsheet."/>
+<meta name="twitter:image" content="../img/nira homepage.png"/>
+<meta name="twitter:image:alt" content="Master CSS Grid in Tailwind CSS"/>
+<link rel="icon" href="../img/nira-ui-logo-transparent.ico" type="image/x-icon" sizes="48x48"/>
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://niraui.onrender.com/blog/tailwind-css-grid.html"
+    },
+    "headline": "Master CSS Grid with Tailwind CSS: Responsive Layout Guide",
+    "description": "Learn how to master CSS Grid with Tailwind CSS for building responsive layouts, dashboards, blogs, and feature grids. Step-by-step examples included.",
+    "image": "https://niraui.onrender.com/img/tailwindcss-grid.webp",
+    "author": {
+      "@type": "Person",
+      "name": "Rume Aluya"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Nira UI",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://niraui.onrender.com/img/nira-ui-logo-transparent.ico"
+      }
+    },
+    "datePublished": "2025-10-21",
+    "dateModified": "2025-10-21"
+  }
+  </script>
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "blog", "item": "https://niraui.onrender.com/blog/index.html" },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Master CSS Grid in Tailwind CSS",
+            "item": "https://niraui.onrender.com/blog/tailwind-css-grid.html"
+        }
+    ]
+}
+</script>
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is CSS Grid?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CSS Grid is a two-dimensional layout system that allows developers to control both rows and columns simultaneously, enabling flexible and complex layouts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I define a grid container in Tailwind CSS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the Tailwind classes <code>grid</code> for a block-level grid or <code>inline-grid</code> for an inline-level grid. This sets up the container for grid items."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I make a grid responsive in Tailwind?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use responsive prefixes like <code>sm:grid-cols-2</code>, <code>md:grid-cols-3</code>, and <code>lg:grid-cols-4</code> to adjust columns for different screen sizes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are col-span and row-span classes in Tailwind CSS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use <code>col-span-x</code> and <code>row-span-x</code> to make grid items span multiple columns or rows, useful for featured cards or dashboards."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="__variable_e8ce0c font-regular">
+<nav class="bg-opacity-5 sticky top-0 z-50 h-16 w-full border-b px-2 border-base-300/47 backdrop-blur-xl backdrop-filter md:px-4">
+
+<div class="mx-auto flex h-full items-center justify-between p-1 sm:p-3 md:gap-2">
+
+<div class="flex items-center gap-5">
+
+
+<div class="flex items-center gap-6">
+
+<div>
+    <a class="flex items-center gap-2.5 logo" href="../index.html"><img alt="Nira UI Logo" loading="lazy" width="34" height="34"  src="../img/nira-ui-logo-transparent.ico"/>
+
+
+<span class="text-md font-semibold hidden sm:flex">Nira UI
+</span></a>
+</div>
+
+<div class="text-muted-foreground hidden items-center gap-5 text-sm font-medium md:flex">
+<a class="flex items-center gap-1 text-sm" href="../blog/index.html">Blog
+  
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+</a>
+
+ <a class="flex items-center gap-1 text-sm"  rel="noopener noreferrer" href="../components/index.html">Components
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+ <a class="flex items-center gap-1 text-sm" target="_blank" rel="noopener noreferrer" href="https://play.tailwindcss.com/c2N1LWcxyJ">Playround
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a> <a class="flex items-center gap-1 text-sm" target="_blank" rel="noopener noreferrer" href="https://discord.gg/aqJhzbtb">Discord
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+
+
+</div>
+
+
+
+
+</div>
+</div>
+
+<div class="flex items-center gap-2">
+
+<div>
+
+<div class="relative max-w-md flex-1 cursor-pointer" type="button" >
+<div id="docsearch" class="bg-base-100 border-base-300/47"></div>
+</div>
+</div>
+
+<div class="flex gap-2 sm:ml-0">
+    <a class="button-outline" target="_blank" rel="noopener noreferrer" aria-label="View the repository on GitHub" href="https://github.com/thaboyaluya/nira-ui">
+	
+	<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-[1.1rem] w-[1.1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+
+<path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
+
+<select class="select" onchange="setTheme(this.value)" id="theme-toggle">
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="system">System</option>
+
+   
+  <option value="storm">Storm</option>
+ 
+    <option value="sunset">Sunset</option>
+	<option value="rose">Rose</option>
+	<option value="gold">Gold</option>
+  <option value="corporate">Corporate</option>
+   <option value="retro">Retro</option>
+   <option value="steel">Steel</option>
+   <option value="pastel">Pastel</option>
+   <option value="lofi">Lofi</option>
+   <option value="dracula">Dracula</option>
+	   <option value="midnight">Midnight</option>
+    
+ 
+  
+</select>
+
+
+</div>
+</div>
+</div></nav>
+
+<main class="h-auto px-5 sm:px-8">
+<div class="flex flex-row sm:gap-10">
+	<div class="sm:w-full sm:max-w-[18rem]">
+    <input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state peer" />
+    <label for="sidebar-mobile-fixed" class="sidebar-overlay z-10"></label>
+    <aside class="sidebar border border-base-300/47 border-r sidebar-mobile sidebar-fixed-left h-full max-w-[18rem] justify-start bg-base-100 z-10   max-sm:fixed max-sm:-translate-x-full  peer-checked:translate-x-0">
+        <section class="sidebar-title items-center p-8"></section>
+        <section class="sidebar-content">
+            <nav class="menu rounded-md">
+                <section class="menu-section px-4">
+                    <span class="menu-title">Docs</span>
+                    <ul class="menu-items">
+                        <li class="py-0.5">
+                            <a href="../docs/introduction.html" class="menu-item menu-active" >Introduction</a>
+                        </li>
+
+                        <li class="py-0.5">
+                            <a href="../docs/installation.html" class="menu-item" >Installation</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/usage.html" class="menu-item" >Usage</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/customize.html" class="menu-item" >Customization</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/theme.html" class="menu-item " >Theme</a>
+                        </li>
+                    </ul>
+                </section>
+                <div class="divider my-0"></div>
+                <section class="menu-section px-4">
+                    <span class="menu-title">Components</span>
+                    <ul class="menu-items">
+                        <li>
+                            <input type="checkbox" id="menu-2" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-2">
+                                <div class="flex gap-2">
+                                    <span>Form input</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                  
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/button.html" class="menu-item" >Button</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/button-group.html" class="menu-item" >Button Group</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/checkbox.html" class="menu-item" >Checkbox</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/form.html" class="menu-item" >Forms</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input-file.html" class="menu-item" >Input File</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input.html" class="menu-item" >Input</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/radio.html" class="menu-item" >Radio</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input-range.html" class="menu-item" >Range</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/select.html" class="menu-item" >Select</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/textarea.html" class="menu-item" >Textarea</a>
+                                        </li>
+                                          <li class="py-0.5 ml-6">
+                                            <a href="../components/toggle.html" class="menu-item" >Toggle</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-3" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-3">
+                                <div class="flex gap-2">
+                                    <span>Navigation</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/breadcrumb.html" class="menu-item" >Breadcrumb</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/drawer.html" class="menu-item" >Drawer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/dropdown.html" class="menu-item" >Dropdown</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/footer.html" class="menu-item" >Footer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/link.html" class="menu-item" >Link</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/navbar.html" class="menu-item" >Navbar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/sidebar.html" class="menu-item" >Sidebar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/tab.html" class="menu-item" >Tab</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-4" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-4">
+                                <div class="flex gap-2">
+                                    <span>Informational</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/accordion.html" class="menu-item" >Accordion</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/alert.html" class="menu-item" >Alert</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/avatar.html" class="menu-item" >Avatar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/badge.html" class="menu-item" >Badge</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/card.html" class="menu-item" >Card</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/divider.html" class="menu-item" >Divider</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/dot.html" class="menu-item" >Dot</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/kbd.html" class="menu-item" >KBD</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/mockup-browser.html" class="menu-item" >Mockup Browser</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/mockup-code.html" class="menu-item" >Mockup code</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/modal.html" class="menu-item" >Modal</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/pagination.html" class="menu-item" >Pagination</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/progress.html" class="menu-item" >Progress</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/skeleton.html" class="menu-item" >Skeleton</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/spinner.html" class="menu-item" >Spinner</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/step.html" class="menu-item" >Step</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/table.html" class="menu-item" >Table</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/tooltip.html" class="menu-item" >Tooltip</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section> <div class="divider my-0 sm:hidden"></div>
+                <section class="menu-section px-4">
+<div class=" text-sm font-medium justify-items-start flex flex-col sm:hidden">
+<a class="flex menu-item items-center gap-1" href="../blog/index.html">Blog
+  
+</a>
+
+ <a class="flex menu-item items-center gap-1 "  rel="noopener noreferrer" href="../components/index.html">Components
+
+</a>
+
+ <a class="flex menu-item items-center gap-1 " target="_blank" rel="noopener noreferrer" href="https://play.tailwindcss.com/c2N1LWcxyJ">Tailwind Playround
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a> <a class="flex menu-item items-center gap-1 " target="_blank" rel="noopener noreferrer" href="https://discord.gg/aqJhzbtb">Discord
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+
+
+</div>
+                </section>
+            </nav>
+        </section>
+    </aside>
+</div>
+
+<div class="grid gap-10 grid-cols-1 sm:grid-cols-2  xl:grid-cols-3">
+
+ 
+<section class="pt-10 sm:pl-[6rem] md:pl-[6.5rem] lg:pl-0 col-span-2">
+            <div class="w-fit">
+            <label for="sidebar-mobile-fixed" class="button-primary button sm:hidden">Open Sidebar</label>
+        </div>
+
+<div class="pb-5"><nav aria-label="breadcrumb" data-slot="breadcrumb">
+<ol data-slot="breadcrumb-list" class="text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5">
+<li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5">
+	<a title="Home Page" href="./index.html">
+	<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="hover:text-foreground transition-colors h-4" data-slot="breadcrumb-link" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+
+<path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+	</a>
+</li>
+<li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true" class="[&amp;&gt;svg]:size-3.5"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="m9 18 6-6-6-6"></path></svg></li>
+<li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5">
+
+<span data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page" class="text-foreground font-normal ">Introduction
+</span></li>
+</ol></nav>
+</div>
+
+<div class="typography">
+	
+<section>
+
+
+<img loading="lazy"  class="card p-0" src="../img/tailwindcss-grid.webp" alt="Master CSS Grid in Tailwind CSS" />
+
+
+
+
+<h1 class="!my-4 text-2xl md:text-3xl !font-semibold" id="get started">Master CSS Grid in Tailwind CSS</h1>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">CSS Grid is one of the most powerful layout tools in modern web development. Unlike Flexbox, which works mainly in one direction, CSS Grid allows you to control both rows and columns at the same time, giving you full flexibility over your page’s structure.</p>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">When paired with Tailwind CSS, CSS Grid becomes even more approachable. Tailwind’s utility-first approach means you can define columns, rows, spacing, alignment, and responsiveness all without writing a single line of custom CSS.</p>
+
+<p class="!mb-2 text-xl !font-semibold">Prerequisites</p>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">You don’t have to be a Grid or Tailwind expert, but a few things help:</p>
+
+<ul class="list-disc ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4">Familiarity with Tailwind CSS utility classes</li>
+  <li class="ml-3 text-base text-base-content/70 mb-4">A working Tailwind project or playground like CodePen / CodeSandbox</li>
+    <li class="ml-3 text-base text-base-content/70 mb-4">Curiosity to explore why Grid behaves the way it does</li>
+</ul>
+
+
+<div class="alert my-4">
+<svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+    <h5 class="alert-headline">Fun Tip</h5>
+    <div class="alert-text">Even if you copy-paste the code examples, try tweaking numbers or spans to see the layout change in real-time. It’s a great way to learn how CSS Grid works.
+    </div>
+</div>
+
+
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Defining a Grid Container in Tailwind CSS</h2>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">The first step when working with Grid is to define the overall grid container that will house our child items.</p>
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">To do this, we can use either the <code class="code">grid</code> or <code class="code">inline-grid</code> classes to create a grid that is either a block-level element (<code class="code">grid</code>) or an inline-level element (<code class="code">inline-grid</code>).
+
+
+</p>
+
+<div class="grid grid-cols-3 gap-4">
+  <div class="bg-primary p-4">Item 1</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+
+
+
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-cols-3 gap-4">
+  <div class="bg-primary p-4">Item 1</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+
+
+
+
+
+<h2 class="!mb-2 text-xl mt-3 !font-semibold" id="how-does-nira-ui-work">Managing grid columns</h2>
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Once you’ve set up your grid container, the next step is adding child items. By default, CSS Grid will place all items in a single column stacked vertically, taking up the full width of the container. So, if you don’t specify otherwise, everything will look like a long list rather than a structured grid.</p>
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">To create multiple columns, Tailwind makes it simple with the <code class="code">grid-cols-x</code>  <a class="link-underline" href="https://tailwindcss.com/docs/grid-template-columns" target="_blank" rel="noopener noreferrer">classes</a>. For example, if you want four columns, you’d use: <code class="code">grid-cols-4</code></p>
+
+<div class="grid grid-cols-4 gap-4">
+  <div class="bg-primary p-4">Item 1</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+  <div class="bg-primary p-4">Item 4</div>
+</div>
+
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-cols-4 gap-4">
+  <div class="bg-primary p-4">Item 1</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+  <div class="bg-primary p-4">Item 4</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+
+
+
+<p class="text-base text-base-content/70 mb-4 mt-3">Once the number of columns is defined, Grid automatically places the items in order across the columns. Each item takes up one column unless you tell it otherwise.</p>
+
+<p class="text-base text-base-content/70 mb-4 mt-3">But what if you want a particular item to span multiple columns, or rearrange the order slightly,That’s where Tailwind’s <code class="code">col-start-x</code>, <code class="code">col-span-x</code>, and <code class="code">col-end-x</code>  <a class="link-underline" href="https://tailwindcss.com/docs/grid-column" target="_blank" rel="noopener noreferrer">classes</a> come in handy.</p>
+
+<ul class="list-disc ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">col-span-x</code> → lets an item take up multiple columns</li>
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">col-start-x</code> → sets the starting column for an item</li>
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">col-end-x</code> → sets the ending column</li>
+</ul>
+
+<p class="text-base text-base-content/70 mb-4 mt-3">Here’s a practical example:</p>
+
+<div class="grid grid-cols-4 gap-4">
+  <div class="col-span-2 bg-primary p-4">Spans 2 columns</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-cols-4 gap-4">
+  <div class="col-span-2 bg-primary p-4">Spans 2 columns</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+<p class="text-base text-base-content/70 mb-4 mt-3">In this layout, the first item stretches across two columns while the other items fill the remaining space. This approach is especially useful for featured cards, banners, or larger content blocks in your layout.</p>
+  
+<div class="alert my-4">
+<svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+    <h5 class="alert-headline">Pro Tip</h5>
+    <div class="alert-text">When building dashboards or card grids, combining col-span with responsive breakpoints allows you to create layouts that adapt beautifully across mobile, tablet, and desktop screens.
+    </div>
+</div>
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Managing Grid Rows</h2>
+<p class="text-base text-base-content/70 mb-4">Just like we control columns, CSS Grid also lets us manage rows. In Tailwind, you can define the number of rows with the <code class="code">grid-rows-x</code>  <a class="link-underline" href="https://tailwindcss.com/docs/grid-template-rows" target="_blank" rel="noopener noreferrer">classes</a>. For example, using <code class="code">grid-rows-3</code> creates a grid with three rows:</p>
+
+<div class="grid grid-rows-3 gap-4">
+  <div class="bg-primary p-4">Row 1</div>
+  <div class="bg-primary p-4">Row 2</div>
+  <div class="bg-primary p-4">Row 3</div>
+</div>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-rows-3 gap-4">
+  <div class="bg-primary p-4">Row 1</div>
+  <div class="bg-primary p-4">Row 2</div>
+  <div class="bg-primary p-4">Row 3</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+<p class="text-base text-base-content/70 mb-4 ">However, a useful thing to know is that if your grid only has one column, each new item automatically goes into a new row so you don’t have to explicitly define the number of rows for a simple vertical stack.</p>
+
+<p class="text-base text-base-content/70 mb-4 ">Even if you define fewer rows than there are items, CSS Grid will automatically create additional rows as needed to accommodate all your items.</p>
+
+<h3 class="!mb-2 text-lg !font-semibold" id="how-does-nira-ui-work">Row Spanning and Positioning</h3>
+
+<p class="text-base text-base-content/70 mb-4 ">Sometimes, you want more control over which item goes into which row, or have certain items span multiple rows. Tailwind gives you  <a class="link-underline" href="https://tailwindcss.com/docs/grid-row" target="_blank" rel="noopener noreferrer">classes</a> for this.Here are some of the classes</p>
+
+<ul class="list-disc ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">row-span-x</code> → lets an item span multiple rows</li>
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">row-start-x</code> → sets where the item begins</li>
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">row-end-x</code> → sets where the item ends</li>
+</ul>
+
+
+<div class="grid grid-rows-3 grid-cols-2 gap-4">
+  <div class="row-span-2 bg-primary p-4">Spans 2 rows</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-rows-3 grid-cols-2 gap-4">
+  <div class="row-span-2 bg-primary p-4">Spans 2 rows</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+<p class="text-base text-base-content/70 mb-4 ">In this layout, the first item stretches across two rows while the others fit into the remaining spaces. This is perfect for sidebars, feature cards, or highlighted sections in a dashboard or content grid.</p>
+
+<div class="alert my-4">
+<svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+    <h5 class="alert-headline">Pro Tip</h5>
+    <div class="alert-text">Combining row spans with column spans gives you maximum flexibility for creative and responsive layouts. Experimenting with these early on will make your Grid skills much sharper.
+    </div>
+</div>
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Grid Spacing</h2>
+
+<p  class="text-base text-base-content/70 mb-4 ">Once you’ve got a handle on rows and columns, the next thing every developer runs into is spacing. Without proper gaps, your grid can feel cramped or messy, even if the layout is technically correct.</p>
+
+
+<p class="text-base text-base-content/70 mb-4 ">Tailwind makes controlling the space between grid items simple using the  <a class="link-underline" href="https://tailwindcss.com/docs/gap" target="_blank" rel="noopener noreferrer">gap utilities</a>. You can manage spacing along both axes horizontal (x) and vertical (y) or apply a uniform gap to both at once.</p>
+
+<p class="text-base text-base-content/70 mb-4 ">There are three main options:</p>
+
+
+<ul class="list-decimal ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">gap-&ltvalue&gt</code> → applies the same spacing to both rows and columns.</li>
+<div class="grid grid-cols-3 gap-4">
+  <div class="bg-primary p-4">Item 1</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-cols-3 gap-4">
+  <div class="bg-primary p-4">Item 1</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+<div class="alert my-4">
+<svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+    <h5 class="alert-headline">Pro Tip</h5>
+    <div class="alert-text">In this example, all items have the same spacing between them horizontally and vertically.
+    </div>
+</div>
+
+
+
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">gap-x-&ltvalue&gt</code> → controls spacing only along the horizontal axis (columns).</li>
+
+<div class="grid grid-cols-3 gap-x-6">
+  <div class="bg-primary p-4">Item 1</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-cols-3 gap-x-6">
+  <div class="bg-primary p-4">Item 1</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+<div class="alert my-4">
+<svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+    <h5 class="alert-headline">Pro Tip</h5>
+    <div class="alert-text">Perfect for stacking items with more vertical breathing room while keeping columns tight.
+    </div>
+</div>
+
+
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">gap-y-&ltvalue&gt</code> → controls spacing only along the vertical axis (rows).</li>
+
+
+<div class="grid grid-cols-3 gap-y-6">
+  <div class="bg-primary p-4">Item 1</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-cols-3 gap-y-6">
+  <div class="bg-primary p-4">Item 1</div>
+  <div class="bg-primary p-4">Item 2</div>
+  <div class="bg-primary p-4">Item 3</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+<div class="alert my-4">
+<svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg>
+    <h5 class="alert-headline">Pro Tip</h5>
+    <div class="alert-text">Use this when you want wider spacing between columns but keep rows closer together.
+    </div>
+</div>
+</ul>
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Aligning Grid Items in Tailwind CSS</h2>
+
+<p class="text-base text-base-content/70 mb-4 mt-3">Once you have your rows, columns, and spacing set up, the next important step is alignment. Tailwind provides a set of  <a class="link-underline" href="https://tailwindcss.com/docs/justify-items" target="_blank" rel="noopener noreferrer">intuitive classes</a> that let you control how grid items sit horizontally and vertically, both individually and as a group. The main classes to know are:</p>
+
+
+<ul class="list-disc ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">justify-items</code> / <code class="code">justify-self</code></li>
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">items</code> / <code class="code">self</code></li>
+    <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">content</code></li>
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">justify</code></li>
+</ul>
+
+
+
+<ul class="list-decimal ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">justify-items</code> / <code class="code">justify-self</code></li>
+
+
+
+<ul class="list-disc ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">justify-items</code> sets the horizontal alignment of all items within their grid slots. You apply this on the parent grid container.</li>
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">justify-self</code> overrides this alignment for a single item, letting you position it independently.</li>
+</ul>
+
+<div class="grid grid-cols-3 justify-items-center gap-4">
+  <div class="justify-self-start bg-primary p-4">Left</div>
+  <div class="bg-primary p-4">Center (default)</div>
+  <div class="justify-self-end bg-primary p-4">Right</div>
+</div>
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-cols-3 justify-items-center gap-4">
+  <div class="justify-self-start bg-primary p-4">Left</div>
+  <div class="bg-primary p-4">Center (default)</div>
+  <div class="justify-self-end bg-primary p-4">Right</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+
+
+
+
+
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">items</code> / <code class="code">self</code></li>
+  <p class="text-base text-base-content/70 mb-4" >These work like <code class="code">justify-items</code> and <code class="code">justify-self</code>, but along the vertical axis.</p>
+<ul class="list-disc ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">items-*</code> controls vertical alignment for all grid items.li>
+  <li class="ml-3 text-base text-base-content/70  mb-4"><code class="code">self-*</code> allows an individual item to override that setting.</li>
+</ul>
+
+<div class="grid grid-rows-3 items-center gap-4 h-64">
+  <div class="self-start bg-primary p-4">Top</div>
+  <div class="bg-primary p-4">Center</div>
+  <div class="self-end bg-primary p-4">Bottom</div>
+</div>
+
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-rows-3 items-center gap-4 h-64">
+  <div class="self-start bg-primary p-4">Top</div>
+  <div class="bg-primary p-4">Center</div>
+  <div class="self-end bg-primary p-4">Bottom</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+
+
+
+
+
+  <li class="ml-3 text-base text-base-content/70 mb-4 "><code class="code">content</code> and <code class="code">justify</code></li>
+
+
+  <ul class="list-disc ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4"><code class="code">content-*</code> controls the placement of all rows within the container. For example, content-center moves all rows to the center vertically.</li>
+  <li class="ml-3 text-base text-base-content/70  mb-4"><code class="code">justify-*</code> does the same for columns, letting you space or center columns across the container.</li>
+</ul>
+
+<div class="grid grid-cols-3 justify-between content-center h-64">
+  <div class="bg-primary p-4">1</div>
+  <div class="bg-primary p-4">2</div>
+  <div class="bg-primary p-4">3</div>
+</div>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-cols-3 justify-between content-center h-64">
+  <div class="bg-primary p-4">1</div>
+  <div class="bg-primary p-4">2</div>
+  <div class="bg-primary p-4">3</div>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+
+
+
+
+</ul>
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Real-World Grid Scenarios in Tailwind CSS</h2>
+
+
+
+
+<p class=" text-base text-base-content/70 mb-4" >CSS Grid is incredibly versatile, and when combined with Tailwind, it makes building real, production-ready layouts a breeze. Here are some scenarios you can actually use in your projects:</p>
+
+
+
+
+<ul class="list-decimal ml-3">
+  <li class="ml-3 text-base text-base-content/70 mb-4">Blog / Content Grid (High Engagement)</li>
+<p class=" text-base text-base-content/70 mb-4" >If you’re building a blog, magazine, or portfolio, a responsive post grid is essential. Tailwind’s grid makes it easy to create even spacing, responsive columns, and featured posts.</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <article class="p-6 bg-base-200/30 shadow-sm rounded  transition">
+    <h2 class="font-bold text-xl mb-2">How to Build a Tailwind Grid</h2>
+    <p class="text-base-content">Learn how to create responsive grids for blogs, dashboards, and landing pages...</p>
+  </article>
+  <article class="p-6 bg-base-200/30 shadow-sm rounded  transition">
+    <h2 class="font-bold text-xl mb-2">10 Grid Layout Tips for Developers</h2>
+    <p class="text-base-content">Optimize your grid layouts for responsiveness and visual balance with these practical tips...</p>
+  </article>
+  <article class="p-6 bg-base-200/30 shadow-sm rounded  transition">
+    <h2 class="font-bold text-xl mb-2">Creating Feature Cards in Tailwind</h2>
+    <p class="text-base-content">Use column and row spans to highlight important content and make your layouts dynamic...</p>
+  </article>
+</div>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <article class="p-6 bg-white shadow rounded hover:shadow-md transition">
+    <h2 class="font-bold text-xl mb-2">How to Build a Tailwind Grid</h2>
+    <p class="text-gray-700">Learn how to create responsive grids for blogs, dashboards, and landing pages...</p>
+  </article>
+  <article class="p-6 bg-white shadow rounded hover:shadow-md transition">
+    <h2 class="font-bold text-xl mb-2">10 Grid Layout Tips for Developers</h2>
+    <p class="text-gray-700">Optimize your grid layouts for responsiveness and visual balance with these practical tips...</p>
+  </article>
+  <article class="p-6 bg-white shadow rounded hover:shadow-md transition">
+    <h2 class="font-bold text-xl mb-2">Creating Feature Cards in Tailwind</h2>
+    <p class="text-gray-700">Use column and row spans to highlight important content and make your layouts dynamic...</p>
+  </article>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+
+
+
+
+
+  <li class="ml-3 text-base text-base-content/70 mb-4">Dashboard Layout (Business / SaaS Applications)</li>
+
+<p class=" text-base text-base-content/70 mb-4" >Dashboards are everywhere—analytics platforms, SaaS apps, admin panels. Grid lets you split content into sections for charts, stats, and tables, without writing custom CSS.</p>
+
+<div class="grid grid-cols-12 gap-4 min-h-screen p-4">
+  <aside class="col-span-12 md:col-span-3 bg-base-200/20  p-6 rounded shadow">
+    <h3 class="font-bold mb-4">Sidebar</h3>
+    <ul class="space-y-2">
+      <li>Overview</li>
+      <li>Analytics</li>
+      <li>Settings</li>
+    </ul>
+  </aside>
+
+  <main class="col-span-12 md:col-span-9 bg-base-200/20 p-6 rounded shadow">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div class="bg-primary/10 p-4 rounded">Revenue</div>
+      <div class="bg-success/10 p-4 rounded">Users</div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-warning/10 p-4 rounded">Recent Orders</div>
+      <div class="bg-danger/10 p-4 rounded">Notifications</div>
+    </div>
+  </main>
+</div>
+
+
+<figure class="highlight my-4 text-start">
+<pre><code data-language="html">
+<div class="grid grid-cols-12 gap-4 min-h-screen p-4">
+  <aside class="col-span-12 md:col-span-3 bg-base-200/20  p-6 rounded shadow">
+    <h3 class="font-bold mb-4">Sidebar</h3>
+    <ul class="space-y-2">
+      <li>Overview</li>
+      <li>Analytics</li>
+      <li>Settings</li>
+    </ul>
+  </aside>
+
+  <main class="col-span-12 md:col-span-9 bg-base-200/20 p-6 rounded shadow">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+      <div class="bg-primary/10 p-4 rounded">Revenue</div>
+      <div class="bg-success/10 p-4 rounded">Users</div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-warning/10 p-4 rounded">Recent Orders</div>
+      <div class="bg-danger/10 p-4 rounded">Notifications</div>
+    </div>
+  </main>
+</div>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+</figure>
+
+
+
+
+
+
+
+ 
+</ul>
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Tailwind CSS Grid Cheatsheet</h2>
+
+
+
+<table class="table text-base-content/90 table-centered">
+      <thead>
+        <tr>
+          <th>CSS Property Name</th>
+          <th>Tailwind CSS Classes</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>display (<a class="link-underline" href="https://tailwindcss.com/docs/display" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td><code class="code">grid</code>, <code class="code">inline-grid</code></td>
+          <td>Define a grid container</td>
+        </tr>
+        <tr>
+          <td>grid-template-columns (<a class="link-underline" href="https://tailwindcss.com/docs/grid-template-columns" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td><code class="code">grid-cols-&lt;number&gt;</code>,<code class="code">grid-cols-none</code>,<code class="code">grid-cols-subgrid</code></td>
+          <td>Specify the number of columns in the grid</td>
+        </tr>
+         <tr>
+          <td>grid-column (<a class="link-underline" href="https://tailwindcss.com/docs/grid-column" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td>
+<code class="code">col-span-&lt;number&gt;</code>,
+<code class="code">col-span-full</code>,
+<code class="code">col-start-&lt;number&gt;</code>,
+<code class="code">col-start-auto</code>,
+<code class="code">col-end-&lt;number&gt;</code>,
+<code class="code">col-end-auto</code>,
+<code class="code">col-auto</code></td>
+          <td>Control how elements in the grid are placed across the columns in the parent grid</td>
+        </tr>
+  
+<tr>
+          <td>grid-row (<a class="link-underline" href="https://tailwindcss.com/docs/grid-template-rows" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td>
+<code class="code">row-span-&lt;number&gt;</code>,
+<code class="code">row-span-full</code>,
+<code class="code">row-start-&lt;number&gt;</code>,
+<code class="code">row-start-auto</code>,
+<code class="code">row-end-&lt;number&gt;</code>,
+<code class="code">row-end-auto</code>,
+<code class="code">row-auto</code></td>
+          <td>Control how elements in the grid are placed across the rows in the parent grid</td>
+        </tr>
+
+
+        <tr>
+          <td>grid-template-rows (<a class="link-underline" href="https://tailwindcss.com/docs/grid-template-rows" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td>
+            <code class="code">grid-rows-&lt;number&gt;</code>,
+            <code class="code">grid-rows-none</code>,
+            <code class="code">grid-rows-subgrid</code></td>
+          <td>Specify the number of rows in the grid</td>
+        </tr>
+
+   
+        <tr>
+          <td>gap (<a class="link-underline" href="https://tailwindcss.com/docs/gap" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td>
+            <code class="code">gap-&lt;number&gt;</code>,
+            <code class="code">gap-x-&lt;number&gt;</code>,
+                <code class="code">gap-y-&lt;number&gt;</code>,
+        </td>
+          <td>Controlling the gutters between items inside the grid</td>
+        </tr>
+
+
+
+
+       <tr>
+          <td>justify-items (<a class="link-underline" href="https://tailwindcss.com/docs/justify-items" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td>
+          <code class="code">justify-items-start</code>,
+          <code class="code">justify-items-end</code>,
+          <code class="code">justify-items-center</code>
+        </td>
+          <td>Controlling the gutters between items inside the grid</td>
+        </tr>
+
+        <tr>
+          <td>justify-self (<a class="link-underline" href="https://tailwindcss.com/docs/justify-self" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td>
+          <code class="code">justify-self-auto</code>,
+          <code class="code">justify-self-start</code>,
+          <code class="code">justify-self-end</code>
+          <code class="code">justify-self-center</code>
+        </td>
+          <td>Control how the target item is aligned along the grid’s inline axis</td>
+        </tr>
+
+
+
+         <tr>
+          <td>align-items (<a class="link-underline" href="https://tailwindcss.com/docs/align-items" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td>
+          <code class="code">items-start</code>,
+          <code class="code">items-end</code>,
+          <code class="code">items-center</code>
+        </td>
+          <td>Control how grid items are aligned on the container’s cross axis</td>
+        </tr>
+
+
+        <tr>
+          <td>align-self (<a class="link-underline" href="https://tailwindcss.com/docs/align-self" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td>
+          <code class="code">self-auto</code>,
+          <code class="code">self-start</code>,
+          <code class="code">self-end</code>,
+          <code class="code">self-center</code>
+        </td>
+          <td>Control how the target item is aligned along the container’s cross axis</td>
+        </tr>
+
+
+        <tr>
+          <td>align-content (<a class="link-underline" href="https://tailwindcss.com/docs/align-content" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td>
+          <code class="code">content-start</code>,
+          <code class="code">content-end</code>,
+          <code class="code">content-center</code>,
+          <code class="code">content-between</code>,
+           <code class="code">content-around</code>,
+                      <code class="code">content-evenly</code>,
+        </td>
+          <td>Control how rows are positioned inside a grid container</td>
+        </tr>
+
+               <tr>
+          <td>justify-content (<a class="link-underline" href="https://tailwindcss.com/docs/justify-content" target="_blank" rel="noopener noreferrer">docs</a>)</td>
+          <td>
+          <code class="code">justify-start</code>,
+          <code class="code">justify-end</code>,
+          <code class="code">justify-center</code>,
+          <code class="code">justify-between</code>,
+           <code class="code">justify-around</code>,
+                      <code class="code">justify-evenly</code>,
+        </td>
+          <td>Control how grid items are positioned along a container’s main axis</td>
+        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Final Thoughts</h2>
+
+<p class=" text-base text-base-content/70 mb-4">The key takeaway: think in rows and columns first, then apply spacing and alignment utilities. Once you internalize these concepts, creating complex layouts becomes simple and fast.</p>
+
+<p class=" text-base text-base-content/70 mb-4">For more details, refer to the official <a class="link-underline" href="https://tailwindcss.com/docs/grid-template-columns" target="_blank" rel="noopener noreferrer">Tailwind CSS Grid Documentation</a>
+ and explore <a class="link-underline"  href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout" target="_blank" rel="noopener noreferrer">CSS Grid MDN Guide</a>
+ for deeper insights.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+</div>
+
+</section>
+
+<aside class="toc sticky top-16 hidden h-[94.5vh] min-w-[230px] gap-3 py-8 xl:flex xl:flex-col" aria-label="Table of contents">
+
+<div class="flex w-full flex-col gap-3 pl-2">
+	<h3 class="text-sm font-semibold">On this page</h3>
+
+<div dir="ltr" data-slot="scroll-area" class="relative pt-0.5 pb-4" style="position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px">
+
+
+<div data-radix-scroll-area-viewport="" data-slot="scroll-area-viewport" class="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1" style="overflow-x:hidden;overflow-y:hidden">
+
+<div style="min-width:100%;display:table">
+
+<div class="flex flex-col gap-2.5 text-sm ">
+	<a class="pl-0" href="#get started">Master CSS Grid in Tailwind CSS</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="flex flex-col gap-3 pl-2"><h3 class="text-sm font-semibold">Content</h3>
+
+<div class="flex flex-col gap-2">
+	<a target="_blank" rel="noopener noreferrer" class="flex items-center text-sm" href="https://github.com/thaboyaluya/nira-ui/issues/new?title=Share%20Your%20Feedback&labels=feedback"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-1 inline-block h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg> Feedback</a>
+
+</div>
+</div><button class="ml-2 flex cursor-pointer items-center opacity-0 transition mt-6 self-start text-sm " id="scroll-top"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-1 inline-block h-4 w-4 align-middle" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="m5 12 7-7 7 7"></path>
+
+<path d="M12 19V5"></path></svg>
+
+<span>Scroll to top
+</span></button>
+</aside>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+</main>
+<footer class=" w-full border-t  border-base-300/47">
+
+<div class=" text-right  px-2 py-3 text-sm ">
+    <p>© <span class="year"></span> <a class="font-bold" href="./index.html">Nira UI</a>.</p>
+</div>
+
+</footer>
+<script src="../public/clipboard.js"></script><script src="../public/script.js"></script>
+<script src="../public/rainbow.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script>
+<script>
+  docsearch({
+  container: '#docsearch',
+  appId: 'NA27DKZC6X',
+  indexName: 'Nira UI Documentation Website',
+  apiKey: '89ed73c8a84edc8585b5c6cb90ec95cc'
+});
+</script>
+</body>
+</html>

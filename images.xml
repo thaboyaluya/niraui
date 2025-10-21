@@ -451,6 +451,18 @@
 	<image:image>
 			<image:loc>https://niraui.onrender.com/img/tailwindcss-3d.webp</image:loc>
 	</image:image>
+		<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-grid.webp</image:loc>
+	</image:image>
+</url>
+
+<url>
+	<loc>https://niraui.onrender.com/blog/tailwind-css-grid.html</loc>
+	<lastmod>2025-10-21T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
+		<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-grid.webp</image:loc>
+	</image:image>
 </url>
 <url>
 	<loc>https://niraui.onrender.com/blog/common-mistake-when-using-tailwind.html</loc>

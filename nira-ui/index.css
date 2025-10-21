@@ -20,7 +20,7 @@
 
 :root {
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: oklch(100% 0.00011 271.152);
   --radius: 0.625rem;
    --docsearch-hit-highlight-color:var(--color-base-300)
 
