@@ -125,3 +125,7 @@ scrollTopBtn.addEventListener('click', () => {
 [...document.getElementsByClassName('year')].forEach(el => {
   el.textContent = new Date().getFullYear();
 });
+  window.addEventListener('load', function() {
+    var spinner = document.getElementById('loading-spinner');
+    spinner.style.display = 'none'; // Hides the spinner
+  });
