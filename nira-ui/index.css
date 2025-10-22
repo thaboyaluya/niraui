@@ -349,7 +349,7 @@ pre .tag, pre .tag-name {
   left: 0;
   width: 100%;
   height: 100%;
-  @apply bg-base-100/85; /* Or any color you want */
+  @apply bg-base-100/85 transition-all ease-in-out; /* Or any color you want */
   display: flex;
   justify-content: center;
   user-select: none;
