@@ -130,5 +130,5 @@ scrollTopBtn.addEventListener('click', () => {
 
       setTimeout(() => {
         spinner.style.display = 'none'; // Hides the spinner
-  }, 1000);
+  }, 500);
   });
