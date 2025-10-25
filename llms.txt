@@ -1,39 +1,39 @@
 # Nira  UI
-Nira UI is a CSS library for Tailwind CSS 4
-Nira UI  provides class names for common UI components
+NiraUI is a CSS library for Tailwind CSS 4
+NiraUI  provides class names for common UI components
 
-- [Nira UI docs](https://niraui.onrender.com/)
+- [NiraUI docs](https://niraui.onrender.com/)
 
-## Nira UI  install notes
+## NiraUI  install notes
 [install guide](https://niraui.onrender.com/docs/installation.html)
 1. NiraUI  requires Tailwind CSS 4
 2. `tailwind.config.js` file is deprecated in Tailwind CSS v4. do not use `tailwind.config.js`. Tailwind CSS v4 only needs `@import "tailwindcss";` in the CSS file if it's a node dependency.
-3. Nira UI  can be installed using `npm i -D nira-ui` and then adding `@plugin "nira-ui/plugin.js";` to the CSS file
-4. Nira UI is suggested to be installed as a dependency but if you really want to use it from CDN, you can use Tailwind CSS and Nira UI CDN files:
+3. NiraUI  can be installed using `npm i -D nira-ui` and then adding `@plugin "nira-ui/plugin.js";` to the CSS file
+4. NiraUI is suggested to be installed as a dependency but if you really want to use it from CDN, you can use Tailwind CSS and NiraUI CDN files:
 ```html
 <link href="https://cdn.jsdelivr.net/gh/thaboyaluya/nira-ui@master/dist/nira.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 ```
-5. A CSS file with Tailwind CSS and Nira UI looks like this (if it's a node dependency)
+5. A CSS file with Tailwind CSS and NiraUI looks like this (if it's a node dependency)
 ```css
 @import "tailwindcss";
 @plugin "nira-ui/plugin.js";
 ```
 
-## Nira UI usage 
-1. We can give styles to a HTML element by adding Nira UI class names to it. By adding a component class name, part class names (if there's any available for that component), and modifier class names (if there's any available for that component)
-2. Components can be customized using Tailwind CSS utility classes if the customization is not possible using the existing Nira UI classes. For example `button px-10` sets a custom horizontal padding to a `button`
-3. If customization of Nira UI styles using Tailwind CSS utility classes didn't work because of CSS specificity issues, you can use the `!` at the end of the Tailwind CSS utility class to override the existing styles. For example `button bg-pink-500!` sets a custom background color to a `button` forcefully. This is a last resort solution and should be used sparingly
-4. If a specific component or something similar to it doesn't exist in Nira UI, you can create your own component using Tailwind CSS utility
+## NiraUI usage 
+1. We can give styles to a HTML element by adding NiraUI class names to it. By adding a component class name, part class names (if there's any available for that component), and modifier class names (if there's any available for that component)
+2. Components can be customized using Tailwind CSS utility classes if the customization is not possible using the existing NiraUI classes. For example `button px-10` sets a custom horizontal padding to a `button`
+3. If customization of NiraUI styles using Tailwind CSS utility classes didn't work because of CSS specificity issues, you can use the `!` at the end of the Tailwind CSS utility class to override the existing styles. For example `button bg-pink-500!` sets a custom background color to a `button` forcefully. This is a last resort solution and should be used sparingly
+4. If a specific component or something similar to it doesn't exist in NiraUI, you can create your own component using Tailwind CSS utility
 5. when using Tailwind CSS `flex` and `grid` for layout, it should be responsive using Tailwind CSS responsive utility prefixes.
-6. Only allowed class names are existing Nira UI class names or Tailwind CSS utility classes.
-7. Ideally, you won't need to write any custom CSS. Using Nira UI class names or Tailwind CSS utility classes is preferred.
+6. Only allowed class names are existing NiraUI class names or Tailwind CSS utility classes.
+7. Ideally, you won't need to write any custom CSS. Using NiraUI class names or Tailwind CSS utility classes is preferred.
 8. suggested - if you need placeholder images, use https://picsum.photos/200/300 with the size you want
 9. suggested - when designing , don't add a custom font unless it's necessary
 10. don't add `bg-base-100 text-base-content` to body unless it's necessary
 11. For design decisions, use Refactoring UI book best practices
 
-Nira UI  class names are one of the following categories. these type names are only for reference and are not used in the actual code
+NiraUI  class names are one of the following categories. these type names are only for reference and are not used in the actual code
 - `component`: the required component class
 - `part`: a child part of a component
 - `style`: sets a specific style to component or part
@@ -43,9 +43,9 @@ Nira UI  class names are one of the following categories. these type names are o
 - `direction`: sets a specific direction to component or part
 - `modifier`: modifies the component or part in a specific way
 
-## Nira UI 5 colors
+## NiraUI 5 colors
 
-### Nira UI color names
+### NiraUI color names
 - `primary`: Primary brand color, The main color of your brand
 - `secondary`: Secondary brand color, The optional, secondary color of your brand
 - `base-100`:-100 Base surface color of page, used for blank backgrounds
@@ -56,19 +56,19 @@ Nira UI  class names are one of the following categories. these type names are o
 - `warning`: Warning color, For warning/caution messages
 - `error`: Error color, For error/danger/destructive messages
 
-### Nira UI color rules
-1. Nira UI adds semantic color names to Tailwind CSS colors
-2. Nira UI color names can be used in utility classes, like other Tailwind CSS color names. for example, `bg-primary` will use the primary color for the background
-3. Nira UI color names include variables as value so they can change based the theme
-4. There's no need to use `dark:` for Nira UI color names
-5. Ideally only Nira UI color names should be used for colors so the colors can change automatically based on the theme
+### NiraUI color rules
+1. NiraUI adds semantic color names to Tailwind CSS colors
+2. NiraUI color names can be used in utility classes, like other Tailwind CSS color names. for example, `bg-primary` will use the primary color for the background
+3. NiraUI color names include variables as value so they can change based the theme
+4. There's no need to use `dark:` for NiraUI color names
+5. Ideally only NiraUI color names should be used for colors so the colors can change automatically based on the theme
 6. If a Tailwind CSS color name (like `red-500`) is used, it will be same red color on all themes
-7. If a Nira UI color name (like `primary`) is used, it will change color based on the theme
+7. If a NiraUI color name (like `primary`) is used, it will change color based on the theme
 8. Using Tailwind CSS color names for text colors should be avoided because Tailwind CSS color `text-gray-800` on `bg-base-100` would be unreadable on a dark theme - because on dark theme, `bg-base-100` is a dark color
 9. `*-content` colors should have a good contrast compared to their associated colors
 10. suggestion - when designing a page use `base-*` colors for majority of the page. use `primary` color for important elements
 
-### Nira UI default theme variable reference
+### NiraUI default theme variable reference
 ```css
 
 /*-- Light --*/
@@ -107,7 +107,7 @@ Nira UI  class names are one of the following categories. these type names are o
 - All CSS variables above are required
 - Colors can be OKLCH or hex or other formats
 
-## Nira UI  components
+## NiraUI  components
 
 Form / Input:
 - Button → https://niraui.onrender.com/components/button.html  
@@ -225,4 +225,4 @@ Informational / Display:
 - Tooltip → https://niraui.onrender.com/components/tooltip.html  
   Small popup message on hover or focus.
 
-[Nira UI Componenets](https://niraui.onrender.com/components/index.html)
+[NiraUI Componenets](https://niraui.onrender.com/components/index.html)
