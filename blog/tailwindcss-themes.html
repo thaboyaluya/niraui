@@ -35,7 +35,7 @@
         {
             "@type": "ListItem",
             "position": 2,
-            "name": "Tailwind CSS Themes",
+            "name": "Tailwind CSS Themes: Customize Your Design with Nira UI",
             "item": "https://niraui.onrender.com/blog/tailwindcss-themes.html"
         }
     ]
@@ -438,7 +438,7 @@
 <path d="m9 18 6-6-6-6"></path></svg></li>
 <li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5">
 
-<span data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page" class="text-foreground font-normal ">Introduction
+<span data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page" class="text-foreground font-normal ">Tailwind Themes
 </span></li>
 </ol></nav>
 </div>
@@ -448,15 +448,17 @@
 <section>
 
 
-<img loading="lazy"  class="card p-0" src="../img/10-+beautiful-tailwindcss-theme.png" alt="Tailwind CSS Themes" />
+<img loading="lazy"  class="card p-0" src="../img/10-+beautiful-tailwindcss-theme.png" alt="Tailwind CSS Themes: Customize Your Design with Nira UI" />
 
 
 
 
-<h1 class="!my-4 text-2xl md:text-3xl !font-semibold" id="get started">Tailwind CSS Themes</h1>
+<h1 class="!my-4 text-2xl md:text-3xl !font-semibold" id="get started">Tailwind CSS Themes: Customize Your Design with Nira UI</h1>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">A Tailwind CSS theme defines the color palette, typography, spacing, and design tokens that give your project its unique look and feel. Instead of writing custom CSS for each page, you centralize your design settings in <code class="code">tailwind.config.js</code>.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">A Tailwind CSS theme defines your project’s overall style — including colors, typography, spacing, and design tokens. Instead of writing custom CSS for every page, you can centralize your entire design system inside your in css file.</p>
 
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">This not only keeps your codebase clean but also makes it easy to manage brand consistency across large projects.</p>
 
 
 
@@ -465,7 +467,7 @@
 
 
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">You can define and extend your theme in the <code class="code">tailwind.config.js</code> file.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">You can define and extend your theme directly in your <code class="code">tailwind.config.js</code> file.</p>
 
 
 <figure class="highlight my-4 text-start"><pre><code data-language="javascript">
@@ -497,13 +499,14 @@ module.exports = {
 
 
 
-<h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="how-does-nira-ui-work">Enable Nira UI built-in theme</h2>
+<h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="how-does-nira-ui-work">Enabling Nira UI’s Built-In Themes</h2>
 
 
 
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">To enable a theme, simply add the <code class="code">data-theme</code> attribute to your HTML element</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Nira UI includes several predesigned themes you can apply instantly.</p>
 
+<p class="text-sm md:text-base text-base-content/70 mb-4">To activate one, just add the <code class="code">data-theme</code> attribute to your HTML element.</p>
 
 <figure class="highlight my-4 text-start">
 <pre><code data-language="html">&lt;html data-theme="midnight"&gt;&lt;/html&gt;
@@ -515,13 +518,15 @@ module.exports = {
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 </svg></button>
 </figure>
-<p class="text-base text-base-content/70 my-4">This applies the midnight theme globally to your page. You can switch themes anytime just change the value of <code class="code">data-theme</code>.</p>
+<p class="text-base text-base-content/70 my-4">That’s it — the <strong>Midnight</strong> theme now applies globally to your entire page.
+You can switch between themes anytime by changing the value of <code class="code">data-theme</code>.</p>
 
 
 
 
 <h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="create-theme">Create Your Own Tailwind CSS Theme</h2>
- <p class="text-base text-base-content/70 my-4">Nira UI themes are fully customizable. To create your own theme, define your custom variables and apply them with a data-theme name:</p>
+ <p class="text-base text-base-content/70 my-4">Nira UI themes are fully customizable. </p>
+ <p class="text-base text-base-content/70 my-4">To create your own theme, define your custom variables and apply them with a data-theme name:</p>
 
  <figure class="highlight my-4 text-start">
 <pre><code data-language="css">
@@ -550,7 +555,7 @@ module.exports = {
 </svg></button>
 </figure>
 
-<p class="text-base text-base-content/70 my-4">Then use it in your HTML:</p>
+<p class="text-base text-base-content/70 my-4">Then apply it globally:</p>
 
 <figure class="highlight my-4 text-start">
 <pre><code data-language="html">&lt;html data-theme="mytheme"&gt;&lt;/html&gt;
@@ -564,7 +569,7 @@ module.exports = {
 </figure>
 
 
-<p class="text-base text-base-content/70 my-4">Or on any <a class="link-underline" href="../components/index.html">Nira UI Components</a></p>
+<p class="text-base text-base-content/70 my-4">Or apply it to a specific <a class="link-underline" href="../components/index.html">Nira UI Components</a></p>
 
 <div class="card" data-theme="mytheme">
   <h2 class="text-base font-semibold">My Theme</h2>
@@ -592,9 +597,9 @@ module.exports = {
 </figure>
 
 
-    <h2 class="!mb-2 text-3xl !font-semibold" id="list-of-theme">List of themes</h2>
-    <p class="text-base text-base-content/70 my-4">Here are the available built-in themes that comes with Nira UI</p>
-<p class="text-base text-base-content/70 my-4">Try them:</p>
+    <h2 class="!mb-2 text-3xl !font-semibold" id="list-of-theme">Built-In Nira UI Themes</h2>
+    <p class="text-base text-base-content/70 my-4">Nira UI ships with multiple ready-to-use themes. Try them out:</p>
+
 <div class="grid grid-cols-1 my-5 text-center md:grid-cols-4 gap-6 ">
 
   
@@ -906,7 +911,7 @@ module.exports = {
         <p class="text-base text-base-content/70 my-4">View all <a class="link-underline" href="../components/index.html">Nira UI Components</a></p>
 
 
-<h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="theme-project">🎨 Try Nira UI Themes in Your Project</h2>
+<h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="theme-project">🚀 Try Nira UI Themes in Your Project</h2>
 
 
                 <p class="text-sm md:text-base text-base-content/70 mb-4">Step 1: Install Nira UI:</p>
@@ -952,13 +957,13 @@ module.exports = {
 
 
 
-<p class="text-base text-base-content/70 my-4">Now your entire project adapts instantly to the selected theme!</p>
+<p class="text-base text-base-content/70 my-4">Your entire project will now instantly adapt to your selected theme.</p>
+
+<p class="text-base text-base-content/70 my-4">No extra CSS, no configuration headaches just plug, play, and design beautifully.</p>
 
 
 
-
-
-
+<p class="text-base text-base-content/70 my-4">With Nira UI, you can explore new color systems, quickly theme entire dashboards, and deliver professional-looking UIs without sacrificing performance or control.</p>
 
 
 
@@ -973,6 +978,31 @@ module.exports = {
 
 
 </section>
+</div>
+
+          <div class="flex items-center justify-between py-5 sm:py-7">
+    <div>
+        <a title="Nira UI VS Tailwind UI"
+            class="button"
+            href="../blog/nira-ui-vs-tailwind-ui.html"
+        >
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-[1rem] w-[1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="m15 18-6-6 6-6"></path>
+            </svg>
+            <p>Nira UI VS Tailwind UI</p>
+        </a>
+    </div>
+    <div>
+        <a title=" 9 Essential Tailwind CSS Plugins for Developers"
+            class="button"
+            href="../blog/tailwindcss-plugin.html"
+        >
+            <p>Tailwind CSS Plugins</p>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-[1rem] w-[1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="m9 18 6-6-6-6"></path>
+            </svg>
+        </a>
+    </div>
 </div>
 
 </section>

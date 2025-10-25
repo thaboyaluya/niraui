@@ -438,7 +438,7 @@
 <path d="m9 18 6-6-6-6"></path></svg></li>
 <li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5">
 
-<span data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page" class="text-foreground font-normal ">Introduction
+<span data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page" class="text-foreground font-normal ">What is Nira UI?
 </span></li>
 </ol></nav>
 </div>
@@ -455,13 +455,15 @@
 
 <h1 class="!my-4 text-2xl md:text-3xl !font-semibold" id="get started">Getting Started with Nira UI: Build Beautiful Interfaces in Minutes</h1>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">If you’ve ever built a project with Tailwind CSS, you already know how powerful and flexible it is. But writing utility classes for every button, card, or modal from scratch can become repetitive and slow.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">If you’ve ever built a project with Tailwind CSS, you already know how powerful and flexible it is. But let’s be honest writing utility classes for every button, card, or modal from scratch can get repetitive fast.</p>
 
 
 <p class="text-sm md:text-base text-base-content/70 mb-4">That’s where  <a class="link text-base-content/70 link-underline" href="../index.html">Nira UI</a> comes in.</p>
 
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Nira UI is a Tailwind CSS plugin that provides a growing library of pre-built, responsive, and customizable UI components. Instead of reinventing the wheel, you can drop in a Nira UI component <a class="link text-base-content/70 link-underline" href="../components/index.html">Nira UI component</a>, style it with Tailwind utilities, and ship your website or app faster.</p>
+
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Nira UI is a Tailwind CSS plugin packed with pre-built, responsive, and fully customizable UI components. Instead of starting from zero, you can drop in a <a class="link text-base-content/70 link-underline" href="../components/index.html">Nira UI component</a>, tweak it with Tailwind utilities, and launch your website or app in record time.</p>
 
 <p class="text-sm md:text-base text-base-content/70 mb-4">In this guide, you’ll learn :</p>
 
@@ -474,7 +476,7 @@
 
 <h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Installation Guide</h2>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Before installing Nira UI, make sure you have:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Before you start, make sure you have:</p>
 
 <ul>
     <li class="ml-3 text-base text-base-content/70 mb-4">✅ Node.js installed.</li>
@@ -484,7 +486,7 @@
 
  <p class="text-base">Step 1: Install Nira UI via NPM</p>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Run this command in your project directory:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Run this command inside your project folder:</p>
 
 <figure class="highlight my-4 text-start">
                     <pre><code data-language="javascript">npm i nira-ui</code></pre>
@@ -496,8 +498,8 @@
                         </svg></button>
                 </figure>
 
-<p class="text-base">Step 2: Add Nira UI to Your app.css</p>
-<p class=" text-base-content/70 mb-4">Import Tailwind CSS and add Nira UI as a plugin inside your main CSS file (<code class="code">app.css</code>, <code class="code">main.css</code>, or similar):</p>
+<p class="text-base">Step 2: Add Nira UI to Your CSS</p>
+<p class=" text-base-content/70 mb-4">Import Tailwind CSS and register Nira UI as a plugin in your main CSS file(<code class="code">app.css</code>, <code class="code">main.css</code>, or similar):</p>
 
 
 <figure class="highlight my-4 text-start">
@@ -512,13 +514,13 @@
                 </figure>
 
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">That’s it 🎉 — you can now use Nira UI class names like  <code class="code">button</code> <code class="code">card</code>, and more in your project.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">That’s it 🎉  you can now use Nira UI class names like button, card, and many more right out of the box.</p>
 
 
 
-<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Nira UI CDN (No Installation)</h2>
+<h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Using Nira UI from a CDN (No Installation Required)</h2>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Don’t want to install Node.js or set up Tailwind locally? You can load Nira UI directly from a CDN:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Don’t want to set up Node.js or Tailwind locally? No problem you can load Nira UI directly from a CDN:</p>
 
 
 <figure class="highlight my-4 text-start">
@@ -533,11 +535,11 @@
                         </svg></button>
                 </figure>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Perfect for quick prototypes or simple static sites.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">This is perfect for quick prototypes, CodePen demos, or lightweight static sites.</p>
 
 <h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Using Your First Nira UI Component</h2>
 
-<p>Let’s start with a Button:</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Let’s start with a simple button:</p>
 
 <figure class="highlight my-4 text-start">
 <pre><code data-language="html"><button class="button button-primary">Get Started</button></code></pre>
@@ -551,12 +553,14 @@
 
 <button class="button button-primary">Get Started</button>
 
-
+<p class="text-sm md:text-base text-base-content/70 my-4">And that’s it — you’ve just used your first Nira UI component.</p>
 
 <h2 class="!mb-2 text-xl !font-semibold" id="how-does-nira-ui-work">Customizing Nira UI Components</h2>
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Nira UI components are built with Tailwind CSS utilities under the hood. This means you can customize everything to match your brand.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Because Nira UI is built entirely on <strong>Tailwind CSS utilities</strong>, you have full creative control over your design.</p>
 
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">Want rounded buttons, color tweaks, or a unique layout? Just use Tailwind classes:</p>
 
 <figure class="highlight my-4 text-start">
 <pre><code data-language="html">
@@ -577,8 +581,10 @@
 <button class="button rounded-none bg-pink-500 border-pink-600 text-white">Button</button>
 
 
-<p class="text-sm md:text-base text-base-content/70 mb-4">Want animations? Just add Tailwind classes or your own CSS animations.</p>
+<p class="text-sm md:text-base text-base-content/70 mb-4">Want animations? Add your favorite Tailwind transitions or your own custom CSS animations.</p>
 
+
+<p class="text-sm md:text-base text-base-content/70 mb-4">With Nira UI, you get the best of both worlds predesigned components that save time, and full Tailwind flexibility when you need to make them your own.</p>
 
 
 
@@ -614,6 +620,32 @@
 
 </section>
 </div>
+
+          <div class="flex items-center justify-between py-5 sm:py-7">
+    <div>
+        <a title="Nira UI Blog"
+            class="button"
+            href="../blog/index.html"
+        >
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-[1rem] w-[1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="m15 18-6-6 6-6"></path>
+            </svg>
+            <p>Nira UI Blog</p>
+        </a>
+    </div>
+    <div>
+        <a title="Nira UI VS Tailwind UI"
+            class="button"
+            href="../blog/nira-ui-vs-tailwind-ui.html"
+        >
+            <p>Nira UI VS Tailwind UI</p>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-[1rem] w-[1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="m9 18 6-6-6-6"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+
 
 </section>
 
