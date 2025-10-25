@@ -356,3 +356,6 @@ pre .tag, pre .tag-name {
   align-items: center;
   z-index: 9999; /* Ensures it's on top of all other content */
 }
+
+
+@layer components { .customButton { @apply rounded-full bg-gradient-to-r from-orange-500 to-red-600 px-4 py-2 leading-[1.5em] inline-flex justify-center text-center items-center gap-2 text-base  shadow-xs select-none text-base-content duration-150 will-change-transform ease-in cursor-pointer disabled:opacity-50 disabled:pointer-events-none disabled:select-none active:scale-[0.98]; } }

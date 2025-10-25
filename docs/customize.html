@@ -486,8 +486,9 @@
 
 
                 <p class="text-base text-base-content/70 my-4">
-               Nira UI is built on Tailwind CSS, which means every component is flexible and easy to customize. You can extend designs using Tailwind utilities, custom CSS, or the <code class="code">@apply directive</code>
+              Nira UI is powered by Tailwind CSS  which means every component is flexible, extendable, and easy to restyle.
                 </p>
+                <p class="text-base text-base-content/70 my-4" >You can customize components using <strong>Tailwind utilities</strong>, <strong>custom CSS</strong>, or the <strong>@apply directive</strong>, depending on how global or specific your design needs are.</p>
 
 
 
@@ -498,7 +499,8 @@
 <h2 id="next-steps" class="!mb-2 text-3xl !font-semibold mt-3">How to Customize Nira UI</h2>
  
     <li class="text-base text-base-content/70 ml-3  my-4">
-    Nira UI ships with multiple component variants (like primary, secondary, outline, and success). These variants make it simple to build a consistent design system without writing new styles from scratch.
+Nira UI ships with multiple component variants like <code class="code">primary</code>, <code class="code">secondary</code>, <code class="code">outline</code>, and <code class="code">success</code>.
+These variants help you maintain a consistent design system without writing new styles from scratch.
     </li>
 
                     <p class="text-base text-base-content/70 my-4">
@@ -518,7 +520,7 @@
                 </figure>
 
                     <p class="text-base text-base-content/70 my-4">
-          You can instantly switch styles using built-in variants:
+Switch to another style instantly with a built-in variant:
                 </p>
 
         <button class="button button-primary">One</button>
@@ -535,14 +537,14 @@
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg></button>
     </figure>
-    <p class="text-base text-base-content/70 mb-4">This keeps your code clean, readable, and theme-ready — perfect for scalable UI design.</p>
+    <p class="text-base text-base-content/70 mb-4">Your code stays clean, readable, and theme-ready perfect for scalable UIs.</p>
 
 
 <h2 id="next-steps" class="!mb-2 text-3xl !font-semibold mt-3">Extend Components with Tailwind Utilities Classes</h2>
 
 
     <li class="text-base text-base-content/70 ml-3  my-4">
-Since Nira UI works seamlessly with Tailwind CSS utilities, you can customize components just like you would in any Tailwind project.
+Since Nira UI is built directly on Tailwind, you can still use any Tailwind utility classes for fine-grained control:
     </li>
 
     <button class="button rounded-full">One</button>
@@ -560,21 +562,23 @@ Since Nira UI works seamlessly with Tailwind CSS utilities, you can customize co
             </svg></button>
     </figure>
 
-    <p class="mb-4">This gives you the flexibility of fine-grained control while keeping the simplicity of component class names.</p>
+    <p class="text-base text-base-content/70 mb-4">This gives you the flexibility of Tailwind with the simplicity of Nira UI’s component names.</p>
 
 
            
-<h2 id="next-steps" class="!mb-2 text-3xl !font-semibold mt-3">Global Customization with Tailwind @apply directive</h2>
+<h2 id="next-steps" class="!mb-2 text-3xl !font-semibold mt-3">Global Customization with Tailwind’s @apply Directive</h2>
 
-
+<p class="text-base text-base-content/70 mb-4">Want to apply consistent styles across your entire app?</p>
     <li class="text-base text-base-content/70 ml-3  my-4">
-     To apply consistent changes across your entire project, use Tailwind’s <code class="code">@apply</code> directive.This is useful when you want all components of a type (like buttons or cards) to share a global style.
+
+
+     Use Tailwind’s <code class="code">@apply</code> directive to redefine Nira UI components globally.
     </li>
 
-
+<button class="customButton">Button</button>
 
     <figure class="highlight my-4 text-start"><pre><code data-language="css">
-@layer components { .button { @apply rounded-full bg-gradient-to-r from-orange-500 to-red-600; } }
+@layer components { .customButton { @apply rounded-full bg-gradient-to-r from-orange-500 to-red-600 px-4 py-2 leading-[1.5em] inline-flex justify-center text-center items-center gap-2 text-base  shadow-xs select-none text-base-content duration-150 will-change-transform ease-in cursor-pointer disabled:opacity-50 disabled:pointer-events-none disabled:select-none active:scale-[0.98]; } }
 </code></pre>
         <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
                 viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -584,9 +588,10 @@ Since Nira UI works seamlessly with Tailwind CSS utilities, you can customize co
             </svg></button>
     </figure>
 
- <p class="text-base text-base-content/70 mb-4">Now, every <code class="code">.button</code> in your project will follow your global design rules automatically.</p>      
+ <p class="text-base text-base-content/70 mb-4">Now, every <code class="code">.customButton</code> in your project will automatically follow your new global style no extra markup needed.</p>      
 
-
+<p class="text-base text-base-content/70 mb-4">Nira UI was built to help you move fast without losing design control.
+Use Tailwind’s flexibility to make every component uniquely yours, while keeping your code clean and consistent.</p>
 
 
             </section>

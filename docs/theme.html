@@ -487,18 +487,21 @@
 
 
                 <p class="text-base text-base-content/70 my-4">
-                 One of the most powerful features of Nira UI is its collection of built-in Tailwind CSS themes. With over 10 pre-made color schemes, you can instantly transform your website’s look and feel using a single attribute.
+                 One of the most powerful features of Nira UI is its built-in theming system.
                 </p>
 
-<p class="text-base text-base-content/70 my-4">Whether you want a dark theme, light theme, or creative color palette, Nira UI makes theming effortless.</p>
+<p class="text-base text-base-content/70 my-4">With more than a dozen ready-to-use themes, you can instantly change your website’s entire look from bright and modern to dark and dramatic using a single attribute.</p>
 
+<p class="text-base text-base-content/70 my-4">Whether you’re building a dashboard, a portfolio, or a SaaS product, Nira UI makes theming effortless.</p>
           
 
 
      <h2 class="!mb-2 text-3xl !font-semibold" id="enable-built-in-theme">Enable a built-in theme</h2>
 
 
-<p class="text-base text-base-content/70 my-4">To enable a theme, simply add the <code class="code">data-theme</code> attribute to your HTML element</p>
+<p class="text-base text-base-content/70 my-4">
+To activate a theme, simply add the <code class="code">data-theme</code> attribute to your HTML element:
+</p>
 
 <figure class="highlight my-4 text-start">
 <pre><code data-language="html">&lt;html data-theme="midnight"&gt;&lt;/html&gt;
@@ -510,11 +513,14 @@
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 </svg></button>
 </figure>
-<p class="text-base text-base-content/70 my-4">This applies the midnight theme globally to your page. You can switch themes anytime just change the value of <code class="code">data-theme</code>.</p>
 
 
-    <h2 class="!mb-2 text-3xl !font-semibold" id="list-of-theme">List of themes</h2>
-    <p class="text-base text-base-content/70 my-4">Here are the available built-in themes and their moods:</p>
+<p class="text-base text-base-content/70 my-4">This applies the Midnight theme across your whole site.</p>
+<p class="text-base text-base-content/70 my-4">Want to switch? Just change the value of <code class="code">data-theme</code> no rebuilds required.</p>
+
+
+    <h2 class="!mb-2 text-3xl !font-semibold" id="list-of-theme">Built-In Themes</h2>
+    <p class="text-base text-base-content/70 my-4">Nira UI includes a wide selection of professionally balanced color palettes, each with its own mood and tone.</p>
 <p class="text-base text-base-content/70 my-4">Try them:</p>
 <div class="grid grid-cols-1 my-5 text-center md:grid-cols-3 gap-6 ">
 
@@ -522,7 +528,7 @@
 <div class="card cursor-pointer" onclick="setTheme('light')" data-theme="light">
   <div class="text-4xl mb-3">🌞</div>
   <h2 class="font-bold text-lg">Light</h2>
-  <p class="text-sm opacity-80">Fresh, open, and uplifting atmosphere.</p>
+  <p class="text-sm opacity-80">Fresh, clean, and uplifting</p>
 </div>
 
 <div class="card cursor-pointer" onclick="setTheme('dark')" data-theme="dark">
@@ -534,7 +540,7 @@
 <div class="card cursor-pointer" onclick="setTheme('midnight')" data-theme="midnight">
   <div class="text-4xl mb-3">🌌</div>
   <h2 class="font-bold text-lg">Midnight</h2>
-  <p class="text-sm opacity-80">Mysterious, quiet, and dreamlike mood.</p>
+  <p class="text-sm opacity-80">Dreamy and immersive</p>
 </div>
 
 
@@ -542,13 +548,13 @@
 <div class="card cursor-pointer" onclick="setTheme('steel')" data-theme="steel">
   <div class="text-4xl mb-3">🛡️</div>
   <h2 class="font-bold text-lg">Steel</h2>
-  <p class="text-sm opacity-80">Strong, modern, and minimal feel.</p>
+  <p class="text-sm opacity-80">Modern, strong, and minimal</p>
 </div>
 
 <div class="card cursor-pointer" onclick="setTheme('storm')" data-theme="storm">
   <div class="text-4xl mb-3">⛈️</div>
   <h2 class="font-bold text-lg">Storm</h2>
-  <p class="text-sm opacity-80">Intense, moody, and full of energy.</p>
+  <p class="text-sm opacity-80">Bold, intense, and energetic</p>
 </div>
 
 
@@ -556,13 +562,13 @@
 <div class="card cursor-pointer" onclick="setTheme('sunset')" data-theme="sunset">
   <div class="text-4xl mb-3">🌅</div>
   <h2 class="font-bold text-lg">Sunset</h2>
-  <p class="text-sm opacity-80">Warm, soothing, and relaxing mood.</p>
+  <p class="text-sm opacity-80">Warm and relaxing</p>
 </div>
 
 <div class="card cursor-pointer" onclick="setTheme('rose')" data-theme="rose">
   <div class="text-4xl mb-3">🌹</div>
   <h2 class="font-bold text-lg">Rose</h2>
-  <p class="text-sm opacity-80">Romantic, soft, and graceful style.</p>
+  <p class="text-sm opacity-80">Soft, elegant, and romantic</p>
 </div>
 
 <div class="card cursor-pointer" onclick="setTheme('gold')" data-theme="gold">
@@ -574,7 +580,7 @@
 <div class="card cursor-pointer" onclick="setTheme('corporate')" data-theme="corporate">
   <div class="text-4xl mb-3">🏢</div>
   <h2 class="font-bold text-lg">Corporate</h2>
-  <p class="text-sm opacity-80">Professional, balanced, and reliable.</p>
+  <p class="text-sm opacity-80">Professional and balanced.</p>
 </div>
 
 <div class="card cursor-pointer" onclick="setTheme('retro')" data-theme="retro">
@@ -586,19 +592,19 @@
 <div class="card cursor-pointer" onclick="setTheme('lofi')" data-theme="lofi">
   <div class="text-4xl mb-3">🎧</div>
   <h2 class="font-bold text-lg">Lofi</h2>
-  <p class="text-sm opacity-80">Relaxed, mellow, and cozy vibe.</p>
+  <p class="text-sm opacity-80">Cozy and chill.</p>
 </div>
 
 <div class="card cursor-pointer" onclick="setTheme('pastel')" data-theme="pastel">
   <div class="text-4xl mb-3">🧸</div>
   <h2 class="font-bold text-lg">Pastel</h2>
-  <p class="text-sm opacity-80">Gentle, playful, and comforting mood.</p>
+  <p class="text-sm opacity-80">Gentle and cheerful.</p>
 </div>
 
 <div class="card cursor-pointer" onclick="setTheme('dracula')" data-theme="dracula">
   <div class="text-4xl mb-3">🧛</div>
   <h2 class="font-bold text-lg">Dracula</h2>
-  <p class="text-sm opacity-80">Dark, dramatic, and mysterious atmosphere.</p>
+  <p class="text-sm opacity-80">Dark and dramatic.</p>
 </div>
 
 
@@ -611,7 +617,8 @@
 
 
 
-<p class="text-base text-base-content/70 my-4">You don’t have to apply a theme globally  Nira UI supports section-based theming. This allows you to mix and preview different styles on one page.</p>
+<p class="text-base text-base-content/70 my-4">You’re not limited to global themes  you can apply themes to specific sections of a page.</p>
+<p class="text-base text-base-content/70 my-4">Perfect for dashboards, documentation, or showcasing multiple brands.</p>
 
  <figure class="highlight my-4 text-start">
 <pre><code data-language="html">
@@ -635,7 +642,9 @@
 <h2 class="!mb-2 text-3xl !font-semibold" id="default-theme-variable-reference">Default theme variable reference</h2>
 
 
-<p class="text-base text-base-content/70 my-4">Every theme in Nira UI is built on CSS custom properties, which makes theming consistent and customizable. Here’s a sample of the default variables for Light and Dark themes:</p>
+<p class="text-base text-base-content/70 my-4">Each theme is powered by CSS custom properties (variables), so customization stays consistent and scalable.</p>
+
+<p class="text-base text-base-content/70 my-4">Here’s a preview of the <strong>Light</strong> and <strong>Dark</strong> theme color variables:</p>
 
  <figure class="highlight my-4 text-start">
 <pre><code data-language="css">
@@ -679,7 +688,7 @@
 </svg></button>
 </figure>
 
-<p class="text-base text-base-content/70 my-4">You can use these variables directly in your own CSS for custom Tailwind themes or overrides.</p>
+<p class="text-base text-base-content/70 my-4">You can use these variables directly in your own CSS for deeper customization or to create a custom Tailwind configuration.</p>
 
 
 <h2 class="!mb-2 text-3xl !font-semibold" id="base-colors">Base colors</h2>
@@ -734,9 +743,6 @@
 
 
 
-    
-
-
 <div class="grid gap-3 sm:grid-cols-2">
     <div class="w-full border-none bg-transparent pt-2">
         <p class="text-3xl ">Base Background</p>
@@ -779,8 +785,9 @@
 </div>
 
 
- <h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="create-theme">Create Your Own Tailwind CSS Theme</h2>
- <p class="text-base text-base-content/70 my-4">Nira UI themes are fully customizable. To create your own theme, define your custom variables and apply them with a data-theme name:</p>
+ <h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="create-theme">Create Your Own Nira UI Theme</h2>
+ <p class="text-base text-base-content/70 my-4">Want to make something completely yours?:</p>
+  <p class="text-base text-base-content/70 my-4">You can define your own color palette and assign it a custom theme name.</p>
 
  <figure class="highlight my-4 text-start">
 <pre><code data-language="css">
@@ -809,7 +816,7 @@
 </svg></button>
 </figure>
 
-<p class="text-base text-base-content/70 my-4">Then use it in your HTML:</p>
+<p class="text-base text-base-content/70 my-4">Then activate it in your HTML:</p>
 
 <figure class="highlight my-4 text-start">
 <pre><code data-language="html">&lt;html data-theme="mytheme"&gt;&lt;/html&gt;
@@ -823,7 +830,7 @@
 </figure>
 
 
-<p class="text-base text-base-content/70 my-4">Or on any <a class="link-underline" href="../components/index.html">Nira UI Components</a></p>
+<p class="text-base text-base-content/70 my-4">Or apply it directly to a specific <a class="link-underline" href="../components/index.html">component:</a></p>
 
 <div class="card" data-theme="mytheme">
   <h2 class="text-base font-semibold">My Theme</h2>
@@ -851,107 +858,7 @@
 </figure>
 
 
- <h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="theme-showcase">Nira UI Theme Showcase</h2>
-
-
-<p class="text-base text-base-content/70 my-4">Explore all the built-in Nira UI themes and see how they transform components instantly. Each theme is responsive, accessible, and powered by Tailwind CSS utility classes.</p>
-
-
-<div class="grid grid-col-1 gap-3">
-<div class="card" data-theme="light">
-  <h2 class="text-base font-semibold">🌞 Light Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Fresh, open, and uplifting. Perfect for clean, minimal designs.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-<div class="card" data-theme="dark">
-  <h2 class="text-base font-semibold">🌙 Dark Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Calm, focused, and easy on the eyes. Great for dashboards and coding tools.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-<div class="card" data-theme="midnight">
-  <h2 class="text-base font-semibold">🌌 Midnight Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Mysterious, quiet, and immersive.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-
-
-<div class="card" data-theme="steel">
-  <h2 class="text-base font-semibold">🛡️ Steel Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Strong, minimal, and professional.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-<div class="card" data-theme="storm">
-  <h2 class="text-base font-semibold">⛈️ Storm Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Dramatic and full of energy.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-
-
-<div class="card" data-theme="sunset">
-  <h2 class="text-base font-semibold">🌅 Sunset Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Warm, soft, and relaxing.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-<div class="card" data-theme="rose">
-  <h2 class="text-base font-semibold">🌹 Rose Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Romantic, elegant, and graceful.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-
-<div class="card" data-theme="gold">
-  <h2 class="text-base font-semibold">🥇 Gold Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Luxurious, premium, and timeless.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-
-<div class="card" data-theme="corporate">
-  <h2 class="text-base font-semibold">🏢 Corporate Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Balanced, trustworthy, and business-ready.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-
-<div class="card" data-theme="retro">
-  <h2 class="text-base font-semibold">📼 Retro Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Fun, nostalgic, and playful.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-<div class="card" data-theme="lofi">
-  <h2 class="text-base font-semibold">🎧 Lofi Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Relaxed, cozy, and minimal.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-<div class="card" data-theme="pastel">
-  <h2 class="text-base font-semibold">🧸 Pastel Theme</h2>
-<p class="text-sm md:text-base text-base-content/70 mb-4">Soft, cheerful, and comforting.</p>
-  <input type="text" class="input mb-2 " placeholder="Nira UI is amazing">
-<button type="button" class="tooltip tooltip-primary   button  tooltip-n mb-2 " data-content="Nira UI is amazing">Tooltip</button>
-</div>
-
-
-</div>
-
+ 
 
 
  <h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="theme-project">🎨 Try Nira UI Themes in Your Project</h2>
@@ -985,7 +892,7 @@
                 </figure>
 
 
-                <p class="text-sm md:text-base text-base-content/70 mb-4">Step 3: Set your theme in HTML:</p>
+                <p class="text-sm md:text-base text-base-content/70 mb-4">Step 3: Apply your desired theme</p>
 
 
 <figure class="highlight my-4 text-start">
@@ -1000,10 +907,15 @@
 
 
 
-<p class="text-base text-base-content/70 my-4">Now your entire project adapts instantly to the selected theme!</p>
+<p class="text-base text-base-content/70 my-4">That’s it! Your project instantly adapts to your selected color scheme.</p>
 
 
 
+ <h2 class="!my-4 text-2xl md:text-3xl !font-semibold" id="theme-project">✨ Nira UI:Tailwind Theming Made Effortless</h2>
+<p class="text-base text-base-content/70 my-4">Switch between light, dark, or any custom theme in seconds.</p>
+
+
+<p class="text-base text-base-content/70 my-4">Build fast, stay consistent, and make your UI shine with Nira UI.</p>
 
 
 
