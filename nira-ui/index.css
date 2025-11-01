@@ -22,10 +22,17 @@
   --input: oklch(0.922 0 0);
   --ring: oklch(100% 0.00011 271.152);
   --radius: 0.625rem;
-   --docsearch-hit-highlight-color:var(--color-base-300)
-
+   --docsearch-hit-highlight-color:var(--color-base-300);
+ 
 }
-
+[data-theme="light"]{
+   --color-primary:#008751
+}
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+        --color-primary: #008751;
+    }
+}
 
 @theme inline {
   --color-input: var(--input);

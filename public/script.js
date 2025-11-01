@@ -49,7 +49,7 @@ function setTheme(theme) {
 
 
     function showTooltip(elem, msg) {
-    elem.setAttribute('class', 'button button-primary p-2  bd-copy tooltip tooltip-primary tooltip-e');
+    elem.setAttribute('class', 'button button-primary p-2  bd-copy tooltip tooltip-primary tooltip-n');
     elem.setAttribute('data-content', msg);
 
 
