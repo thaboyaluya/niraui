@@ -127,8 +127,5 @@ scrollTopBtn.addEventListener('click', () => {
 });
   window.addEventListener('load', function() {
     var spinner = document.getElementById('loading-spinner');
-
-      setTimeout(() => {
-        spinner.style.display = 'none'; // Hides the spinner
-  }, 500);
+      spinner.style.display = 'none'; 
   });
