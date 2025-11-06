@@ -28,7 +28,8 @@
 <meta name="twitter:image" content="../img/nira homepage.png"/>
 <meta name="twitter:image:alt" content="NiraUI – Tailwind CSS Components & Themes for Faster Development"/>
 <link rel="icon" href="./img/nira-ui-logo-transparent.ico" type="image/x-icon" sizes="48x48"/>
-
+<link rel="stylesheet" href="./icons/style.css">
+<script src="./fuzzy.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -147,7 +148,275 @@
 
 
 
+<style>
 
+  .autocomplete {
+  position: relative;
+}
+
+/* Suggestions dropdown */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-base-100);
+  border: 1px solid var(--color-base-300);
+  border-radius: var(--radius-selector,6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-top: 0.5rem;
+  z-index: 50;
+  overflow: hidden;
+  display: none;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.suggestion:hover {
+  background: var(--color-base-200);
+}
+
+.suggestion .name {
+  font-size: 0.95rem;
+  color: var(--color-base-content);
+  font-weight: 500;
+}
+
+.suggestion .category {
+  font-size: 0.8rem;
+  color: var(--color-base-content);
+}
+
+.icon-preview i {
+  font-size: 1.2rem;
+  color: var(--color-base-content);
+}
+
+
+  
+
+.total-results {
+  font-size: 0.9rem;
+  color: var(--color-base-content);
+  margin: 0.5rem 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+
+
+    .icons-grid {
+    
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+      gap: 1rem;
+    }
+    .icons-grid > * {
+  max-width: 120px; /* or whatever fits your design */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+    .icon-item {
+      border-radius: var(--radius-selector,6px);
+      cursor:pointer;
+      padding: .5rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      transition: transform 0.15s ease;
+    }
+
+    .icon-item:hover {
+      transform: scale(1.05);
+    }
+
+
+    .icon-item small {
+      font-size: 12px;
+      word-break: break-word;
+    }
+
+    
+
+ .copied {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: var(--color-primary);
+      color: var(--color-base-100);
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: var(--radius-selector,6px);
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.3s;
+    }
+
+    .icon-item.copied-active .copied {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+
+
+    .name {
+      font-size: 0.9rem;
+      color: #222;
+    }
+    .category {
+      font-size: 0.75rem;
+      color: #777;
+    }
+
+
+    .icon-browser {
+ 
+  margin: 0 auto;
+  padding: 2rem;
+ 
+}
+
+/* Search bar and controls */
+.icons-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+
+
+
+
+
+
+/* Icon card */
+.icon-item {
+  background: var(--color-base-100);
+  border: 1px solid var(--color-base-300);
+  border-radius: var(--radius-selector,6px);
+  text-align: center;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.icon-item i {
+  font-size: 1.8rem;
+  color: var(--color-base-content);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.icon-item:hover {
+
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.icon-name {
+  font-size: 0.85rem;
+  color: var(--color-base-content);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Copied state */
+.icon-item.copied-active {
+  background: var(--color-base-100);
+  opacity:0.8;
+  border-color: var(--color-success);
+}
+
+.icon-item.copied-active .icon-name {
+  color: var(--color-success);
+}
+
+/* Total results */
+.total-results {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--color-base-content);
+  font-size: 0.9rem;
+}
+
+.icon-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  color: var(--color-base-content);
+  font-size: 0.95rem;
+  transition: opacity 0.3s ease;
+}
+
+.icon-loader.hidden {
+  display: none;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--color-primary);
+  border-top-color: var(--color-base-content);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-bottom: 0.75rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.niraui-button {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),box-shadow 0.3s ease,background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.niraui-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.niraui-button:hover::after {
+  left: 125%;
+}
+
+
+
+
+
+
+</style>
 
 
 
@@ -1026,6 +1295,49 @@ Use it with React, Vue, Svelte, Next.js, Laravel, Astro, Angular, or anything el
 
 
 
+<section class="py-20">
+<div class="max-w-8xl mx-auto text-center px-6">
+<h2 class="mx-auto w-full text-center font-bold text-3xl md:text-5xl"><span class="text-primary"> NiraUI</span>  Icons  </h2>
+<p class=" mx-auto w-full max-w-xl text-center text-base text-base-content/70 my-4"> NiraUI Icons is an open-source collection of beautiful, consistent, and responsive icons built for Tailwind CSS. Search, copy, and customize icons with tailwind css for your next project.</p>
+<div class="icon-browser">
+  <div class="icons-header flex-col md:flex-row">
+    
+    <div class="autocomplete relative flex flex-col w-full max-w-xl mx-auto">
+  <input
+    id="searchInput"
+    type="text"
+    class="input input-lg w-full"
+    placeholder="Search over 3,000+ icons…"
+    aria-label="Search over 3,000+ icons…"
+  />
+  <div id="suggestions" class="suggestions"></div>
+</div>
+
+    
+
+
+    <select id="categoryFilter" class="select select-lg"></select>
+      <div id="suggestions" class="suggestions"></div>
+      <div id="copyMessage" class="fixed  hidden top-5 right-5 z-50 px-4 py-2 card block">
+ <p> ✅ Copied <i id="copiedIcon"></i>!</p>
+</div>
+    <button id="clearBtn" class="button button-danger  button-lg">Clear</button>
+  </div>
+<div id="noResultsContainer"></div>
+<div id="iconLoader" class="icon-loader hidden">
+<span class="loading loading-spinner loading-xl"></span>
+</div>
+  <div id="iconGrid" class="icons-grid"></div>
+  <button id="loadMoreBtn" class="button button-lg mx-auto gap-2 my-10">Load More Icons</button>
+  <div id="totalResults" class="total-results"></div>
+</div>
+
+
+<a class="button button-large " href="./docs/niraicons.html">How to use NiraUI Icons</a>
+</div>
+</section>
+
+
 
 
 
@@ -1182,6 +1494,318 @@ Your support helps me build new components, improve documentation, and grow the 
 <script src="./public/script.js" ></script> 
 <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script>
 <script>
+
+const input = document.getElementById("searchInput");
+const clearBtn = document.getElementById("clearBtn");
+const grid = document.getElementById("iconGrid");
+const suggestionsBox = document.getElementById("suggestions");
+const categorySelect = document.getElementById("categoryFilter");
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+const totalResults = document.getElementById("totalResults");
+const noResultsContainer = document.getElementById("noResultsContainer");
+const loader = document.getElementById("iconLoader");
+
+let icons = [];
+let fuse;
+
+const MAX_ICONS_DISPLAY = 300;
+let currentOffset = 0;
+let currentList = [];
+
+/* ---------------------------- Utility Functions --------------------------- */
+const debounce = (fn, delay = 200) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn(...args), delay);
+  };
+};
+
+/* ------------------------------- Load Icons ------------------------------- */
+async function loadIcons() {
+  try {
+    const response = await fetch('../icons/icons.json', {
+      cache: 'force-cache', // 🧠 Use browser cache if available
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (!response.ok) throw new Error(`Failed to load icons.json (${response.status})`);
+
+    // Return parsed JSON
+    return await response.json();
+
+  } catch (error) {
+    console.warn("⚠️ Could not fetch icons from cache, retrying network...");
+
+    // 🔁 Retry without cache (in case the file changed or cache is invalid)
+    const freshResponse = await fetch('./icons/icons.json', { cache: 'reload' });
+    if (!freshResponse.ok) throw new Error("Failed to reload icons.json from network");
+
+    return await freshResponse.json();
+  }
+}
+
+/* ---------------------------- Copy to Clipboard --------------------------- */
+window.copyIcon = (el, className) => {
+
+  try {navigator.clipboard.writeText(`<i class="${className}"></i>`); } catch (err) { console.warn('Clipboard failed:', err); }
+
+  el.classList.add("copied-active");
+  setTimeout(() => el.classList.remove("copied-active"), 1000);
+};
+
+/* ------------------------------ No Results UI ----------------------------- */
+function showNoResults(query) {
+  noResultsContainer.innerHTML = `
+<div class="pt-10 pb-16 sm:pt-24 sm:pb-36 lg:pt-40 lg:pb-56 text-center">
+    <svg width="96" height="96" fill="none" class="mx-auto mb-6 text-base-content">
+        <path
+            d="M36 28.024A18.05 18.05 0 0025.022 39M59.999 28.024A18.05 18.05 0 0170.975 39"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        ></path>
+        <ellipse cx="37.5" cy="43.5" rx="4.5" ry="7.5" fill="currentColor"></ellipse>
+        <ellipse cx="58.5" cy="43.5" rx="4.5" ry="7.5" fill="currentColor"></ellipse>
+        <path
+            d="M24.673 75.42a9.003 9.003 0 008.879 5.563m-8.88-5.562A8.973 8.973 0 0124 72c0-7.97 9-18 9-18s9 10.03 9 18a9 9 0 01-8.448 8.983m-8.88-5.562C16.919 68.817 12 58.983 12 48c0-19.882 16.118-36 36-36s36 16.118 36 36-16.118 36-36 36a35.877 35.877 0 01-14.448-3.017"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        ></path>
+        <path
+            d="M41.997 71.75A14.94 14.94 0 0148 70.5c2.399 0 4.658.56 6.661 1.556a3 3 0 003.999-4.066 12 12 0 00-10.662-6.49 11.955 11.955 0 00-7.974 3.032c1.11 2.37 1.917 4.876 1.972 7.217z"
+            fill="currentColor"
+        ></path>
+    </svg>
+    <p class="text-lg leading-5 font-medium mb-3">Sorry! There are no icon name “${query}” in ${categorySelect.value} category.</p>
+       <p class="text-lg leading-5 font-medium mb-3">Please broaden your search query or check a different category.</p>
+</div>
+
+  `;
+  loadMoreBtn.style.display = "none";
+}
+
+/* -------------------------- Render Fuzzy Suggestions ---------------------- */
+function renderSuggestions(query) {
+  suggestionsBox.innerHTML = "";
+  if (!query.trim()) {
+    suggestionsBox.style.display = "none";
+    return;
+  }
+
+  const names = icons.map(i => i.name);
+  const results = fuse.search(query.toLowerCase(), names);
+  const matchedNames = results.map(r => r.string);
+  let matchedIcons = icons.filter(icon => matchedNames.includes(icon.name));
+
+  if (matchedIcons.length < 8) {
+    const partials = icons.filter(icon =>
+      icon.name.toLowerCase().includes(query.toLowerCase())
+    );
+    matchedIcons = [...new Set([...matchedIcons, ...partials])];
+  }
+
+  if (!matchedIcons.length) {
+    suggestionsBox.style.display = "none";
+    return;
+  }
+
+  suggestionsBox.innerHTML = matchedIcons.slice(0, 8).map(icon => `
+    <div class="suggestion">
+      <div>
+        <div class="name">${icon.name}</div>
+        <div class="category">${icon.category}</div>
+      </div>
+      <div class="icon-preview"><i class="${icon.name}" aria-label="Copy ${icon.name}"></i></div>
+    </div>
+  `).join("");
+
+  [...suggestionsBox.querySelectorAll(".suggestion")].forEach((el, i) => {
+    el.addEventListener("click", () => {
+      const icon = matchedIcons[i];
+      input.value = icon.name;
+      navigator.clipboard.writeText(`<i class="${icon.name}"></i>`);
+      renderGrid([icon]);
+      suggestionsBox.innerHTML = `<div class="suggestion">✅ Copied <i aria-label="Copy ${icon.name}">${icon.name}</i>!</div>`;
+      setTimeout(() => (suggestionsBox.innerHTML = ""), 1000);
+    });
+  });
+
+  suggestionsBox.style.display = "block";
+}
+
+/* ----------------------------- Render Icon Grid --------------------------- */
+function renderGrid(list, reset = true) {
+  noResultsContainer.innerHTML = "";
+  if (!list.length) {
+    showNoResults();
+    totalResults.textContent = "Showing 0 of 0 icon(s)";
+    return;
+  }
+
+  if (reset) {
+    currentOffset = 0;
+    currentList = list;
+  }
+
+  const slice = currentList.slice(0, currentOffset + MAX_ICONS_DISPLAY);
+
+  grid.innerHTML = slice.map(icon => `
+    <div class="icon-item" title="Click to copy" onclick="copyIcon(this, '${icon.name}')">
+      <i class="${icon.name}" aria-label="Copy ${icon.name}"></i>
+      <span class="icon-name">${icon.category}</span>
+      <span class="copied">Copied!</span>
+    </div>
+  `).join("");
+
+  totalResults.textContent = `Showing ${slice.length} of ${currentList.length} icon(s)`;
+  loadMoreBtn.style.display = currentList.length > slice.length ? "block" : "none";
+}
+
+/* ---------------------------- Load More Function -------------------------- */
+loadMoreBtn.addEventListener("click", () => {
+  loadMoreBtn.classList.add("button-loading");
+  loadMoreBtn.innerHTML='  Fectch more icons...'
+
+  setTimeout(() => {
+    currentOffset += MAX_ICONS_DISPLAY;
+    renderGrid(currentList, false);
+    loadMoreBtn.classList.remove("button-loading");
+    loadMoreBtn.innerHTML = "  Load More";
+  }, 500);
+});
+
+
+/* ------------------------------- Search Logic ----------------------------- */
+const handleSearch = debounce(() => {
+  const query = input.value.trim();
+  const category = categorySelect.value;
+
+  let list = icons;
+  if (category !== "all") list = list.filter(icon => icon.category === category);
+
+  if (query) {
+    const results = fuse.search(query);
+    list = results.map(r => r.item).filter(icon => category === "all" || icon.category === category);
+
+    if (!list.length) {
+      renderSuggestions(query);
+      grid.innerHTML = "";
+      showNoResults(query);
+      totalResults.textContent = "Showing 0 of 0 icon(s)";
+      return;
+    }
+    renderSuggestions(query);
+  } else {
+    suggestionsBox.style.display = "none";
+  }
+
+  renderGrid(list);
+}, 150);
+
+/* ------------------------------ Initialization ---------------------------- */
+async function init() {
+  try {
+     loader.classList.remove("hidden");
+    grid.classList.add("hidden");
+    
+    icons = await loadIcons();
+    fuse = new Fuse(icons, { keys: ["name", "category"], threshold: 0.3 });
+
+    const categories = ["all", ...new Set(icons.map(i => i.category).sort())];
+    categorySelect.innerHTML = categories
+      .map(c => `<option value="${c}">${c === "all" ? "All Categories" : c}</option>`)
+      .join("");
+
+      requestAnimationFrame(() =>  renderGrid(icons));
+
+
+  } catch (err) {
+    console.error("Error loading icons:", err);
+  }finally {
+    // Hide loader once rendering is done
+    loader.classList.add("hidden");
+    grid.classList.remove("hidden");
+  }
+}
+
+init();
+
+/* ------------------------------- Event Hooks ------------------------------ */
+input.addEventListener("input", () => {
+  clearBtn.style.display = input.value ? "block" : "none";
+  handleSearch();
+});
+
+clearBtn.addEventListener("click", () => {
+  input.value = "";
+  clearBtn.style.display = "none";
+  suggestionsBox.style.display = "none";
+  categorySelect.value = "all";
+  renderGrid(icons);
+  input.focus();
+});
+
+categorySelect.addEventListener("change", handleSearch);
+
+document.addEventListener("click", e => {
+  if (!e.target.closest(".autocomplete")) suggestionsBox.style.display = "none";
+});
+
+
+function toDisplayName(name) {
+      // Remove "icon-" prefix and category parts, convert to readable title case
+      const cleaned = name.replace(/^icon-/, '').replace(/[_-]+/g, ' ');
+      return cleaned
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+    }
+
+    function getCategory(name) {
+      if (name.includes('social')) return 'social';
+      if (name.includes('media')) return 'media';
+      if (name.includes('arrow')) return 'arrows';
+      if (name.includes('ui') || name.includes('layout')) return 'ui';
+      if (name.includes('file') || name.includes('folder')) return 'files';
+      if (name.includes('system') || name.includes('settings')) return 'system';
+      if (name.includes('weather')) return 'weather';
+      if (name.includes('transport') || name.includes('car') || name.includes('ship')) return 'transport';
+      if (name.includes('food') || name.includes('drink')) return 'food';
+      if (name.includes('device') || name.includes('mobile') || name.includes('desktop')) return 'devices';
+      return 'misc';
+    }
+
+    async function extractIconsAsJSON(url) {
+      const response = await fetch(url);
+      const cssText = await response.text();
+
+      const regex = /\.icon-[a-zA-Z0-9_-]+:before\s*{\s*content:\s*["'](\\[a-fA-F0-9]+)["'];?\s*}/g;
+      let match;
+      const icons = [];
+
+      while ((match = regex.exec(cssText)) !== null) {
+        const className = match[0].match(/\.icon-[a-zA-Z0-9_-]+/)[0].replace('.', '');
+        const unicode = match[1];
+        icons.push({
+          name: className,
+          unicode: unicode,
+          category: getCategory(className)
+        });
+      }
+
+      // Sort alphabetically by name
+      icons.sort((a, b) => a.name.localeCompare(b.name));
+      return icons;
+    }
+
+
+
   docsearch({
   container: '#docsearch',
   appId: 'NA27DKZC6X',

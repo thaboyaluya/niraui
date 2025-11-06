@@ -6,37 +6,32 @@
 <head>
 <meta charSet="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/><meta http-equiv="content-type" content="text/html;charset=utf-8" />
-
-
 <link rel="stylesheet" href="../public/github.css">
 <link rel="stylesheet" href="../public/nira.css"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4" />
-
-
-
-
-<title>How to Install NiraUI – Tailwind CSS Plugin Guide
+<title> Free Tailwind CSS Icon Library - NiraUI Icons 
 </title>
-<meta name="description" content="Quick start guide to install NiraUI. Add it as a Tailwind CSS plugin with NPM or use it from a CDN for rapid prototyping."/>
-<meta name="keywords" content="introduction,guide,nextjs,documents"/>
+<meta name="description" content="NiraUI Icons is an open-source collection of beautiful, consistent, and responsive icons built for Tailwind CSS. Search, copy, and customize icons for your next project."/>
+<meta name="keywords" content="NiraUI Icons, Tailwind icons, open source icon library, SVG icons, CSS icons, web icons, free icons, NiraUI, Tailwind CSS plugin, developer tools, frontend UI components"/>
 
-
-<meta property="og:title" content="Install NiraUI | Tailwind Components"/>
-<meta property="og:description" content="Quick start guide to install NiraUI. Add it as a Tailwind CSS plugin with NPM or use it from a CDN for rapid prototyping."/>
+<meta property="og:title" content="Free Tailwind CSS Icon Library - NiraUI Icons "/>
+<meta property="og:description" content="NiraUI Icons is an open-source collection of beautiful, consistent, and responsive icons built for Tailwind CSS. Search, copy, and customize icons for your next project."/>
 <meta property="og:url" content=""/>
-<meta property="og:site_name" content="Documents"/>
+<meta property="og:site_name" content="Free Tailwind CSS Icon Library - NiraUI Icons "/>
 <meta property="og:image" content="../img/nira homepage.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="How to Install NiraUI – Tailwind CSS Plugin Guide"/>
+<meta property="og:image:alt" content="Free Tailwind CSS Icon Library - NiraUI Icons "/>
 <meta property="og:type" content="website"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:site" content="@RubixStudios"/>
-<meta name="twitter:title" content="How to Install NiraUI – Tailwind CSS Plugin Guide"/>
-<meta name="twitter:description" content="This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements."/>
+<meta name="twitter:site" content="@"/>
+<meta name="twitter:title" content="Free Tailwind CSS Icon Library - NiraUI Icons "/>
+<meta name="twitter:description" content="NiraUI Icons is an open-source collection of beautiful, consistent, and responsive icons built for Tailwind CSS. Search, copy, and customize icons for your next project."/>
 <meta name="twitter:image" content="../img/nira homepage.png"/>
-<meta name="twitter:image:alt" content="How to Install NiraUI – Tailwind CSS Plugin Guide"/>
+<meta name="twitter:image:alt" content="NiraUI Documentation"/>
 <meta name="robots" content="index,follow">
 <link rel="icon" href="../img/nira-ui-logo-transparent.ico" type="image/x-icon" sizes="48x48"/>
+<link rel="stylesheet" href="../icons/style.css">
+<script src="../fuzzy.js"></script>
 
 <script type="application/ld+json">
 {
@@ -51,14 +46,283 @@
   ,{
     "@type": "ListItem", 
     "position": 2, 
-    "name": "install",
-    "item": "https://niraui.onrender.com/docs/installation.html"  
+    "name": "customize",
+    "item": "https://niraui.onrender.com/docs/niraicons.html"  
   }
- 
-  
+
   ]
 }
 </script>
+
+<style>
+
+  .autocomplete {
+  position: relative;
+}
+
+/* Suggestions dropdown */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-base-100);
+  border: 1px solid var(--color-base-300);
+  border-radius: var(--radius-selector,6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-top: 0.5rem;
+  z-index: 50;
+  overflow: hidden;
+  display: none;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.suggestion:hover {
+  background: var(--color-base-200);
+}
+
+.suggestion .name {
+  font-size: 0.95rem;
+  color: var(--color-base-content);
+  font-weight: 500;
+}
+
+.suggestion .category {
+  font-size: 0.8rem;
+  color: var(--color-base-content);
+}
+
+.icon-preview i {
+  font-size: 1.2rem;
+  color: var(--color-base-content);
+}
+
+
+  
+
+.total-results {
+  font-size: 0.9rem;
+  color: var(--color-base-content);
+  margin: 0.5rem 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+
+
+    .icons-grid {
+    
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+      gap: 1rem;
+    }
+    .icons-grid > * {
+  max-width: 120px; /* or whatever fits your design */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+    .icon-item {
+      border-radius: var(--radius-selector,6px);
+      cursor:pointer;
+      padding: .5rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      transition: transform 0.15s ease;
+    }
+
+    .icon-item:hover {
+      transform: scale(1.05);
+    }
+
+
+    .icon-item small {
+      font-size: 12px;
+      word-break: break-word;
+    }
+
+    
+
+ .copied {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: var(--color-primary);
+      color: var(--color-base-100);
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: var(--radius-selector,6px);
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.3s;
+    }
+
+    .icon-item.copied-active .copied {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+
+
+    .name {
+      font-size: 0.9rem;
+      color: #222;
+    }
+    .category {
+      font-size: 0.75rem;
+      color: #777;
+    }
+
+
+    .icon-browser {
+ 
+  margin: 0 auto;
+  padding: 2rem;
+ 
+}
+
+/* Search bar and controls */
+.icons-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+
+
+
+
+
+
+/* Icon card */
+.icon-item {
+  background: var(--color-base-100);
+  border: 1px solid var(--color-base-300);
+  border-radius: var(--radius-selector,6px);
+  text-align: center;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.icon-item i {
+  font-size: 1.8rem;
+  color: var(--color-base-content);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.icon-item:hover {
+
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.icon-name {
+  font-size: 0.85rem;
+  color: var(--color-base-content);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Copied state */
+.icon-item.copied-active {
+  background: var(--color-base-100);
+  opacity:0.8;
+  border-color: var(--color-success);
+}
+
+.icon-item.copied-active .icon-name {
+  color: var(--color-success);
+}
+
+/* Total results */
+.total-results {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--color-base-content);
+  font-size: 0.9rem;
+}
+
+.icon-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  color: var(--color-base-content);
+  font-size: 0.95rem;
+  transition: opacity 0.3s ease;
+}
+
+.icon-loader.hidden {
+  display: none;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--color-primary);
+  border-top-color: var(--color-base-content);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-bottom: 0.75rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.niraui-button {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),box-shadow 0.3s ease,background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.niraui-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.niraui-button:hover::after {
+  left: 125%;
+}
+
+
+
+
+
+
+</style>
 
 </head>
 
@@ -141,8 +405,8 @@
 
 <path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
 
-<select class="select" onchange="setTheme(this.value)" id="theme-toggle">
-  <option value="light">Light</option>
+<select class="select"  onchange="setTheme(this.value)" id="theme-toggle">
+  <option value="light" >Light</option>
   <option value="dark">Dark</option>
   <option value="system">System</option>
   <option value="storm">Storm</option>
@@ -189,7 +453,7 @@
                         </li>
 
                         <li class="py-0.5">
-                            <a href="../docs/installation.html" class="menu-item menu-active" >Installation</a>
+                            <a href="../docs/installation.html" class="menu-item" >Installation</a>
                         </li>
                         <li class="py-0.5">
                             <a href="../docs/usage.html" class="menu-item" >Usage</a>
@@ -199,8 +463,9 @@
                         </li>
                         <li class="py-0.5">
                             <a href="../docs/theme.html" class="menu-item " >Theme</a>
-                        </li><li class="py-0.5">
-                            <a href="../docs/niraicons.html" class="menu-item " >NiraUI Icons
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/niraicons.html" class="menu-item menu-active" >NiraUI Icons
                             <div class="tag-container">
                         <div class="tag-slide">
                             <div aria-hidden="true" class="slide-self">
@@ -211,6 +476,7 @@
                         </div>
                     </div></a>
                         </li>
+                       
                     </ul>
                 </section>
                 <div class="divider my-0"></div>
@@ -442,6 +708,7 @@
 
 <div class="grid gap-10 grid-cols-1 sm:grid-cols-2  xl:grid-cols-3">
 
+ 
     <section class="pt-10 sm:pl-[6rem] md:pl-[6.5rem] lg:pl-0 col-span-2">
         <div class="w-fit">
             <label for="sidebar-mobile-fixed" class="button-primary button sm:hidden">Open Sidebar</label>
@@ -473,7 +740,7 @@
                     </li>
                     <li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5"><a
                             data-slot="breadcrumb-link" class="hover:text-foreground transition-colors"
-                            href="./introduction.html">Introduction</a></li>
+                            href="../docs/usage.html">Usage</a></li>
                     <li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true"
                         class="[&amp;&gt;svg]:size-3.5">
                         <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
@@ -484,7 +751,7 @@
                     </li>
                     <li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5"><span
                             data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page"
-                            class="text-foreground font-normal b">Installation</span></li>
+                            class="text-foreground font-normal b">Free Tailwind CSS Icon Library - NiraUI Icons</span></li>
                 </ol>
             </nav>
         </div>
@@ -492,116 +759,171 @@
         <div class="typography ">
 
 
-            <h1 class="!mb-2 text-3xl !font-semibold">🚀 NiraUI Installation Guide
+            <h1 class="!mb-2 text-3xl !font-semibold">Free Tailwind CSS Icon Library - NiraUI Icons 
+
             </h1>
 
-            <p class="text-base text-base-content/70 my-4">NiraUI is a lightweight Tailwind CSS plugin packed with prebuilt, customizable UI components - buttons, cards, alerts, and more.
-No extra JavaScript, no complex setup — just pure CSS that works anywhere.</p>
+             <p class="text-base text-base-content/70 my-4">
+              NiraUI Icons is an open-source collection of beautiful, consistent, and responsive icons built for Tailwind CSS. Search, copy, and customize icons with tailwind css for your next project.
+                </p>
 
-            <p class="text-base text-base-content/70 my-4">Whether you’re building with <strong>Next.js</strong>, <strong>React</strong>, <strong>Vite</strong>, or <strong>plain HTML</strong>, installing NiraUI takes less than a minute</p>
+<div class="icon-browser">
+  <div class="icons-header flex-col md:flex-row">
+    
+    <div class="autocomplete relative flex flex-col w-full max-w-xl mx-auto">
+  <input
+    id="searchInput"
+    type="text"
+    class="input input-lg w-full"
+    placeholder="Search over 3,000+ icons…"
+    aria-label="Search over 3,000+ icons…"
+  />
+  <div id="suggestions" class="suggestions"></div>
+</div>
+
+    
+
+
+    <select id="categoryFilter" class="select select-lg"></select>
+      <div id="suggestions" class="suggestions"></div>
+      <div id="copyMessage" class="fixed  hidden top-5 right-5 z-50 px-4 py-2 card block">
+ <p> ✅ Copied <i id="copiedIcon"></i>!</p>
+</div>
+    <button id="clearBtn" class="button button-danger  button-lg">Clear</button>
+  </div>
+<div id="noResultsContainer"></div>
+<div id="iconLoader" class="icon-loader hidden">
+<span class="loading loading-spinner loading-xl"></span>
+</div>
+  <div id="iconGrid" class="icons-grid"></div>
+  <button id="loadMoreBtn" class="button button-lg mx-auto gap-2 my-10">Load More</button>
+  <div id="totalResults" class="total-results"></div>
+</div>
+
+
 
             <section>
-  
-                
-     
-                <h2 class="!mb-2 text-3xl !font-semibold my-4" id="install-nira-ui">Method 1: Install via NPM (Recommended)</h2>
 
- <p class="text-sm md:text-base text-base-content/70 mb-4">If you’re using Tailwind CSS with build tools like <strong>Vite</strong>, <strong>Next.js</strong>, or <strong>React</strong>, this is the best way to install NiraUI.</p>
 
+
+
+
+
+
+
+<h2 id="how-to-install-nira-ui-icons" class="!mb-2 text-3xl !font-semibold mt-3">How to install a free Tailwind CSS Icon Library - NiraUI Icons </h2>
  
 
 
-           <p class="text-base text-base-content/70 my-4">Before installing, make sure you have: <a class=" link-underline"
-                        href="https://nodejs.org/en/download/">Node.js</a> (v16 or higher) and <a class=" link-underline"
-                        href="https://tailwindcss.com/docs/installation/" target="_blank"
-                        rel="noopener noreferrer">Tailwind CSS</a> installed.</p>
-                <p class="text-sm md:text-base text-base-content/70 mb-4">Step 1: Install NiraUI via NPM</p>
+                    <p class="text-base text-base-content/70 my-4">
+          You can install NiraUI Icons by adding the CSS file to your project. There are two main ways:
+                </p>
 
-           <p class="text-sm md:text-base text-base-content/70 mb-4">Run the following command in your project directory:</p>     
+   <h3 class="text-xl font-medium mb-2">1. Via CDN</h3>
+    <p class="text-base text-base-content/70 my-4">Add this link to the <code class="code">head</code> of your HTML:</p>
 
-
-
-                <figure class="highlight my-4 text-start">
-                    <pre><code data-language="javascript">npm i nira-ui</code></pre>
-                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
-                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></button>
-                </figure>
-
-
-                <p class="text-sm md:text-base text-base-content/70 mb-4">Add NiraUI as a Tailwind Plugin</p>
-
-                <p class="text-sm md:text-base text-base-content/70 mb-4">Import Tailwind and enable the NiraUI plugin in your main CSS file(<code class="code">app.css</code>, <code class="code">main.css</code>, or similar):</p>
-
-
-                <figure class="highlight my-4 text-start">
-                    <pre><code data-language="css">@import "tailwindcss";
-@plugin "nira-ui/plugin.js";</code></pre>
-                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
-                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></button>
-                </figure>
-
-<p class="text-sm md:text-base text-base-content/70 mb-4">🎉 That’s it! You can now use clean, prebuilt NiraUI class names like <strong>button</strong>, <strong>card</strong>, and <a class="link-underline" href="../components/index.html">more</a>.</p>
-
-<p class="text-sm md:text-base text-base-content/70 mb-4">Example:</p>
 <figure class="highlight my-4 text-start">
-    <pre><code data-language="html"><button class="button">Click Me</button></code></pre>
+<pre><code data-language="html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/thaboyaluya/nirauicons@master/nirauicon.css"&gt;
+</code></pre>
 <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
 viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path
-    d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
-    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 </svg></button>
 </figure>
 
-<button class="button">Click Me</button>
-           
+<h3 class="text-xl font-medium mb-2">2. Local Installation</h3>
 
+ <p class="text-base text-base-content/70 my-4">Copy the <code class="code">nirauicon.css</code> file in the ./dist folder in this <a href="https://github.com/thaboyaluya/nirauicons" title="NiraUIcons Github">repo</a> and place it in your project directory, then link it in your HTML:</p>
 
-                <h2 id="nira-ui-cdn" class="!mb-2 text-3xl !font-semibold mt-3">Method 2: Use NiraUI via CDN (No Installation Needed)
-                </h2>
-
-                <p class="text-base text-base-content/70 my-4">Just testing or working in a static HTML file?
-You can load NiraUI instantly from a CDN — no Node.js or build setup required.</p>
-
-
-                <p class="text-sm md:text-base text-base-content/70 mb-4">Add the following inside your  <code class="code">head</code> tag:</p>
-
-                <figure class="highlight my-2 text-left">
-                    <pre ><code data-language="html">
-&lt;link href="https://cdn.jsdelivr.net/gh/thaboyaluya/nira-ui@master/dist/nira.css" rel="stylesheet" type="text/css" /&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;
+<figure class="highlight my-4 text-start"><pre><code data-language="html">
+&lt;link rel="stylesheet" href=".path-to-your/nirauicons.css"&gt;
 </code></pre>
-                    <button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
-                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></button>
-                </figure>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
+    <p class="text-base text-base-content/70 mb-4">Your code stays clean, readable, and theme-ready perfect for scalable UIs.</p>
 
 
-<p class="text-base text-base-content/70 my-4">Now you can start using NiraUI classes right away no setup, no configuration.</p>
+        <section class="my-3">
+      <h2 class="text-2xl mb-4">Notes</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li class="text-base text-base-content/70 my-4">Ensure your CSS file path is correct if using local installation.</li>
+        <li class="text-base text-base-content/70 my-4">You can customize icon size with Tailwind classes, e.g., <code class="code">text-3xl</code>.</li>
+        <li class="text-base text-base-content/70 my-4">Colors can also be customized with Tailwind classes, e.g., <code class="code">text-red-500</code>.</li>
+      </ul>
+    </section>
+
+<h2 id="next-steps" class="!mb-2 text-3xl !font-semibold mt-3"> NiraUI Icons Sizes </h2>
+ 
 
 
 
-<h2 id="next-steps" class="!mb-2 text-3xl !font-semibold mt-3">Next Steps</h2>
+<i class="icon-carriage-baby text-4xl"></i>
+<i class="icon-carriage-baby text-3xl"></i>
+<i class="icon-carriage-baby text-2xl"></i>
+<i class="icon-carriage-baby text-xl"></i>
+<i class="icon-carriage-baby text-lg"></i>
+<i class="icon-carriage-baby text-base"></i>
 
-<p class="text-base text-base-content/70 my-4">🎨 Explore the <a class="link-underline" href="../components/index.html">Component Library</a> — start building beautiful UIs faster</p>
+<figure class="highlight my-4 text-start"><pre><code data-language="html">
+<i class="icon-carriage-baby text-4xl"></i>
+<i class="icon-carriage-baby text-3xl"></i>
+<i class="icon-carriage-baby text-2xl"></i>
+<i class="icon-carriage-baby text-xl"></i>
+<i class="icon-carriage-baby text-lg"></i>
+<i class="icon-carriage-baby text-base"></i>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
 
-<p class="text-base text-base-content/70 my-4">🌗 Try Different <a class="link-underline" href="../docs/theme.html">Themes</a> — customize your project’s look and feel</p>
+
+<h2 id="next-steps" class="!mb-2 text-3xl !font-semibold mt-3"> NiraUI Colors</h2>
+ 
+
+<i class="icon-carriage-baby text-4xl text-primary"></i>
+<i class="icon-carriage-baby text-3xl text-secondary"></i>
+<i class="icon-carriage-baby text-2xl text-success"></i>
+<i class="icon-carriage-baby text-xl text-danger"></i>
+<i class="icon-carriage-baby text-lg text-warning"></i>
+<i class="icon-carriage-baby text-base text-orange-600"></i>
+
+
+<figure class="highlight my-4 text-start"><pre><code data-language="html">
+<i class="icon-carriage-baby text-4xl text-primary"></i>
+<i class="icon-carriage-baby text-3xl text-secondary"></i>
+<i class="icon-carriage-baby text-2xl text-success"></i>
+<i class="icon-carriage-baby text-xl text-danger"></i>
+<i class="icon-carriage-baby text-lg text-warning"></i>
+<i class="icon-carriage-baby text-base text-orange-600"></i>
+</code></pre>
+<button data-clipboard-snippet="" class="button button-primary p-2 bd-copy "><svg class="h-4 w-4"
+viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path
+d="M8 16V18.8C8 19.9201 8 20.4802 8.21799 20.908C8.40973 21.2843 8.71569 21.5903 9.09202 21.782C9.51984 22 10.0799 22 11.2 22H18.8C19.9201 22 20.4802 22 20.908 21.782C21.2843 21.5903 21.5903 21.2843 21.782 20.908C22 20.4802 22 19.9201 22 18.8V11.2C22 10.0799 22 9.51984 21.782 9.09202C21.5903 8.71569 21.2843 8.40973 20.908 8.21799C20.4802 8 19.9201 8 18.8 8H16M5.2 16H12.8C13.9201 16 14.4802 16 14.908 15.782C15.2843 15.5903 15.5903 15.2843 15.782 14.908C16 14.4802 16 13.9201 16 12.8V5.2C16 4.0799 16 3.51984 15.782 3.09202C15.5903 2.71569 15.2843 2.40973 14.908 2.21799C14.4802 2 13.9201 2 12.8 2H5.2C4.0799 2 3.51984 2 3.09202 2.21799C2.71569 2.40973 2.40973 2.71569 2.21799 3.09202C2 3.51984 2 4.07989 2 5.2V12.8C2 13.9201 2 14.4802 2.21799 14.908C2.40973 15.2843 2.71569 15.5903 3.09202 15.782C3.51984 16 4.07989 16 5.2 16Z"
+stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg></button>
+</figure>
 
 
 
-<p class="text-base text-base-content/70 my-4">NiraUI helps developers ship modern, responsive designs faster all powered by Tailwind CSS.
-Whether you’re building your first landing page or a production-grade dashboard, NiraUI makes your workflow smoother and your code cleaner.</p>
+
+
+
+
+
+
+
 
 
             </section>
@@ -610,20 +932,20 @@ Whether you’re building your first landing page or a production-grade dashboar
     <div>
         <a
             class="button"
-            href="../docs/introduction.html"
+            href="../docs/theme.html"
         >
             <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-[1rem] w-[1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                 <path d="m15 18-6-6 6-6"></path>
             </svg>
-            <p>Introduction</p>
+            <p>Theme</p>
         </a>
     </div>
     <div>
         <a
             class="button"
-            href="../docs/usage.html"
+            href="../components/button.html"
         >
-            <p>Usage</p>
+            <p>Button</p>
             <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-[1rem] w-[1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                 <path d="m9 18 6-6-6-6"></path>
             </svg>
@@ -651,9 +973,8 @@ Whether you’re building your first landing page or a production-grade dashboar
                     <div style="min-width:100%;display:table">
 
                         <div class="flex flex-col gap-2.5 text-sm">
-                            <a class="pl-0" href="#install-nira-ui">How to Install NiraUI ?</a>
-                            <a class="pl-0" href="#nira-ui-cdn">NiraUI CDN</a>
-                            <a class="pl-0" href="#next-steps">Next Steps</a>
+                            <a class="pl-0" href="#how-to-install-nira-ui-icons">How to install a free Tailwind CSS Icon Library - NiraUI Icons</a>
+                           
 
                         </div>
                     </div>
@@ -679,7 +1000,7 @@ Whether you’re building your first landing page or a production-grade dashboar
 
             </div>
         </div><button
-            class="ml-2 flex cursor-pointer items-center opacity-0 transition mt-6 self-start text-sm " id="scroll-top"><svg
+            class="ml-2 flex cursor-pointer items-center opacity-0 transition mt-6 self-start text-sm" id="scroll-top"><svg
                 stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
                 stroke-linejoin="round" class="mr-1 inline-block h-4 w-4 align-middle" height="1em" width="1em"
                 xmlns="http://www.w3.org/2000/svg">
@@ -693,6 +1014,36 @@ Whether you’re building your first landing page or a production-grade dashboar
             </span></button>
     </aside>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
 </div>
 	
 
@@ -718,12 +1069,355 @@ Whether you’re building your first landing page or a production-grade dashboar
 <script src="../public/clipboard.js"></script>
 <script src="../public/script.js"></script> <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script>
 <script>
+
+
+
+
+const input = document.getElementById("searchInput");
+const clearBtn = document.getElementById("clearBtn");
+const grid = document.getElementById("iconGrid");
+const suggestionsBox = document.getElementById("suggestions");
+const categorySelect = document.getElementById("categoryFilter");
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+const totalResults = document.getElementById("totalResults");
+const noResultsContainer = document.getElementById("noResultsContainer");
+const loader = document.getElementById("iconLoader");
+
+let icons = [];
+let fuse;
+
+const MAX_ICONS_DISPLAY = 50;
+let currentOffset = 0;
+let currentList = [];
+
+/* ---------------------------- Utility Functions --------------------------- */
+const debounce = (fn, delay = 200) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn(...args), delay);
+  };
+};
+
+/* ------------------------------- Load Icons ------------------------------- */
+async function loadIcons() {
+  try {
+    const response = await fetch('../icons/icons.json', {
+      cache: 'force-cache', // 🧠 Use browser cache if available
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (!response.ok) throw new Error(`Failed to load icons.json (${response.status})`);
+
+    // Return parsed JSON
+    return await response.json();
+
+  } catch (error) {
+    console.warn("⚠️ Could not fetch icons from cache, retrying network...");
+
+    // 🔁 Retry without cache (in case the file changed or cache is invalid)
+    const freshResponse = await fetch('../icons/icons.json', { cache: 'reload' });
+    if (!freshResponse.ok) throw new Error("Failed to reload icons.json from network");
+
+    return await freshResponse.json();
+  }
+}
+
+/* ---------------------------- Copy to Clipboard --------------------------- */
+window.copyIcon = (el, className) => {
+
+  try {navigator.clipboard.writeText(`<i class="${className}"></i>`); } catch (err) { console.warn('Clipboard failed:', err); }
+
+  el.classList.add("copied-active");
+  setTimeout(() => el.classList.remove("copied-active"), 1000);
+};
+
+/* ------------------------------ No Results UI ----------------------------- */
+function showNoResults(query) {
+  noResultsContainer.innerHTML = `
+<div class="pt-10 pb-16 sm:pt-24 sm:pb-36 lg:pt-40 lg:pb-56 text-center">
+    <svg width="96" height="96" fill="none" class="mx-auto mb-6 text-base-content">
+        <path
+            d="M36 28.024A18.05 18.05 0 0025.022 39M59.999 28.024A18.05 18.05 0 0170.975 39"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        ></path>
+        <ellipse cx="37.5" cy="43.5" rx="4.5" ry="7.5" fill="currentColor"></ellipse>
+        <ellipse cx="58.5" cy="43.5" rx="4.5" ry="7.5" fill="currentColor"></ellipse>
+        <path
+            d="M24.673 75.42a9.003 9.003 0 008.879 5.563m-8.88-5.562A8.973 8.973 0 0124 72c0-7.97 9-18 9-18s9 10.03 9 18a9 9 0 01-8.448 8.983m-8.88-5.562C16.919 68.817 12 58.983 12 48c0-19.882 16.118-36 36-36s36 16.118 36 36-16.118 36-36 36a35.877 35.877 0 01-14.448-3.017"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        ></path>
+        <path
+            d="M41.997 71.75A14.94 14.94 0 0148 70.5c2.399 0 4.658.56 6.661 1.556a3 3 0 003.999-4.066 12 12 0 00-10.662-6.49 11.955 11.955 0 00-7.974 3.032c1.11 2.37 1.917 4.876 1.972 7.217z"
+            fill="currentColor"
+        ></path>
+    </svg>
+    <p class="text-lg leading-5 font-medium mb-3">Sorry! There are no icon name “${query}” in ${categorySelect.value} category.</p>
+       <p class="text-lg leading-5 font-medium mb-3">Please broaden your search query or check a different category.</p>
+</div>
+
+  `;
+  loadMoreBtn.style.display = "none";
+}
+
+/* -------------------------- Render Fuzzy Suggestions ---------------------- */
+function renderSuggestions(query) {
+  suggestionsBox.innerHTML = "";
+  if (!query.trim()) {
+    suggestionsBox.style.display = "none";
+    return;
+  }
+
+  const names = icons.map(i => i.name);
+  const results = fuse.search(query.toLowerCase(), names);
+  const matchedNames = results.map(r => r.string);
+  let matchedIcons = icons.filter(icon => matchedNames.includes(icon.name));
+
+  if (matchedIcons.length < 8) {
+    const partials = icons.filter(icon =>
+      icon.name.toLowerCase().includes(query.toLowerCase())
+    );
+    matchedIcons = [...new Set([...matchedIcons, ...partials])];
+  }
+
+  if (!matchedIcons.length) {
+    suggestionsBox.style.display = "none";
+    return;
+  }
+
+  suggestionsBox.innerHTML = matchedIcons.slice(0, 8).map(icon => `
+    <div class="suggestion">
+      <div>
+        <div class="name">${icon.name}</div>
+        <div class="category">${icon.category}</div>
+      </div>
+      <div class="icon-preview"><i class="${icon.name}" aria-label="Copy ${icon.name}"></i></div>
+    </div>
+  `).join("");
+
+  [...suggestionsBox.querySelectorAll(".suggestion")].forEach((el, i) => {
+    el.addEventListener("click", () => {
+      const icon = matchedIcons[i];
+      input.value = icon.name;
+      navigator.clipboard.writeText(`<i class="${icon.name}"></i>`);
+      renderGrid([icon]);
+      suggestionsBox.innerHTML = `<div class="suggestion">✅ Copied <i aria-label="Copy ${icon.name}">${icon.name}</i>!</div>`;
+      setTimeout(() => (suggestionsBox.innerHTML = ""), 1000);
+    });
+  });
+
+  suggestionsBox.style.display = "block";
+}
+
+/* ----------------------------- Render Icon Grid --------------------------- */
+function renderGrid(list, reset = true) {
+  noResultsContainer.innerHTML = "";
+  if (!list.length) {
+    showNoResults();
+    totalResults.textContent = "Showing 0 of 0 icon(s)";
+    return;
+  }
+
+  if (reset) {
+    currentOffset = 0;
+    currentList = list;
+  }
+
+  const slice = currentList.slice(0, currentOffset + MAX_ICONS_DISPLAY);
+
+  grid.innerHTML = slice.map(icon => `
+    <div class="icon-item" title="Click to copy" onclick="copyIcon(this, '${icon.name}')">
+      <i class="${icon.name}" aria-label="Copy ${icon.name}"></i>
+      <span class="icon-name">${icon.category}</span>
+      <span class="copied">Copied!</span>
+    </div>
+  `).join("");
+
+  totalResults.textContent = `Showing ${slice.length} of ${currentList.length} icon(s)`;
+  loadMoreBtn.style.display = currentList.length > slice.length ? "block" : "none";
+}
+
+/* ---------------------------- Load More Function -------------------------- */
+loadMoreBtn.addEventListener("click", () => {
+  loadMoreBtn.classList.add("button-loading");
+  loadMoreBtn.innerHTML='  Fectch more icons...'
+
+  setTimeout(() => {
+    currentOffset += MAX_ICONS_DISPLAY;
+    renderGrid(currentList, false);
+    loadMoreBtn.classList.remove("button-loading");
+    loadMoreBtn.innerHTML = "  Load More";
+  }, 500);
+});
+
+
+/* ------------------------------- Search Logic ----------------------------- */
+const handleSearch = debounce(() => {
+  const query = input.value.trim();
+  const category = categorySelect.value;
+
+  let list = icons;
+  if (category !== "all") list = list.filter(icon => icon.category === category);
+
+  if (query) {
+    const results = fuse.search(query);
+    list = results.map(r => r.item).filter(icon => category === "all" || icon.category === category);
+
+    if (!list.length) {
+      renderSuggestions(query);
+      grid.innerHTML = "";
+      showNoResults(query);
+      totalResults.textContent = "Showing 0 of 0 icon(s)";
+      return;
+    }
+    renderSuggestions(query);
+  } else {
+    suggestionsBox.style.display = "none";
+  }
+
+  renderGrid(list);
+}, 150);
+
+/* ------------------------------ Initialization ---------------------------- */
+async function init() {
+  try {
+     loader.classList.remove("hidden");
+    grid.classList.add("hidden");
+    
+    icons = await loadIcons();
+    fuse = new Fuse(icons, { keys: ["name", "category"], threshold: 0.3 });
+
+    const categories = ["all", ...new Set(icons.map(i => i.category).sort())];
+    categorySelect.innerHTML = categories
+      .map(c => `<option value="${c}">${c === "all" ? "All Categories" : c}</option>`)
+      .join("");
+
+      requestAnimationFrame(() =>  renderGrid(icons));
+
+
+  } catch (err) {
+    console.error("Error loading icons:", err);
+  }finally {
+    // Hide loader once rendering is done
+    loader.classList.add("hidden");
+    grid.classList.remove("hidden");
+  }
+}
+
+init();
+
+/* ------------------------------- Event Hooks ------------------------------ */
+input.addEventListener("input", () => {
+  clearBtn.style.display = input.value ? "block" : "none";
+  handleSearch();
+});
+
+clearBtn.addEventListener("click", () => {
+  input.value = "";
+  clearBtn.style.display = "none";
+  suggestionsBox.style.display = "none";
+  categorySelect.value = "all";
+  renderGrid(icons);
+  input.focus();
+});
+
+categorySelect.addEventListener("change", handleSearch);
+
+document.addEventListener("click", e => {
+  if (!e.target.closest(".autocomplete")) suggestionsBox.style.display = "none";
+});
+
+
+function toDisplayName(name) {
+      // Remove "icon-" prefix and category parts, convert to readable title case
+      const cleaned = name.replace(/^icon-/, '').replace(/[_-]+/g, ' ');
+      return cleaned
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+    }
+
+    function getCategory(name) {
+      if (name.includes('social')) return 'social';
+      if (name.includes('media')) return 'media';
+      if (name.includes('arrow')) return 'arrows';
+      if (name.includes('ui') || name.includes('layout')) return 'ui';
+      if (name.includes('file') || name.includes('folder')) return 'files';
+      if (name.includes('system') || name.includes('settings')) return 'system';
+      if (name.includes('weather')) return 'weather';
+      if (name.includes('transport') || name.includes('car') || name.includes('ship')) return 'transport';
+      if (name.includes('food') || name.includes('drink')) return 'food';
+      if (name.includes('device') || name.includes('mobile') || name.includes('desktop')) return 'devices';
+      return 'misc';
+    }
+
+    async function extractIconsAsJSON(url) {
+      const response = await fetch(url);
+      const cssText = await response.text();
+
+      const regex = /\.icon-[a-zA-Z0-9_-]+:before\s*{\s*content:\s*["'](\\[a-fA-F0-9]+)["'];?\s*}/g;
+      let match;
+      const icons = [];
+
+      while ((match = regex.exec(cssText)) !== null) {
+        const className = match[0].match(/\.icon-[a-zA-Z0-9_-]+/)[0].replace('.', '');
+        const unicode = match[1];
+        icons.push({
+          name: className,
+          unicode: unicode,
+          category: getCategory(className)
+        });
+      }
+
+      // Sort alphabetically by name
+      icons.sort((a, b) => a.name.localeCompare(b.name));
+      return icons;
+    }
+
+
+
+
+
   docsearch({
   container: '#docsearch',
   appId: 'NA27DKZC6X',
   indexName: 'NiraUI Documentation Website',
   apiKey: '89ed73c8a84edc8585b5c6cb90ec95cc'
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
 </script>
 </body>
 </html>

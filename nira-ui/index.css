@@ -366,3 +366,131 @@ pre .tag, pre .tag-name {
 
 
 @layer components { .customButton { @apply rounded-full bg-gradient-to-r from-orange-500 to-red-600 px-4 py-2 leading-[1.5em] inline-flex justify-center text-center items-center gap-2 text-base  shadow-xs select-none text-base-content duration-150 will-change-transform ease-in cursor-pointer disabled:opacity-50 disabled:pointer-events-none disabled:select-none active:scale-[0.98]; } }
+.animate-slide {
+    animation: slide 3s infinite
+}
+
+.tag-container {
+    position: relative;
+    height: max-content;
+    width: max-content;
+    overflow: hidden;
+    border-radius: var(--radius-selector,6px);
+}
+
+.slide-self {
+    position: absolute;
+    inset: calc(0.25rem * 0);
+    rotate: -20deg;
+    rotate: 20;
+    --tw-gradient-position: to right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+    --tw-gradient-from: transparent;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
+    --tw-gradient-via: color-mix(in oklab, var(--color-base-content)  10%, transparent);
+    --tw-gradient-via: color-mix(in oklab, var(--color-base-content) 5%, transparent);
+    z-index: calc(10 * -1);
+    --tw-scale-y: 125%;
+    --tw-scale-y: 1.25;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: -20deg;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .tag-slide {
+    animation: slide 3s infinite;
+    position: absolute;
+    inset: calc(0.25rem * 0);
+    height: calc(0.25rem * 16);
+    width: calc(0.25rem * 4);
+  }
+  .tag-content {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    column-gap: calc(0.25rem * 2);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-radius: var(--radius-selector,6px);
+    border-color: color-mix(in oklab, var(--color-base-300) 47%, transparent);
+    background-color: color-mix(in oklab, var(--color-base-200) 5%, transparent);
+    padding: calc(0.25rem * 0.5);
+    padding-left: calc(0.25rem * 2.5);
+    &::before {
+      content: var(--tw-content);
+      bottom: -1px;
+      height: 1px;
+      width: calc(3/5 * 100%);
+      --tw-gradient-via: var(--color-base-content);
+      @supports (color: color-mix(in lab, red, red)) {
+        --tw-gradient-via: color-mix(in oklab, var(--color-base-content) 40%, transparent);
+      }
+      --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+      position: absolute;
+      inset-inline: calc(0.25rem * 4);
+      --tw-scale-y: 110%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+      --tw-gradient-position: to right in oklab;
+      background-image: linear-gradient(var(--tw-gradient-stops));
+      --tw-gradient-from: transparent;
+      --tw-gradient-to: transparent;
+    }
+    --tw-shadow: 0 1px var(--tw-shadow-color, rgb(0 0 0 / 0.05));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .tag-only {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    column-gap: calc(0.25rem * 2);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-radius: var(--radius-selector,6px);
+    border-color: color-mix(in oklab, var(--color-base-300) 47%, transparent);
+    background-color: color-mix(in oklab, var(--color-base-200) 5%, transparent);
+    &::before {
+      content: var(--tw-content);
+      --tw-gradient-via: var(--color-base-content);
+      @supports (color: color-mix(in lab, red, red)) {
+        --tw-gradient-via: color-mix(in oklab, var(--color-base-content) 40%, transparent);
+      }
+      --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+      position: absolute;
+      inset-inline: calc(0.25rem * 4);
+      bottom: -1px;
+      height: 1px;
+      width: calc(3/5 * 100%);
+      --tw-scale-y: 110%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+      --tw-gradient-position: to right in oklab;
+      background-image: linear-gradient(var(--tw-gradient-stops));
+      --tw-gradient-from: transparent;
+      --tw-gradient-to: transparent;
+    }
+    padding-inline: calc(0.25rem * 2);
+    padding-block: calc(0.25rem * 1);
+    --tw-shadow: 0 1px var(--tw-shadow-color, rgb(0 0 0 / 0.05));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  @keyframes slide {
+    0% {
+        transform: translate(-20rem)
+    }
+
+    25% {
+        transform: translate(-10rem)
+    }
+
+    to {
+        transform: translate(15rem)
+    }
+}
