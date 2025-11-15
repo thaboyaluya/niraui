@@ -100,7 +100,15 @@ Here’s a minimal HTML project you can use to test NiraUI quickly (via CDN):
     <h2 class="text-xl font-semibold">Card Example</h2>
     <p class="text-gray-600">This is a reusable NiraUI card component.</p>
   </div>
-</body>
+<script type="text/javascript" defer data-plerdy_code='1'>
+    var _protocol="https:"==document.location.protocol?"https://":"http://";
+    _site_hash_code = "67a0aec847ab7f84aa1f5f2eb8b5595b",_suid=68950, plerdyScript=document.createElement("script");
+    plerdyScript.setAttribute("defer",""),plerdyScript.dataset.plerdymainscript="plerdymainscript",
+    plerdyScript.src="https://a.plerdy.com/public/js/click/main.js?v="+Math.random();
+    var plerdymainscript=document.querySelector("[data-plerdymainscript='plerdymainscript']");
+    plerdymainscript&&plerdymainscript.parentNode.removeChild(plerdymainscript);
+    try{document.head.appendChild(plerdyScript)}catch(t){console.log(t,"unable add script tag")}
+</script></body>
 </html>
 ```
 
