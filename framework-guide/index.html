@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en" >
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+
+<head>
+<meta charSet="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/><meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+
+<link rel="stylesheet" href="../public/github.css">
+<link rel="stylesheet" href="../public/nira.css"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4" />
+
+
+
+
+<title>Framework guides - NiraUI
+</title>
+<meta name="description" content="Explore framework-specific guides to learn how to integrate NiraUI as a Tailwind CSS plugin with different frameworks and build tools."/>
+<meta name="keywords" content="introduction,guide,nextjs,documents"/>
+
+
+<meta property="og:title" content="Install NiraUI | Tailwind Components"/>
+<meta property="og:description" content="Explore framework-specific guides to learn how to integrate NiraUI as a Tailwind CSS plugin with different frameworks and build tools."/>
+<meta property="og:url" content=""/>
+<meta property="og:site_name" content="Documents"/>
+<meta property="og:image" content="../img/nira homepage.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Framework guides - NiraUI"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@RubixStudios"/>
+<meta name="twitter:title" content="Framework guides - NiraUI"/>
+<meta name="twitter:description" content="Explore framework-specific guides to learn how to integrate NiraUI as a Tailwind CSS plugin with different frameworks and build tools."/>
+<meta name="twitter:image" content="../img/nira homepage.png"/>
+<meta name="twitter:image:alt" content="Framework guides - NiraUI"/>
+<meta name="robots" content="index,follow">
+<link rel="icon" href="../img/nira-ui-logo-transparent.ico" type="image/x-icon" sizes="48x48"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/", 
+  "@type": "BreadcrumbList", 
+  "itemListElement": [{
+    "@type": "ListItem", 
+    "position": 1, 
+    "name": "home",
+    "item": "https://niraui.onrender.com/"  
+  }
+  ,{
+    "@type": "ListItem", 
+    "position": 2, 
+    "name": "install",
+    "item": "https://niraui.onrender.com/framework-guide/index.html"  
+  }
+ 
+  
+  ]
+}
+</script>
+
+</head>
+
+<body >
+<nav class="sticky top-0 z-50 h-16 w-full border-b px-2 border-base-300/47 backdrop-blur-xl backdrop-filter md:px-4">
+
+<div class="mx-auto flex h-full items-center justify-between p-1 sm:p-3 md:gap-2">
+
+<div class="flex items-center gap-5">
+
+
+<div class="flex items-center gap-6">
+
+<div><a class="flex items-center gap-2.5 logo" href="../index.html">
+
+    <img alt="NiraUI"  width="34" height="34" decoding="async" data-nimg="1" src="../img/nira-ui-logo-transparent.ico"/>
+
+<span class="text-md font-semibold hidden sm:flex">NiraUI
+</span>
+</a>
+</div>
+
+<div class="text-muted-foreground hidden items-center gap-5 text-sm font-medium md:flex">
+<a class="flex items-center gap-1 text-sm" href="../blog/index.html">Blog
+  
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+</a>
+
+ <a class="flex items-center gap-1 text-sm"  rel="noopener noreferrer" href="../components/index.html">Components
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+ <a class="flex items-center gap-1 text-sm" target="_blank" rel="noopener noreferrer" href="https://play.tailwindcss.com/c2N1LWcxyJ">Playround
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a> <a class="flex items-center gap-1 text-sm" target="_blank" rel="noopener noreferrer" href="https://discord.gg/SuvtAQtUfj">Discord
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+
+
+</div>
+
+
+</div>
+</div>
+
+<div class="flex items-center gap-2">
+
+<div>
+
+<div class="relative max-w-md flex-1 cursor-pointer" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_R_plb_" data-state="closed" data-slot="dialog-trigger">
+<div id="docsearch" class="bg-base-100 border-base-300/47"></div>
+</div>
+</div>
+
+<div class="flex gap-2 sm:ml-0"><a class="button" target="_blank" rel="noopener noreferrer" aria-label="View the repository on GitHub" href="https://github.com/thaboyaluya/nira-ui/">
+	
+	<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-[1.1rem] w-[1.1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+
+<path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
+
+<select class="select" onchange="setTheme(this.value)" id="theme-toggle">
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="system">System</option>
+  <option value="storm">Storm</option>
+ 
+    <option value="sunset">Sunset</option>
+	<option value="rose">Rose</option>
+	<option value="gold">Gold</option>
+  <option value="corporate">Corporate</option>
+   <option value="retro">Retro</option>
+   <option value="steel">Steel</option>
+   <option value="pastel">Pastel</option>
+   <option value="lofi">Lofi</option>
+   <option value="dracula">Dracula</option>
+	   <option value="midnight">Midnight</option>
+    
+ 
+  
+</select>
+
+
+</div>
+</div>
+</div></nav>
+<div id="loading-spinner">
+ <div class="spinner  spinner-xl spinner-primary" role="status" aria-label="loading">
+  <span class="sr-only">Loading...</span>
+</div>
+
+</div>
+
+<main class="h-auto px-5 sm:px-8">
+
+<div class="flex flex-row sm:gap-10">
+<div class="sm:w-full sm:max-w-[18rem]">
+    <input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state peer" />
+    <label for="sidebar-mobile-fixed" class="sidebar-overlay z-10"></label>
+    <aside class="sidebar border border-base-300/47 border-r sidebar-mobile sidebar-fixed-left h-full max-w-[18rem] justify-start bg-base-100 z-10   max-sm:fixed max-sm:-translate-x-full  peer-checked:translate-x-0">
+        <section class="sidebar-title items-center p-8"></section>
+        <section class="sidebar-content">
+            <nav class="menu rounded-md">
+                <section class="menu-section px-4">
+                    <span class="menu-title">Docs</span>
+                    <ul class="menu-items">
+                        <li class="py-0.5">
+                            <a href="../docs/introduction.html" class="menu-item " >Introduction</a>
+                        </li>
+
+                        <li class="py-0.5">
+                            <a href="../docs/installation.html" class="menu-item " >Installation</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../framework-guide/index.html" class="menu-item menu-active" >Framework Guide</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/usage.html" class="menu-item" >Usage</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/customize.html" class="menu-item" >Customization</a>
+                        </li>
+                        <li class="py-0.5">
+                            <a href="../docs/theme.html" class="menu-item " >Theme</a>
+                        </li><li class="py-0.5">
+                            <a href="../docs/niraicons.html" class="menu-item " >NiraUI Icons
+                            <div class="tag-container">
+                        <div class="tag-slide">
+                            <div aria-hidden="true" class="slide-self">
+                            </div>
+                        </div>
+                        <div class="tag-only">
+                            <span class="text-sm tracking-wide text-base-content">New Release</span>
+                        </div>
+                    </div></a>
+                        </li>
+                    </ul>
+                </section>
+                <div class="divider my-0"></div>
+                <section class="menu-section px-4">
+                    <span class="menu-title">Components</span>
+                    <ul class="menu-items">
+                        <li>
+                            <input type="checkbox" id="menu-2" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-2">
+                                <div class="flex gap-2">
+                                    <span>Form input</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                  
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/button.html" class="menu-item" >Button</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/button-group.html" class="menu-item" >Button Group</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/checkbox.html" class="menu-item" >Checkbox</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/form.html" class="menu-item" >Forms</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input-file.html" class="menu-item" >Input File</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input.html" class="menu-item" >Input</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/radio.html" class="menu-item" >Radio</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/input-range.html" class="menu-item" >Range</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/select.html" class="menu-item" >Select</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/textarea.html" class="menu-item" >Textarea</a>
+                                        </li>
+                                          <li class="py-0.5 ml-6">
+                                            <a href="../components/toggle.html" class="menu-item" >Toggle</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-3" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-3">
+                                <div class="flex gap-2">
+                                    <span>Navigation</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/breadcrumb.html" class="menu-item" >Breadcrumb</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/drawer.html" class="menu-item" >Drawer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/dropdown.html" class="menu-item" >Dropdown</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/footer.html" class="menu-item" >Footer</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/link.html" class="menu-item" >Link</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/navbar.html" class="menu-item" >Navbar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/sidebar.html" class="menu-item" >Sidebar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/tab.html" class="menu-item" >Tab</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="menu-4" class="menu-toggle" />
+                            <label class="menu-item justify-between" for="menu-4">
+                                <div class="flex gap-2">
+                                    <span>Informational</span>
+                                </div>
+                                <span class="menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </label>
+
+                            <div class="menu-item-collapse">
+                                <div class="min-h-0">
+                                    <ul>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/accordion.html" class="menu-item" >Accordion</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/alert.html" class="menu-item" >Alert</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/avatar.html" class="menu-item" >Avatar</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/badge.html" class="menu-item" >Badge</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/card.html" class="menu-item" >Card</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/divider.html" class="menu-item" >Divider</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/dot.html" class="menu-item" >Dot</a>
+                                        </li>
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/kbd.html" class="menu-item" >KBD</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/mockup-browser.html" class="menu-item" >Mockup Browser</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/mockup-code.html" class="menu-item" >Mockup code</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/modal.html" class="menu-item" >Modal</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/pagination.html" class="menu-item" >Pagination</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/progress.html" class="menu-item" >Progress</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/skeleton.html" class="menu-item" >Skeleton</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/spinner.html" class="menu-item" >Spinner</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/step.html" class="menu-item" >Step</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/table.html" class="menu-item" >Table</a>
+                                        </li>
+
+                                        <li class="py-0.5 ml-6">
+                                            <a href="../components/tooltip.html" class="menu-item" >Tooltip</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section> <div class="divider my-0 sm:hidden"></div>
+                <section class="menu-section px-4">
+<div class=" text-sm font-medium justify-items-start flex flex-col sm:hidden">
+<a class="flex menu-item items-center gap-1" href="../blog/index.html">Blog
+  
+</a>
+
+ <a class="flex menu-item items-center gap-1 "  rel="noopener noreferrer" href="../components/index.html">Components
+
+</a>
+
+ <a class="flex menu-item items-center gap-1 " target="_blank" rel="noopener noreferrer" href="https://play.tailwindcss.com/c2N1LWcxyJ">Tailwind Playround
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a> <a class="flex menu-item items-center gap-1 " target="_blank" rel="noopener noreferrer" href="https://discord.gg/SuvtAQtUfj">Discord
+ <svg stroke="currentColor" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3 align-super" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M7 7h10v10"></path>
+
+<path d="M7 17 17 7"></path></svg>
+
+</a>
+
+
+
+</div>
+                </section>
+            </nav>
+        </section>
+    </aside>
+</div>
+	
+
+<div class="grid gap-10 grid-cols-1 sm:grid-cols-2  xl:grid-cols-3">
+
+    <section class="pt-10 sm:pl-[6rem] md:pl-[6.5rem] lg:pl-0 col-span-2">
+        <div class="w-fit">
+            <label for="sidebar-mobile-fixed" class="button-primary button sm:hidden">Open Sidebar</label>
+        </div>
+        <div class="pb-5">
+            <nav aria-label="breadcrumb" data-slot="breadcrumb">
+                <ol data-slot="breadcrumb-list"
+                    class="text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5">
+                    <li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5">
+                        <a href="./index.html">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="hover:text-foreground transition-colors h-4" data-slot="breadcrumb-link" height="1em"
+                            width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                            <path
+                                d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+                            </path>
+                        </svg></a>
+
+                    </li>
+                    <li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true"
+                        class="[&amp;&gt;svg]:size-3.5">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </li>
+                    <li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5"><a
+                            data-slot="breadcrumb-link" class="hover:text-foreground transition-colors"
+                            href="../docs/installation.html">Installation</a></li>
+                    <li data-slot="breadcrumb-separator" role="presentation" aria-hidden="true"
+                        class="[&amp;&gt;svg]:size-3.5">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </li>
+                    <li data-slot="breadcrumb-item" class="inline-flex items-center gap-1.5"><span
+                            data-slot="breadcrumb-page" role="link" aria-disabled="true" aria-current="page"
+                            class="text-foreground font-normal b">Framework Guides</span></li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="typography ">
+
+
+            <h1 class="!mb-2 text-3xl !font-semibold">Framework guides
+            </h1>
+
+            <p class="text-base text-base-content/70 my-4">Explore framework-specific guides to learn how to integrate NiraUI as a Tailwind CSS plugin with different frameworks and build tools.</p>
+
+            <p class="text-base text-base-content/70 my-4">This guide will help you get started with NiraUI, walking you through everything from running and customizing your project to updating and seamlessly integrating it!</p>
+
+            <section>
+  
+                
+     
+                <h2 class="!mb-2 text-3xl !font-semibold my-4" id="install-nira-ui">Installation</h2>
+
+
+
+      <div
+            class="grid max-w-sm grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-4 px-10 pt-10 md:max-w-lg md:gap-10 xl:max-w-none xl:px-6 xl:pt-0 my-10 "
+        >
+           <a href="../framework-guide/react.html" class="card text-center hover:-translate-y-2 transition-all">
+                        <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI React"
+                src="../img/react.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">React</p>
+           </a>
+
+        <a href="../framework-guide/react.html" class="card text-center hover:-translate-y-2 transition-all">
+                        <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI NextJS"
+                src="../img/nextjs.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Next</p>
+           </a>
+
+
+           <a href="../framework-guide/vue.html" class="card text-center hover:-translate-y-2 transition-all">
+                        <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI vue"
+                src="../img/vue.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Vue</p>
+           </a>
+
+
+
+           <a href="../framework-guide/nuxt.html" class="card text-center hover:-translate-y-2 transition-all">
+                        <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Nuxt"
+                src="../img/nuxtjs.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Nuxt</p>
+           </a>
+
+
+           
+           <a href="../framework-guide/angular.html" class="card text-center hover:-translate-y-2 transition-all">
+                        <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Angular"
+                src="../img/angular.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Angular</p>
+           </a>
+
+
+               
+           <a href="../framework-guide/svelte.html" class="card text-center hover:-translate-y-2 transition-all">
+                        <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Svelte"
+                src="../img/svelte.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Svelte</p>
+           </a>
+
+
+            <a href="../framework-guide/astro.html" class="card text-center hover:-translate-y-2 transition-all">
+                        <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Astro"
+                src="../img/astro.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Astro</p>
+           </a>
+
+
+            <a href="../framework-guide/qwik.html" class="card text-center hover:-translate-y-2 transition-all">
+                        <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Qwik"
+                src="../img/qwik.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Qwik</p>
+           </a>
+
+
+           <a href="../framework-guide/solidjs.html" class="card text-center hover:-translate-y-2 transition-all">
+                        <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI SolidJS"
+                src="../img/solidjs.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">SolidJS</p>
+           </a>
+
+
+           <a href="../framework-guide/solidjs.html" class="card text-center hover:-translate-y-2 transition-all">
+            <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Laravel"
+                src="../img/laravel.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Laravel</p>
+           </a>
+
+
+           <a href="../framework-guide/phoenix.html" class="card text-center hover:-translate-y-2 transition-all">
+            <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Phoenix"
+                src="../img/phoenix.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Phoenix</p>
+           </a>
+
+
+           <a href="../framework-guide/rails.html" class="card text-center hover:-translate-y-2 transition-all">
+            <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Rails"
+                src="../img/rails.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Rails</p>
+           </a>
+
+
+           <a href="../framework-guide/preact.html" class="card text-center hover:-translate-y-2 transition-all">
+            <img
+                loading="lazy"
+                class="aspect-square w-full  h-24 will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Preact"
+                src="../img/preact.svg"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Preact</p>
+           </a>
+
+
+           <a href="../framework-guide/rails.html" class="card text-center hover:-translate-y-2 transition-all">
+            <img
+                loading="lazy"
+                class="aspect-square w-full   will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Django"
+                src="../img/django-icon.png"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Django</p>
+           </a>
+
+
+           <a href="../framework-guide/flask.html" class="card text-center hover:-translate-y-2 transition-all">
+            <img
+                loading="lazy"
+                class="aspect-square w-full   will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Flask"
+                src="../img/flask-icon.png"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Flask</p>
+           </a>
+
+
+           <a href="../framework-guide/11ty.html" class="card text-center hover:-translate-y-2 transition-all">
+            <img
+                loading="lazy"
+                class="aspect-square w-full will-change-auto motion-reduce:[scale:1]! motion-reduce:opacity-100! motion-reduce:filter-none!"
+                alt="NiraUI Eleventy"
+                src="../img/11ty-icon.png"
+                style="opacity: 1; transform: translateY(0rem);"
+            />
+            <p class="text-base-content/70 my-2 font-bold">Eleventy</p>
+           </a>
+
+
+
+
+            
+        </div>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </section>
+
+          <div class="flex items-center justify-between py-5 sm:py-7">
+    <div>
+        <a
+            class="button"
+            href="../docs/installation.html"
+        >
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-1 h-[1rem] w-[1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="m15 18-6-6 6-6"></path>
+            </svg>
+            <p>Installation</p>
+        </a>
+    </div>
+    <div>
+        <a
+            class="button"
+            href="../docs/usage.html"
+        >
+            <p>Usage</p>
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="ml-1 h-[1rem] w-[1rem]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="m9 18 6-6-6-6"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <aside class=" sticky top-16 hidden h-[94.5vh] min-w-[230px] gap-3 py-8 xl:flex xl:flex-col"
+        aria-label="Table of contents">
+
+        <div class="flex w-full flex-col gap-3 pl-2">
+            <h3 class="text-sm font-semibold">On this page</h3>
+
+            <div dir="ltr" data-slot="scroll-area" class="relative pt-0.5 pb-4"
+                style="position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px">
+
+
+                <div 
+                    class="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1"
+                    style="overflow-x:hidden;overflow-y:hidden">
+
+                    <div style="min-width:100%;display:table">
+
+                        <div class="flex flex-col gap-2.5 text-sm">
+                            <a class="pl-0" href="#install-nira-ui">Framework Guides</a>
+                            <a class="pl-0" href="#nira-ui-cdn">Installation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-3 pl-2">
+            <h3 class="text-sm font-semibold">Content</h3>
+
+            <div class="flex flex-col gap-2">
+                <a target="_blank" rel="noopener noreferrer"
+                    class="flex items-center text-sm "
+                    href="https://github.com/thaboyaluya/nira-ui/issues/new?title=Share%20Your%20Feedback&labels=feedback"><svg
+                        stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                        stroke-linejoin="round" class="mr-1 inline-block h-4 w-4" height="1em" width="1em"
+                        xmlns="http://www.w3.org/2000/svg">
+
+                        <path d="M7 7h10v10"></path>
+
+                        <path d="M7 17 17 7"></path>
+                    </svg> Feedback</a>
+
+            </div>
+        </div><button
+            class="ml-2 flex cursor-pointer items-center opacity-0 transition mt-6 self-start text-sm " id="scroll-top"><svg
+                stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                stroke-linejoin="round" class="mr-1 inline-block h-4 w-4 align-middle" height="1em" width="1em"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <path d="m5 12 7-7 7 7"></path>
+
+                <path d="M12 19V5"></path>
+            </svg>
+
+            <span>Scroll to top
+            </span></button>
+    </aside>
+
+</div>
+	
+
+
+
+
+
+		
+
+  </div>
+</main>
+
+
+<footer class=" w-full border-t  border-base-300/47">
+
+<div class=" text-right  px-2 py-3 text-sm ">
+    <p>© <span class="year"></span> <a class="font-bold" href="./index.html">NiraUI</a>.</p>
+</div>
+
+</footer>
+
+<script src="../public/rainbow.js"></script>
+<script src="../public/clipboard.js"></script>
+<script src="../public/script.js"></script> <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script>
+<script>
+  docsearch({
+  container: '#docsearch',
+  appId: 'NA27DKZC6X',
+  indexName: 'NiraUI Documentation Website',
+  apiKey: '89ed73c8a84edc8585b5c6cb90ec95cc'
+});
+</script>
+<script type="text/javascript" defer data-plerdy_code='1'>
+    var _protocol="https:"==document.location.protocol?"https://":"http://";
+    _site_hash_code = "67a0aec847ab7f84aa1f5f2eb8b5595b",_suid=68950, plerdyScript=document.createElement("script");
+    plerdyScript.setAttribute("defer",""),plerdyScript.dataset.plerdymainscript="plerdymainscript",
+    plerdyScript.src="https://a.plerdy.com/public/js/click/main.js?v="+Math.random();
+    var plerdymainscript=document.querySelector("[data-plerdymainscript='plerdymainscript']");
+    plerdymainscript&&plerdymainscript.parentNode.removeChild(plerdymainscript);
+    try{document.head.appendChild(plerdyScript)}catch(t){console.log(t,"unable add script tag")}
+</script></body>
+</html>
