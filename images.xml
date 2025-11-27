@@ -2,450 +2,479 @@
 		<!--	created with www.mysitemapgenerator.com	-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url>
-<loc>https://niraui.onrender.com/index.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/ferr-studio-G2Qjx1y9aAM-unsplash.jpg</image:loc>
-<image:title>NiraUI Avatar</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/vue.svg</image:loc>
-<image:title>NiraUI vue</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/react.svg</image:loc>
-<image:title>NiraUI react</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/svelte.svg</image:loc>
-<image:title>NiraUI svelte</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/qwik.svg</image:loc>
-<image:title>NiraUI qwik</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/laravel.svg</image:loc>
-<image:title>NiraUI laravel</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/nextjs.svg</image:loc>
-<image:title>NiraUI nextjs</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/solidjs.svg</image:loc>
-<image:title>NiraUI solidjs</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/preact.svg</image:loc>
-<image:title>NiraUI preact</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/phoenix.svg</image:loc>
-<image:title>NiraUI phoenix</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/nuxtjs.svg</image:loc>
-<image:title>NiraUI nuxtjs</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/astro.svg</image:loc>
-<image:title>NiraUI astro</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/angular.svg</image:loc>
-<image:title>NiraUI angular</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/vite.svg</image:loc>
-<image:title>NiraUI vite</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/rails.svg</image:loc>
-<image:title>NiraUI rails</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/rumealuya.JPG</image:loc>
-<image:title>Rume Aluya Creator of NiraUI</image:title>
-</image:image>
+	<loc>https://niraui.onrender.com/</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/blog/index.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/what-is-nira-ui.png</image:loc>
-<image:title>What is NiraUI?</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/nira-ui-vs-tailwind-ui.png</image:loc>
-<image:title>NiraUI vs. Tailwind UI</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/10-+beautiful-tailwindcss-theme.png</image:loc>
-<image:title>10+ Beautiful Tailwind CSS Themes with NiraUI</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/tailwind-css-guide-features-examples.jpg</image:loc>
-<image:title>A Complete Guide to Tailwind CSS: The Utility-First CSS Framework That’s Changing Web Design</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/tailwindcss-rtl.png</image:loc>
-<image:title>Tailwind CSS (2025): Built-in LTR and RTL Support Explained</image:title>
-</image:image>
+	<loc>https://niraui.onrender.com/index.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>1.0</priority>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/nira-ui-logo-transparent.ico</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/ferr-studio-G2Qjx1y9aAM-unsplash.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/vue.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/react.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/svelte.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/qwik.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/laravel.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/nextjs.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/solidjs.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/preact.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/phoenix.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/nuxtjs.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/astro.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/angular.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/vite.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/rails.svg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/accordion.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/alert.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/avatar.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/badge.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/breadcrumbs.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/button.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/card.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/checkbox.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/divider.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/dot.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/drawer.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/rumealuya.JPG</image:loc>
+	</image:image>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/index.html</loc>
+	<loc>https://niraui.onrender.com/blog/index.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/what-is-nira-ui.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/nira-ui-vs-tailwind-ui.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/10-+beautiful-tailwindcss-theme.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/9-best-tailwind-css-plugins-for-developers.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwind-mistake.webp</image:loc>
+	</image:image>
 </url>
 <url>
-<loc>https://niraui.onrender.com/docs/introduction.html</loc>
+	<loc>https://niraui.onrender.com/components/index.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/dropdown.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/footer.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/input.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/file-input.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/range.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/kbd.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/link.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/mockup-browser.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/mockup-code.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/modal.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/navbar.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/pagination.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/progress.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/radio.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/select.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/skeleton.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/spinner.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/steps.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/tab.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/table.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/textarea.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/toggle.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/tooltip.webp</image:loc>
+	</image:image>
 </url>
 <url>
-<loc>https://niraui.onrender.com/docs/installation.html</loc>
+	<loc>https://niraui.onrender.com/docs/introduction.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/blog/what-is-nira-ui.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/what-is-nira-ui.png</image:loc>
-<image:title>What is NiraUI?</image:title>
-</image:image>
+	<loc>https://niraui.onrender.com/docs/theme.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/button.html</loc>
+	<loc>https://niraui.onrender.com/docs/customize.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/card.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/ferr-studio-G2Qjx1y9aAM-unsplash.jpg</image:loc>
-<image:title>Card Image</image:title>
-</image:image>
+	<loc>https://niraui.onrender.com/docs/usage.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/alert.html</loc>
+	<loc>https://niraui.onrender.com/components/accordion.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/docs/theme.html</loc>
+	<loc>https://niraui.onrender.com/components/alert.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/docs/customize.html</loc>
+	<loc>https://niraui.onrender.com/components/avatar.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/ferr-studio-kApBCRq9EFs-unsplash.jpg</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/hesam-link-TdMpf4mvJT8-unsplash.jpg</image:loc>
+	</image:image>
 </url>
 <url>
-<loc>https://niraui.onrender.com/docs/usage.html</loc>
+	<loc>https://niraui.onrender.com/components/badge.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/accordion.html</loc>
+	<loc>https://niraui.onrender.com/components/breadcrumb.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/avatar.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/ferr-studio-G2Qjx1y9aAM-unsplash.jpg</image:loc>
-<image:title>Avatar</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/ferr-studio-kApBCRq9EFs-unsplash.jpg</image:loc>
-<image:title>Avatar</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/hesam-link-TdMpf4mvJT8-unsplash.jpg</image:loc>
-<image:title>Avatar</image:title>
-</image:image>
+	<loc>https://niraui.onrender.com/components/button.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/badge.html</loc>
+	<loc>https://niraui.onrender.com/components/button-group.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/breadcrumb.html</loc>
+	<loc>https://niraui.onrender.com/components/card.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/button-group.html</loc>
+	<loc>https://niraui.onrender.com/docs/installation.html</loc>
+	<lastmod>2025-10-03T15:47:14+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/docs/niraicons.html</loc>
+	<loc>https://niraui.onrender.com/components/checkbox.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/ferr-studio-G2Qjx1y9aAM-unsplash.jpg</image:loc>
-<image:title>NiraUI Avatar</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/vue.svg</image:loc>
-<image:title>NiraUI vue</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/react.svg</image:loc>
-<image:title>NiraUI react</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/svelte.svg</image:loc>
-<image:title>NiraUI svelte</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/qwik.svg</image:loc>
-<image:title>NiraUI qwik</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/laravel.svg</image:loc>
-<image:title>NiraUI laravel</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/nextjs.svg</image:loc>
-<image:title>NiraUI nextjs</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/solidjs.svg</image:loc>
-<image:title>NiraUI solidjs</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/preact.svg</image:loc>
-<image:title>NiraUI preact</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/phoenix.svg</image:loc>
-<image:title>NiraUI phoenix</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/nuxtjs.svg</image:loc>
-<image:title>NiraUI nuxtjs</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/astro.svg</image:loc>
-<image:title>NiraUI astro</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/angular.svg</image:loc>
-<image:title>NiraUI angular</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/vite.svg</image:loc>
-<image:title>NiraUI vite</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/rails.svg</image:loc>
-<image:title>NiraUI rails</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/rumealuya.JPG</image:loc>
-<image:title>Rume Aluya Creator of NiraUI</image:title>
-</image:image>
+	<loc>https://niraui.onrender.com/components/form.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/framework-guide/index.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/react.svg</image:loc>
-<image:title>NiraUI React</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/nextjs.svg</image:loc>
-<image:title>NiraUI NextJS</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/vue.svg</image:loc>
-<image:title>NiraUI vue</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/nuxtjs.svg</image:loc>
-<image:title>NiraUI Nuxt</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/angular.svg</image:loc>
-<image:title>NiraUI Angular</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/svelte.svg</image:loc>
-<image:title>NiraUI Svelte</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/astro.svg</image:loc>
-<image:title>NiraUI Astro</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/qwik.svg</image:loc>
-<image:title>NiraUI Qwik</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/solidjs.svg</image:loc>
-<image:title>NiraUI SolidJS</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/laravel.svg</image:loc>
-<image:title>NiraUI Laravel</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/phoenix.svg</image:loc>
-<image:title>NiraUI Phoenix</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/rails.svg</image:loc>
-<image:title>NiraUI Rails</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/preact.svg</image:loc>
-<image:title>NiraUI Preact</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/django-icon.png</image:loc>
-<image:title>NiraUI Django</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/flask-icon.png</image:loc>
-<image:title>NiraUI Flask</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/11ty-icon.png</image:loc>
-<image:title>NiraUI Eleventy</image:title>
-</image:image>
+	<loc>https://niraui.onrender.com/components/input-file.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/checkbox.html</loc>
+	<loc>https://niraui.onrender.com/components/input.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/form.html</loc>
+	<loc>https://niraui.onrender.com/components/radio.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/input-file.html</loc>
+	<loc>https://niraui.onrender.com/components/input-range.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/input.html</loc>
+	<loc>https://niraui.onrender.com/components/select.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/radio.html</loc>
+	<loc>https://niraui.onrender.com/components/textarea.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/input-range.html</loc>
+	<loc>https://niraui.onrender.com/components/toggle.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/select.html</loc>
+	<loc>https://niraui.onrender.com/components/drawer.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/textarea.html</loc>
+	<loc>https://niraui.onrender.com/components/dropdown.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/toggle.html</loc>
+	<loc>https://niraui.onrender.com/components/footer.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/drawer.html</loc>
+	<loc>https://niraui.onrender.com/components/link.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/dropdown.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/ferr-studio-G2Qjx1y9aAM-unsplash.jpg</image:loc>
-<image:title>Avatar</image:title>
-</image:image>
+	<loc>https://niraui.onrender.com/components/navbar.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/footer.html</loc>
+	<loc>https://niraui.onrender.com/components/sidebar.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/link.html</loc>
+	<loc>https://niraui.onrender.com/components/tab.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/navbar.html</loc>
+	<loc>https://niraui.onrender.com/components/divider.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/sidebar.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/hesam-link-TdMpf4mvJT8-unsplash.jpg</image:loc>
-<image:title>avatar</image:title>
-</image:image>
+	<loc>https://niraui.onrender.com/components/dot.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/tab.html</loc>
+	<loc>https://niraui.onrender.com/components/kbd.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/divider.html</loc>
+	<loc>https://niraui.onrender.com/components/mockup-browser.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/dot.html</loc>
+	<loc>https://niraui.onrender.com/components/mockup-code.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/kbd.html</loc>
+	<loc>https://niraui.onrender.com/components/modal.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/mockup-browser.html</loc>
+	<loc>https://niraui.onrender.com/components/pagination.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/mockup-code.html</loc>
+	<loc>https://niraui.onrender.com/components/progress.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/modal.html</loc>
+	<loc>https://niraui.onrender.com/components/skeleton.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/pagination.html</loc>
+	<loc>https://niraui.onrender.com/components/spinner.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/progress.html</loc>
+	<loc>https://niraui.onrender.com/components/step.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/skeleton.html</loc>
+	<loc>https://niraui.onrender.com/components/table.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/spinner.html</loc>
+	<loc>https://niraui.onrender.com/components/tooltip.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/step.html</loc>
+	<loc>https://niraui.onrender.com/blog/what-is-nira-ui.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/table.html</loc>
+	<loc>https://niraui.onrender.com/blog/nira-ui-vs-tailwind-ui.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/components/tooltip.html</loc>
+	<loc>https://niraui.onrender.com/blog/tailwindcss-themes.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-<loc>https://niraui.onrender.com/blog/nira-ui-vs-tailwind-ui.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/nira-ui-vs-tailwind-ui.png</image:loc>
-<image:title>NiraUI VS Tailwind UI</image:title>
-</image:image>
+	<loc>https://niraui.onrender.com/blog/tailwindcss-plugin.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/nira%20homepage.png</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-typography.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-container-queries.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-flip.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-animate.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwind-scrollbar-hide.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-forms.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-opentype.webp</image:loc>
+	</image:image>
+	<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-3d.webp</image:loc>
+	</image:image>
+		<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-grid.webp</image:loc>
+	</image:image>
+</url>
+
+<url>
+	<loc>https://niraui.onrender.com/blog/tailwind-css-grid.html</loc>
+	<lastmod>2025-10-21T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
+		<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-grid.webp</image:loc>
+	</image:image>
 </url>
 <url>
-<loc>https://niraui.onrender.com/blog/tailwindcss-themes.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/10-+beautiful-tailwindcss-theme.png</image:loc>
-<image:title>Tailwind CSS Themes: Customize Your Design with NiraUI</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/ferr-studio-G2Qjx1y9aAM-unsplash.jpg</image:loc>
-<image:title>Avatar</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/ferr-studio-kApBCRq9EFs-unsplash.jpg</image:loc>
-<image:title>Avatar</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/hesam-link-TdMpf4mvJT8-unsplash.jpg</image:loc>
-<image:title>Avatar</image:title>
-</image:image>
+	<loc>https://niraui.onrender.com/blog/tailwindcss-vs-bootstrap-in-2025-which-one-should-you-use.html</loc>
+	<lastmod>2025-10-21T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
+		<image:image>
+			<image:loc>https://niraui.onrender.com/img/tailwindcss-vs-bootstrap-in-2025-which-one-should-you-use.webp</image:loc>
+	</image:image>
 </url>
 <url>
-<loc>https://niraui.onrender.com/blog/tailwindcss-plugin.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/nira homepage.png</image:loc>
-<image:title>NiraUI is the best Tailwind CSS component library</image:title>
-</image:image>
-</url>
-<url>
-<loc>https://niraui.onrender.com/blog/common-mistake-when-using-tailwind.html</loc>
-</url>
-<url>
-<loc>https://niraui.onrender.com/blog/complete-guide-to-tailwind-css.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/tailwind-css-guide-features-examples.jpg</image:loc>
-<image:title>The Ultimate Tailwind CSS Guide — 2025 Edition</image:title>
-</image:image>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/ferr-studio-G2Qjx1y9aAM-unsplash.jpg</image:loc>
-<image:title>Animated Image</image:title>
-</image:image>
-</url>
-<url>
-<loc>https://niraui.onrender.com/blog/tailwind-css-grid.html</loc>
-</url>
-<url>
-<loc>https://niraui.onrender.com/blog/tailwindcss-rtl.html</loc>
-<image:image>
-<image:loc>https://niraui.onrender.com/img/tailwindcss-rtl.png</image:loc>
-<image:title>Tailwind CSS (2025): Built-in LTR and RTL Support Explained</image:title>
-</image:image>
-</url>
-<url>
-<loc>https://niraui.onrender.com/blog/tailwindcss-vs-bootstrap-in-2025-which-one-should-you-use.html</loc>
+	<loc>https://niraui.onrender.com/blog/common-mistake-when-using-tailwind.html</loc>
+	<lastmod>2025-10-03T15:47:15+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 </urlset>
